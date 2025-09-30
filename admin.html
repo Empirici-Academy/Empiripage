@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empirici Academy — Admin Panel</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        /* Admin-specific styles */
+        .admin-warning {
+            background: #e74c3c;
+            color: white;
+            padding: 16px;
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        .admin-container {
+            display: grid;
+            grid-template-columns: 280px 1fr;
+            min-height: 100vh;
+        }
+        
+        .admin-sidebar {
+            background: var(--navy);
+            color: white;
+            padding: 24px 0;
+        }
+        
+        .admin-main {
+            padding: 24px;
+            background: var(--light-gray);
+            max-height: 100vh;
+            overflow-y: auto;
+        }
+        
+        .admin-nav {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .admin-nav-item {
+            margin-bottom: 4px;
+        }
+        
+        .admin-nav-link {
+            display: block;
+            padding: 12px 24px;
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        
+        .admin-nav-link:hover,
+        .admin-nav-link.active {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-left-color: var(--teal-1);
+        }
+        
+        .admin-section {
+            display: none;
+            background: white;
+            border-radius: var(--radius);
+            padding: 32px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .admin-section.active {
+            display: block;
+        }
+        
+        .admin-section h2 {
+            margin-bottom: 24px;
+            color: var(--navy);
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 16px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+        
+        .form-full {
+            grid-column: 1 / -1;
+        }
+        
+        .admin-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 2px solid var(--light-gray);
+        }
+        
+        .array-item {
+            background: var(--light-gray);
+            padding: 20px;
+            border-radius: var(--radius);
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+        }
+        
+        .array-item-header {
+            display: flex;
+            justify-content: between;
+            align-items: center;
+            margin-bottom: 16px;
+        }
+        
+        .array-item-actions {
+            display: flex;
+            gap: 8px;
+        }
+        
+        .image-preview {
+            max-width: 200px;
+            max-height: 150px;
+            border-radius: var(--radius);
+            margin-top: 8px;
+            border: 2px solid var(--light-gray);
+        }
+        
+        .messages-list {
+            max-height: 400px;
+            overflow-y: auto;
+        }
+        
+        .message-item {
+            background: var(--light-gray);
+            padding: 16px;
+            border-radius: var(--radius);
+            margin-bottom: 12px;
+            border-left: 4px solid var(--teal-1);
+        }
+        
+        .message-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+        }
+        
+        .message-name {
+            font-weight: 600;
+            color: var(--navy);
+        }
+        
+        .message-date {
+            color: var(--muted);
+            font-size: 14px;
+        }
+        
+        .message-email {
+            color: var(--teal-1);
+            margin-bottom: 8px;
+        }
+        
+        .message-content {
+            color: var(--navy);
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-warning">
+        ⚠️ Admin panel runs without authentication — do not deploy publicly without adding access control.
+    </div>
+    
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="admin-sidebar">
+            <div class="admin-brand" style="padding: 0 24px 24px;">
+                <h2 style="color: white; margin-bottom: 8px;">Empirici Academy</h2>
+                <p style="color: rgba(255,255,255,0.7); font-size: 14px;">Content Management</p>
+            </div>
+            
+            <ul class="admin-nav">
+                <li class="admin-nav-item">
+                    <a href="#dashboard" class="admin-nav-link active" data-tab="dashboard">📊 Dashboard</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#site-settings" class="admin-nav-link" data-tab="site-settings">⚙️ Site Settings</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#home" class="admin-nav-link" data-tab="home">🏠 Home Page</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#about" class="admin-nav-link" data-tab="about">👥 About Page</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#courses" class="admin-nav-link" data-tab="courses">📚 Courses</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#collaboration" class="admin-nav-link" data-tab="collaboration">🤝 Collaboration</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#blog" class="admin-nav-link" data-tab="blog">📝 Blog</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#products" class="admin-nav-link" data-tab="products">🛍️ Products</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#contact" class="admin-nav-link" data-tab="contact">📞 Contact</a>
+                </li>
+                <li class="admin-nav-item">
+                    <a href="#messages" class="admin-nav-link" data-tab="messages">💬 Messages</a>
+                </li>
+            </ul>
+            
+            <div style="padding: 24px;">
+                <div class="admin-actions">
+                    <button type="button" class="btn btn-primary btn-full" onclick="admin.saveChanges()">💾 Save Changes</button>
+                </div>
+            </div>
+        </aside>
+        
+        <!-- Main Content -->
+        <main class="admin-main">
+            <!-- Dashboard Section -->
+            <section id="dashboard-section" class="admin-section active">
+                <h2>Dashboard</h2>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>Site Status</h3>
+                        <p>All systems operational</p>
+                        <div id="storage-status" style="margin-top: 16px;">
+                            <small>Checking localStorage...</small>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <h3>Recent Messages</h3>
+                        <p id="message-count">Loading...</p>
+                        <a href="#messages" class="admin-nav-link" style="display: inline-block; margin-top: 8px;">View Messages</a>
+                    </div>
+                    <div class="card">
+                        <h3>Quick Actions</h3>
+                        <div style="display: flex; flex-direction: column; gap: 8px; margin-top: 12px;">
+                            <button type="button" class="btn btn-outline" onclick="admin.exportJSON()">📤 Export JSON</button>
+                            <button type="button" class="btn btn-outline" onclick="admin.importJSON()">📥 Import JSON</button>
+                            <button type="button" class="btn btn-outline" onclick="admin.resetToDefaults()">🔄 Reset to Defaults</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="admin-actions">
+                    <button type="button" class="btn btn-primary" onclick="admin.saveChanges()">💾 Save All Changes</button>
+                    <button type="button" class="btn btn-outline" onclick="admin.previewSite()">👁️ Preview Site</button>
+                </div>
+            </section>
+            
+            <!-- Site Settings Section -->
+            <section id="site-settings-section" class="admin-section">
+                <h2>Site Settings</h2>
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="site-name">Site Name</label>
+                        <input type="text" id="site-name" data-key="site.name" class="admin-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="site-tagline">Tagline</label>
+                        <input type="text" id="site-tagline" data-key="site.tagline" class="admin-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="site-email">Email</label>
+                        <input type="email" id="site-email" data-key="site.email" class="admin-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="site-phone">Phone</label>
+                        <input type="tel" id="site-phone" data-key="site.phone" class="admin-input">
+                    </div>
+                    <div class="form-group form-full">
+                        <label for="site-address">Address</label>
+                        <textarea id="site-address" data-key="site.address" class="admin-input" rows="3"></textarea>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Home Page Section -->
+            <section id="home-section" class="admin-section">
+                <h2>Home Page Content</h2>
+                <div class="form-grid">
+                    <div class="form-group form-full">
+                        <label for="home-hero-title">Hero Title</label>
+                        <input type="text" id="home-hero-title" data-key="home.hero.title" class="admin-input">
+                    </div>
+                    <div class="form-group form-full">
+                        <label for="home-hero-subtitle">Hero Subtitle</label>
+                        <textarea id="home-hero-subtitle" data-key="home.hero.subtitle" class="admin-input" rows="3"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="home-hero-primaryCta">Primary CTA Text</label>
+                        <input type="text" id="home-hero-primaryCta" data-key="home.hero.primaryCta" class="admin-input">
+                    </div>
+                    <div class="form-group">
+                        <label for="home-hero-secondaryCta">Secondary CTA Text</label>
+                        <input type="text" id="home-hero-secondaryCta" data-key="home.hero.secondaryCta" class="admin-input">
+                    </div>
+                </div>
+                
+                <h3 style="margin-top: 32px;">Hero Image</h3>
+                <div class="form-group">
+                    <input type="file" id="home-hero-image" accept="image/*" onchange="admin.handleImageUpload(this, 'home.hero.heroImage')">
+                    <div id="home-hero-image-preview" class="image-preview-container">
+                        <img id="home-hero-image-preview-img" class="image-preview" src="" alt="Hero image preview">
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Messages Section -->
+            <section id="messages-section" class="admin-section">
+                <h2>Contact Messages</h2>
+                <div class="admin-actions">
+                    <button type="button" class="btn btn-outline" onclick="admin.exportMessagesCSV()">📊 Export as CSV</button>
+                    <button type="button" class="btn btn-outline" onclick="admin.clearMessages()">🗑️ Clear All Messages</button>
+                </div>
+                
+                <div id="messages-list" class="messages-list">
+                    <!-- Messages will be loaded here -->
+                </div>
+            </section>
+            
+            <!-- More sections will be added in admin.js -->
+        </main>
+    </div>
+
+    <script src="/js/site-content-default.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/admin.js"></script>
+</body>
+</html>
