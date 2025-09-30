@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empirici Academy — Collaboration</title>
+    <meta name="description" content="Partner with Empirici Academy for corporate training, workshops, and curriculum partnerships.">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="/index.html" class="logo-link">
+                    <img src="/assets/logo.png" alt="Empirici Academy" data-key="site.name" data-alt="site.name" class="logo">
+                </a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/courses.html" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/collaboration.html" class="nav-link">Collaboration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item nav-item-admin">
+                    <a href="/admin.html" class="nav-link nav-link-admin">Admin</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="section-sm" style="background: var(--light-gray);">
+            <div class="container">
+                <h1 data-key="collaboration.headline">Partner with Empirici Academy</h1>
+                <p class="text-muted" data-key="collaboration.paragraph">We offer tailored corporate training, workshop days, and curriculum partnerships for institutions.</p>
+            </div>
+        </section>
+
+        <!-- Services Offered -->
+        <section class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 48px;">Our Collaboration Services</h2>
+                
+                <div class="grid grid-2" id="services-container">
+                    <!-- Services will be dynamically rendered here -->
+                </div>
+                
+                <template id="service-template">
+                    <div class="card service-card">
+                        <h3 data-key="collaboration.servicesOffered[i]">Service Name</h3>
+                        <p>We provide comprehensive solutions tailored to your organization's needs.</p>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section" style="background: linear-gradient(135deg, var(--teal-1), var(--teal-2)); color: white;">
+            <div class="container">
+                <div class="collaboration-cta">
+                    <h2 data-key="collaboration.cta.text">Contact us for a tailored partnership</h2>
+                    <p>Let's discuss how we can work together to meet your training and development goals.</p>
+                    <a href="/contact.html?subject=Collaboration" class="btn btn-secondary">Start Conversation</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content grid grid-3">
+                <div class="footer-section">
+                    <h3 data-key="site.name">Empirici Academy</h3>
+                    <p data-key="site.tagline">Knowledge Gained Through Experience</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/courses.html">Courses</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <address class="footer-contact">
+                        <p data-key="site.email">info@empirici.academy</p>
+                        <p data-key="site.phone">+20 100 000 0000</p>
+                        <p data-key="site.address">Cairo, Egypt (placeholder)</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/site-content-default.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.EmpiriciUtils) {
+                window.EmpiriciUtils.renderArray('#services-container', '#service-template', 'collaboration.servicesOffered');
+            }
+        });
+    </script>
+</body>
+</html>
