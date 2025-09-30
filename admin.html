@@ -330,4 +330,139 @@
     <script src="/js/main.js"></script>
     <script src="/js/admin.js"></script>
 </body>
+<!-- Add these sections to the existing admin.html main content -->
+
+<!-- About Page Section -->
+<section id="about-section" class="admin-section">
+    <h2>About Page Content</h2>
+    <div class="form-grid">
+        <div class="form-group form-full">
+            <label for="about-mission">Mission</label>
+            <textarea id="about-mission" data-key="about.mission" class="admin-input" rows="3"></textarea>
+        </div>
+        <div class="form-group form-full">
+            <label for="about-vision">Vision</label>
+            <textarea id="about-vision" data-key="about.vision" class="admin-input" rows="3"></textarea>
+        </div>
+        <div class="form-group form-full">
+            <label for="about-story">Our Story</label>
+            <textarea id="about-story" data-key="about.story" class="admin-input" rows="4"></textarea>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 32px;">Our Values</h3>
+    <div class="admin-actions">
+        <button type="button" class="btn btn-primary" onclick="admin.addArrayItem('about.values')">➕ Add Value</button>
+    </div>
+    <div id="values-array">
+        <!-- Values will be rendered here -->
+    </div>
+
+    <h3 style="margin-top: 32px;">Team Members</h3>
+    <div class="admin-actions">
+        <button type="button" class="btn btn-primary" onclick="admin.addArrayItem('about.team')">👥 Add Team Member</button>
+    </div>
+    <div id="team-array">
+        <!-- Team members will be rendered here -->
+    </div>
+</section>
+
+<!-- Courses Page Section -->
+<section id="courses-section" class="admin-section">
+    <h2>Courses Page Content</h2>
+    <div class="form-grid">
+        <div class="form-group form-full">
+            <label for="courses-header">Page Header</label>
+            <input type="text" id="courses-header" data-key="coursesPage.header" class="admin-input">
+        </div>
+        <div class="form-group form-full">
+            <label for="courses-description">Page Description</label>
+            <textarea id="courses-description" data-key="coursesPage.description" class="admin-input" rows="3"></textarea>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 32px;">Courses List</h3>
+    <div class="admin-actions">
+        <button type="button" class="btn btn-primary" onclick="admin.addArrayItem('coursesPage.courses')">📚 Add Course</button>
+    </div>
+    <div id="courses-array">
+        <!-- Courses will be rendered here -->
+    </div>
+</section>
+
+<!-- Collaboration Section -->
+<section id="collaboration-section" class="admin-section">
+    <h2>Collaboration Page Content</h2>
+    <div class="form-grid">
+        <div class="form-group form-full">
+            <label for="collaboration-headline">Headline</label>
+            <input type="text" id="collaboration-headline" data-key="collaboration.headline" class="admin-input">
+        </div>
+        <div class="form-group form-full">
+            <label for="collaboration-paragraph">Description</label>
+            <textarea id="collaboration-paragraph" data-key="collaboration.paragraph" class="admin-input" rows="4"></textarea>
+        </div>
+    </div>
+
+    <h3 style="margin-top: 32px;">Services Offered</h3>
+    <div class="admin-actions">
+        <button type="button" class="btn btn-primary" onclick="admin.addArrayItem('collaboration.servicesOffered')">➕ Add Service</button>
+    </div>
+    <div id="services-array">
+        <!-- Services will be rendered here -->
+    </div>
+
+    <h3 style="margin-top: 32px;">Call to Action</h3>
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="collaboration-cta-text">CTA Text</label>
+            <input type="text" id="collaboration-cta-text" data-key="collaboration.cta.text" class="admin-input">
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section -->
+<section id="blog-section" class="admin-section">
+    <h2>Blog Management</h2>
+    
+    <h3>Blog Posts</h3>
+    <div class="admin-actions">
+        <button type="button" class="btn btn-primary" onclick="admin.addArrayItem('blog.posts')">📝 Create New Post</button>
+    </div>
+    <div id="blog-posts-array">
+        <!-- Blog posts will be rendered here -->
+    </div>
+</section>
+
+<!-- Products Section -->
+<section id="products-section" class="admin-section">
+    <h2>Products & Bundles</h2>
+    
+    <h3>Product Items</h3>
+    <div class="admin-actions">
+        <button type="button" class="btn btn-primary" onclick="admin.addArrayItem('products.items')">🛍️ Add Product</button>
+    </div>
+    <div id="products-array">
+        <!-- Products will be rendered here -->
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact-section" class="admin-section">
+    <h2>Contact Page Content</h2>
+    <div class="form-grid">
+        <div class="form-group">
+            <label for="contact-heading">Heading</label>
+            <input type="text" id="contact-heading" data-key="contact.heading" class="admin-input">
+        </div>
+        <div class="form-group">
+            <label for="contact-subheading">Subheading</label>
+            <input type="text" id="contact-subheading" data-key="contact.subheading" class="admin-input">
+        </div>
+        <div class="form-group form-full">
+            <label for="contact-mapEmbed">Map Embed Code (HTML)</label>
+            <textarea id="contact-mapEmbed" data-key="contact.mapEmbed" class="admin-input" rows="4" placeholder="<!-- Paste your map iframe code here -->"></textarea>
+        </div>
+    </div>
+</section>
 </html>
