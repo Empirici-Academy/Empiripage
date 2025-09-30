@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empirici Academy — Blog Post</title>
+    <meta name="description" content="Read our latest insights about data analysis, statistics, and data visualization.">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="/index.html" class="logo-link">
+                    <img src="/assets/logo.png" alt="Empirici Academy" data-key="site.name" data-alt="site.name" class="logo">
+                </a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/courses.html" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/collaboration.html" class="nav-link">Collaboration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item nav-item-admin">
+                    <a href="/admin.html" class="nav-link nav-link-admin">Admin</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Blog Post Content -->
+        <article class="section">
+            <div class="container">
+                <div class="blog-post-header">
+                    <nav class="breadcrumb">
+                        <a href="/blog.html">Blog</a>
+                        <span>/</span>
+                        <span>Post</span>
+                    </nav>
+                    
+                    <h1 id="post-title">Loading Post...</h1>
+                    
+                    <div class="blog-post-meta">
+                        <span id="post-date">Date</span>
+                        <span>•</span>
+                        <span id="post-author">Author</span>
+                    </div>
+                    
+                    <img id="post-featured-image" src="/assets/placeholder.svg" alt="Blog post featured image" class="blog-post-featured-image">
+                </div>
+                
+                <div class="blog-post-content">
+                    <div id="post-content">
+                        <p>Loading post content...</p>
+                    </div>
+                </div>
+                
+                <div class="blog-post-actions">
+                    <a href="/blog.html" class="btn btn-outline">← Back to Blog</a>
+                    <div class="social-share">
+                        <span>Share this post:</span>
+                        <a href="#" class="social-link" aria-label="Share on LinkedIn">
+                            <img src="/assets/linkedin.svg" alt="LinkedIn">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Share on Twitter">
+                            <img src="/assets/twitter.svg" alt="Twitter">
+                        </a>
+                        <a href="#" class="social-link" aria-label="Share on Facebook">
+                            <img src="/assets/facebook.svg" alt="Facebook">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- Related Posts Placeholder -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 48px;">More from our Blog</h2>
+                <div style="text-align: center;">
+                    <a href="/blog.html" class="btn btn-primary">View All Posts</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content grid grid-3">
+                <div class="footer-section">
+                    <h3 data-key="site.name">Empirici Academy</h3>
+                    <p data-key="site.tagline">Knowledge Gained Through Experience</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/courses.html">Courses</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <address class="footer-contact">
+                        <p data-key="site.email">info@empirici.academy</p>
+                        <p data-key="site.phone">+20 100 000 0000</p>
+                        <p data-key="site.address">Cairo, Egypt (placeholder)</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/js/site-content-default.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get post slug from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const postSlug = urlParams.get('post');
+            
+            if (!postSlug) {
+                document.getElementById('post-title').textContent = 'Post Not Found';
+                document.getElementById('post-content').innerHTML = '<p>Sorry, the requested blog post could not be found.</p>';
+                return;
+            }
+            
+            // Load site data and find the post
+            const siteData = window.EmpiriciUtils ? window.EmpiriciUtils.loadSiteData() : window.DEFAULT_SITE_DATA;
+            const posts = siteData.blog?.posts || [];
+            const post = posts.find(p => p.slug === postSlug);
+            
+            if (!post) {
+                document.getElementById('post-title').textContent = 'Post Not Found';
+                document.getElementById('post-content').innerHTML = '<p>Sorry, the requested blog post could not be found.</p>';
+                return;
+            }
+            
+            // Update page title
+            document.title = `Empirici Academy — ${post.title}`;
+            
+            // Update post content
+            document.getElementById('post-title').textContent = post.title;
+            document.getElementById('post-date').textContent = new Date(post.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            });
+            document.getElementById('post-author').textContent = post.author;
+            document.getElementById('post-featured-image').src = post.featuredImage;
+            document.getElementById('post-featured-image').alt = post.title;
+            document.getElementById('post-content').innerHTML = post.content;
+            
+            // Update meta description
+            const metaDescription = document.querySelector('meta[name="description"]');
+            if (metaDescription) {
+                metaDescription.content = post.excerpt;
+            }
+        });
+    </script>
+</body>
+</html>
