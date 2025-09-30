@@ -3,735 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empirici Academy | Knowledge Gained Through Experience</title>
+    <title>Empirici Academy — Home</title>
+    <meta name="description" content="Practical, hands-on data courses: Data Analysis, Statistics, Power BI, Tableau — designed for learners of all levels.">
+    
+    <!-- OpenGraph Tags -->
+    <meta property="og:title" content="Empirici Academy — Home">
+    <meta property="og:description" content="Knowledge Gained Through Experience">
+    <meta property="og:image" content="/assets/logo.png">
+    <meta property="og:type" content="website">
+    
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Variables for consistent theming */
-        :root {
-            --primary-gradient: linear-gradient(135deg, #1B9AAA, #107D8B);
-            --secondary-color: #0A1C28;
-            --light-gray: #F7F9FB;
-            --white: #FFFFFF;
-            --accent-yellow: #FFC857;
-            --text-dark: #333333;
-            --text-light: #666666;
-            --border-radius: 8px;
-            --section-padding: 100px;
-            --transition: all 0.3s ease;
-        }
-
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            line-height: 1.6;
-            color: var(--text-dark);
-            background-color: var(--white);
-        }
-
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            line-height: 1.3;
-            margin-bottom: 1rem;
-        }
-
-        h1 {
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
-        h2 {
-            font-size: 2.5rem;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-        }
-
-        p {
-            margin-bottom: 1.5rem;
-        }
-
-        img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            border-radius: var(--border-radius);
-            font-weight: 500;
-            text-align: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-        }
-
-        .btn-primary {
-            background: var(--primary-gradient);
-            color: var(--white);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(27, 154, 170, 0.2);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #107D8B;
-            border: 2px solid #107D8B;
-        }
-
-        .btn-secondary:hover {
-            background: #107D8B;
-            color: var(--white);
-        }
-
-        .section {
-            padding: var(--section-padding) 0;
-        }
-
-        .section-light {
-            background-color: var(--white);
-        }
-
-        .section-gray {
-            background-color: var(--light-gray);
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: var(--white);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-        }
-
-        .logo span {
-            color: #107D8B;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-item {
-            margin-left: 30px;
-        }
-
-        .nav-link {
-            font-weight: 500;
-            transition: var(--transition);
-            position: relative;
-        }
-
-        .nav-link:hover {
-            color: #107D8B;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--primary-gradient);
-            transition: var(--transition);
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        .bar {
-            display: block;
-            width: 25px;
-            height: 3px;
-            margin: 5px auto;
-            transition: var(--transition);
-            background-color: var(--secondary-color);
-        }
-
-        /* Hero Section */
-        .hero {
-            background: var(--light-gray) url('/assets/hero-bg.png') no-repeat center center;
-            background-size: cover;
-            padding: 150px 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-        }
-
-        .hero p {
-            max-width: 600px;
-            margin: 0 auto 2.5rem;
-            font-size: 1.2rem;
-            color: var(--text-light);
-        }
-
-        .hero-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        /* Intro Section */
-        .intro-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .intro-text h2 {
-            margin-bottom: 1.5rem;
-        }
-
-        .intro-image {
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Courses Section */
-        .courses-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .course-card {
-            background: var(--white);
-            border-radius: var(--border-radius);
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: var(--transition);
-        }
-
-        .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .course-image {
-            height: 200px;
-            background-color: #e0f7fa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .course-content {
-            padding: 25px;
-        }
-
-        .course-content h3 {
-            margin-bottom: 15px;
-        }
-
-        .course-content p {
-            margin-bottom: 20px;
-            color: var(--text-light);
-        }
-
-        /* Testimonials Section */
-        .testimonial-container {
-            max-width: 800px;
-            margin: 50px auto 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .testimonial-stats {
-            background: var(--white);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            margin-bottom: 40px;
-            text-align: center;
-        }
-
-        .testimonial-stats h3 {
-            font-size: 2.5rem;
-            color: #107D8B;
-            margin-bottom: 10px;
-        }
-
-        .testimonial-quote {
-            background: var(--white);
-            padding: 30px;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            position: relative;
-            max-width: 600px;
-        }
-
-        .testimonial-quote::before {
-            content: '"';
-            font-size: 5rem;
-            color: #e0f7fa;
-            position: absolute;
-            top: -20px;
-            left: 10px;
-            font-family: Georgia, serif;
-        }
-
-        .testimonial-author {
-            margin-top: 20px;
-            font-weight: 500;
-        }
-
-        /* CTA Section */
-        .cta-banner {
-            background: var(--primary-gradient);
-            color: var(--white);
-            padding: 60px 0;
-            text-align: center;
-            border-radius: var(--border-radius);
-        }
-
-        .cta-banner h2 {
-            margin-bottom: 20px;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: var(--white);
-            padding: 60px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr 1fr;
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-logo {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-        }
-
-        .footer-links h4 {
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-
-        .footer-links ul {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            transition: var(--transition);
-        }
-
-        .footer-links a:hover {
-            color: #FFC857;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .social-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            transition: var(--transition);
-        }
-
-        .social-icon:hover {
-            background-color: #107D8B;
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            :root {
-                --section-padding: 80px;
-            }
-
-            h1 {
-                font-size: 2.5rem;
-            }
-
-            h2 {
-                font-size: 2rem;
-            }
-
-            .intro-content {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .courses-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        @media (max-width: 768px) {
-            :root {
-                --section-padding: 60px;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            h2 {
-                font-size: 1.8rem;
-            }
-
-            .hamburger {
-                display: block;
-            }
-
-            .hamburger.active .bar:nth-child(2) {
-                opacity: 0;
-            }
-
-            .hamburger.active .bar:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
-            }
-
-            .hamburger.active .bar:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
-            }
-
-            .nav-menu {
-                position: fixed;
-                left: -100%;
-                top: 70px;
-                gap: 0;
-                flex-direction: column;
-                background-color: var(--white);
-                width: 100%;
-                text-align: center;
-                transition: var(--transition);
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-                padding: 20px 0;
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-item {
-                margin: 16px 0;
-            }
-
-            .hero-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .courses-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 576px) {
-            :root {
-                --section-padding: 40px;
-            }
-
-            .container {
-                padding: 0 15px;
-            }
-
-            .hero {
-                padding: 100px 0;
-            }
-
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- Header/Navigation -->
-    <header>
-        <div class="container">
-            <nav class="navbar">
-                <a href="index.html" class="logo">Empirici <span>Academy</span></a>
-                <ul class="nav-menu">
-                    <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-                    <li class="nav-item"><a href="about.html" class="nav-link">About Us</a></li>
-                    <li class="nav-item"><a href="courses.html" class="nav-link">Courses</a></li>
-                    <li class="nav-item"><a href="collaboration.html" class="nav-link">Collaboration</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </div>
-            </nav>
-        </div>
+    <!-- Header -->
+    <header class="header">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="/index.html" class="logo-link">
+                    <img src="/assets/logo.png" alt="Empirici Academy" data-key="site.name" data-alt="site.name" class="logo">
+                </a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/courses.html" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/collaboration.html" class="nav-link">Collaboration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item nav-item-admin">
+                    <a href="/admin.html" class="nav-link nav-link-admin">Admin</a>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <h1>Knowledge Gained Through Experience</h1>
-            <p>Practical learning in data, technology, and analytics.</p>
-            <div class="hero-buttons">
-                <a href="courses.html" class="btn btn-primary">Explore Courses</a>
-                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Intro Section -->
-    <section class="section section-light">
-        <div class="container">
-            <div class="intro-content">
-                <div class="intro-text">
-                    <h2>Who We Are</h2>
-                    <p>Empirici Academy is a premier educational institution dedicated to providing practical, hands-on learning experiences in data science, technology, and analytics.</p>
-                    <p>Our mission is to bridge the gap between theoretical knowledge and real-world application, empowering students with the skills needed to thrive in today's data-driven economy.</p>
-                </div>
-                <div class="intro-image">
-                    <!-- Placeholder for intro image -->
-                    <div style="height: 300px; background-color: #e0f7fa; display: flex; align-items: center; justify-content: center; color: #107D8B; font-weight: 500;">
-                        Students Learning Illustration
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" style="background: linear-gradient(135deg, var(--teal-1), var(--teal-2));">
+            <div class="container">
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 data-key="home.hero.title">Knowledge Gained Through Experience</h1>
+                        <p class="hero-subtitle" data-key="home.hero.subtitle">Practical, hands-on data courses: Data Analysis, Statistics, Power BI, Tableau — designed for learners of all levels.</p>
+                        <div class="hero-actions">
+                            <a href="/courses.html" class="btn btn-primary" data-key="home.hero.primaryCta" data-ignore-href="true">Explore Courses</a>
+                            <a href="/contact.html" class="btn btn-outline" data-key="home.hero.secondaryCta" data-ignore-href="true">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="hero-image">
+                        <img src="/assets/hero.png" alt="Empirici Academy students learning" data-key="home.hero.heroImage">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Featured Courses Section -->
-    <section class="section section-gray">
-        <div class="container">
-            <h2 class="text-center">Our Courses</h2>
-            <p class="text-center">Explore our practical, industry-focused courses designed to build real-world skills.</p>
-            
-            <div class="courses-grid">
-                <!-- Course 1 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <!-- Placeholder for course image -->
-                        <div style="color: #107D8B; font-weight: 500;">Data Analysis Course</div>
-                    </div>
-                    <div class="course-content">
-                        <h3>Data Analysis</h3>
-                        <p>Master the fundamentals of data analysis using Python, SQL, and visualization tools to extract meaningful insights from complex datasets.</p>
-                        <a href="courses.html" class="btn btn-secondary">Learn More</a>
-                    </div>
+        <!-- Intro Section -->
+        <section class="section">
+            <div class="container">
+                <div class="intro-content">
+                    <h2 data-key="home.intro.heading">Who We Are</h2>
+                    <p data-key="home.intro.paragraph">Empirici Academy is a small, student-centered educational institution specializing in practical data and analytics training. We emphasize hands-on projects and real-world experience to build skills you can apply immediately.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Courses Section -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 48px;">Featured Courses</h2>
+                
+                <div class="grid grid-3" id="featured-courses-container">
+                    <!-- Courses will be dynamically rendered here -->
                 </div>
                 
-                <!-- Course 2 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <!-- Placeholder for course image -->
-                        <div style="color: #107D8B; font-weight: 500;">Statistics Course</div>
+                <!-- Course Template (hidden) -->
+                <template id="course-template">
+                    <div class="card course-card">
+                        <img src="/assets/course-1.png" alt="Course image" data-key="home.featuredCourses[i].image" class="course-image">
+                        <div class="course-content">
+                            <h3 data-key="home.featuredCourses[i].title">Course Title</h3>
+                            <div class="course-meta">
+                                <span class="course-level" data-key="home.featuredCourses[i].level">Level</span>
+                                <span class="course-duration" data-key="home.featuredCourses[i].duration">Duration</span>
+                            </div>
+                            <p class="course-desc" data-key="home.featuredCourses[i].shortDesc">Course description</p>
+                            <div class="course-format" data-key="home.featuredCourses[i].format">Format</div>
+                            <a href="/courses.html" class="btn btn-primary" data-key="home.featuredCourses[i].link" data-ignore-href="true">Learn More</a>
+                        </div>
                     </div>
-                    <div class="course-content">
-                        <h3>Statistics</h3>
-                        <p>Develop a strong foundation in statistical methods and their practical applications in data science and business analytics.</p>
-                        <a href="courses.html" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
-                
-                <!-- Course 3 -->
-                <div class="course-card">
-                    <div class="course-image">
-                        <!-- Placeholder for course image -->
-                        <div style="color: #107D8B; font-weight: 500;">Power BI Course</div>
-                    </div>
-                    <div class="course-content">
-                        <h3>Power BI</h3>
-                        <p>Learn to create interactive dashboards and reports using Microsoft Power BI to transform data into actionable business intelligence.</p>
-                        <a href="courses.html" class="btn btn-secondary">Learn More</a>
-                    </div>
-                </div>
+                </template>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Testimonials Section -->
-    <section class="section section-light">
-        <div class="container">
-            <h2 class="text-center">Trusted by Hundreds of Learners</h2>
-            
-            <div class="testimonial-container">
-                <div class="testimonial-stats">
-                    <h3>500+</h3>
-                    <p>Students Trained</p>
-                </div>
-                
-                <div class="testimonial-quote">
-                    <p>"The practical approach at Empirici Academy completely transformed how I approach data problems. The hands-on projects gave me the confidence to apply for data analyst roles."</p>
-                    <p class="testimonial-author">- Sarah Johnson, Data Analyst</p>
+        <!-- Testimonial Section -->
+        <section class="section">
+            <div class="container">
+                <div class="testimonial-card card">
+                    <div class="testimonial-badge" data-key="home.testimonial.badge">500+ students trained</div>
+                    <blockquote class="testimonial-quote">
+                        <p data-key="home.testimonial.quote">Empirici Academy gave me the confidence to switch careers into data analysis. The projects were practical and relevant.</p>
+                    </blockquote>
+                    <div class="testimonial-author">
+                        <img src="/assets/team-1.png" alt="Student photo" data-key="home.testimonial.avatar" class="testimonial-avatar">
+                        <div class="testimonial-info">
+                            <strong data-key="home.testimonial.author">Sara H.</strong>
+                            <span data-key="home.testimonial.role">Former Student</span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- CTA Banner -->
-    <section class="section section-gray">
-        <div class="container">
-            <div class="cta-banner">
-                <h2>Ready to start your learning journey?</h2>
-                <a href="contact.html" class="btn btn-primary">Contact Us</a>
+        <!-- CTA Banner -->
+        <section class="section" style="background: var(--navy); color: white;">
+            <div class="container">
+                <div class="cta-banner">
+                    <h2 data-key="home.ctaBanner.text">Ready to start your learning journey?</h2>
+                    <a href="/contact.html" class="btn btn-primary" data-key="home.ctaBanner.buttonText" data-ignore-href="true">Contact Us</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-about">
-                    <div class="footer-logo">Empirici Academy</div>
-                    <p>Practical learning in data, technology, and analytics. Empowering students with real-world skills for today's data-driven economy.</p>
+            <div class="footer-content grid grid-3">
+                <div class="footer-section">
+                    <h3 data-key="site.name">Empirici Academy</h3>
+                    <p data-key="site.tagline">Knowledge Gained Through Experience</p>
                     <div class="social-links">
-                        <a href="#" class="social-icon" aria-label="LinkedIn">
-                            <!-- LinkedIn icon placeholder -->
-                            <span>in</span>
+                        <a href="#" class="social-link">
+                            <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
                         </a>
-                        <a href="#" class="social-icon" aria-label="Twitter">
-                            <!-- Twitter icon placeholder -->
-                            <span>tw</span>
+                        <a href="#" class="social-link">
+                            <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
                         </a>
-                        <a href="#" class="social-icon" aria-label="Facebook">
-                            <!-- Facebook icon placeholder -->
-                            <span>fb</span>
+                        <a href="#" class="social-link">
+                            <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
                         </a>
                     </div>
                 </div>
                 
-                <div class="footer-links">
+                <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="about.html">About Us</a></li>
-                        <li><a href="courses.html">Courses</a></li>
-                        <li><a href="collaboration.html">Collaboration</a></li>
-                        <li><a href="contact.html">Contact</a></li>
+                    <ul class="footer-links">
+                        <li><a href="/courses.html">Courses</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
                     </ul>
                 </div>
                 
-                <div class="footer-contact">
+                <div class="footer-section">
                     <h4>Contact Info</h4>
-                    <p>Email: info@empiriciacademy.com</p>
-                    <p>Phone: +1 (555) 123-4567</p>
+                    <address class="footer-contact">
+                        <p data-key="site.email">info@empirici.academy</p>
+                        <p data-key="site.phone">+20 100 000 0000</p>
+                        <p data-key="site.address">Cairo, Egypt (placeholder)</p>
+                    </address>
                 </div>
             </div>
             
             <div class="footer-bottom">
-                <p>&copy; 2023 Empirici Academy. All rights reserved.</p>
+                <p>&copy; 2024 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript for mobile navigation -->
+    <!-- JavaScript -->
+    <script src="/js/site-content-default.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    
+    <!-- Home page specific script -->
     <script>
-        // Mobile navigation toggle
-        const hamburger = document.querySelector('.hamburger');
-        const navMenu = document.querySelector('.nav-menu');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            // Render featured courses
+            if (window.EmpiriciUtils) {
+                window.EmpiriciUtils.renderArray('#featured-courses-container', '#course-template', 'home.featuredCourses');
+            }
         });
-
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('active');
-        }));
     </script>
 </body>
 </html>
