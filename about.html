@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empirici Academy — About</title>
+    <meta name="description" content="Learn about Empirici Academy's mission, vision, and team of expert instructors.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <!-- Header (same as index.html) -->
+    <header class="header">
+        <a href="#main-content" class="skip-to-content">Skip to main content</a>
+        <nav class="nav container">
+            <div class="nav-brand">
+                <a href="/index.html" class="logo-link">
+                    <img src="/assets/logo.png" alt="Empirici Academy" data-key="site.name" data-alt="site.name" class="logo">
+                </a>
+            </div>
+            
+            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span class="hamburger"></span>
+            </button>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about.html" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/courses.html" class="nav-link">Courses</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/collaboration.html" class="nav-link">Collaboration</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/blog.html" class="nav-link">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/contact.html" class="nav-link">Contact</a>
+                </li>
+                <li class="nav-item nav-item-admin">
+                    <a href="/admin.html" class="nav-link nav-link-admin">Admin</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <!-- Page Header -->
+        <section class="section-sm" style="background: var(--light-gray);">
+            <div class="container">
+                <h1>About Empirici Academy</h1>
+                <p class="text-muted">Our mission, vision, and the team behind your learning journey</p>
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="section">
+            <div class="container">
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h2>Our Mission</h2>
+                        <p data-key="about.mission">To empower learners with practical data skills through hands-on experience, mentorship, and real-world projects.</p>
+                    </div>
+                    <div class="card">
+                        <h2>Our Vision</h2>
+                        <p data-key="about.vision">To be a trusted local hub for applied data education that prepares learners for modern data roles.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Story -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <div class="story-content">
+                    <h2>Our Story</h2>
+                    <p data-key="about.story">Founded with the idea that experience is the best teacher, Empirici Academy grew from small weekend workshops into a regular program teaching hundreds of students.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Values -->
+        <section class="section">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 48px;">Our Values</h2>
+                <div class="grid grid-2" id="values-container">
+                    <!-- Values will be dynamically rendered here -->
+                </div>
+                
+                <template id="value-template">
+                    <div class="card value-card">
+                        <h3 data-key="about.values[i]">Value</h3>
+                    </div>
+                </template>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="section" style="background: var(--light-gray);">
+            <div class="container">
+                <h2 style="text-align: center; margin-bottom: 48px;">Our Team</h2>
+                <div class="grid grid-3" id="team-container">
+                    <!-- Team members will be dynamically rendered here -->
+                </div>
+                
+                <template id="team-template">
+                    <div class="card team-card">
+                        <img src="/assets/team-1.png" alt="Team member photo" data-key="about.team[i].photo" class="team-photo">
+                        <div class="team-info">
+                            <h3 data-key="about.team[i].name">Name</h3>
+                            <p class="team-role" data-key="about.team[i].role">Role</p>
+                            <p class="team-bio" data-key="about.team[i].bio">Bio</p>
+                        </div>
+                    </div>
+                </template>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (same as index.html) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content grid grid-3">
+                <div class="footer-section">
+                    <h3 data-key="site.name">Empirici Academy</h3>
+                    <p data-key="site.tagline">Knowledge Gained Through Experience</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
+                        </a>
+                        <a href="#" class="social-link">
+                            <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="/courses.html">Courses</a></li>
+                        <li><a href="/about.html">About Us</a></li>
+                        <li><a href="/blog.html">Blog</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <address class="footer-contact">
+                        <p data-key="site.email">info@empirici.academy</p>
+                        <p data-key="site.phone">+20 100 000 0000</p>
+                        <p data-key="site.address">Cairo, Egypt (placeholder)</p>
+                    </address>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="/js/site-content-default.js" defer></script>
+    <script src="/js/main.js" defer></script>
+    
+    <!-- About page specific script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            if (window.EmpiriciUtils) {
+                window.EmpiriciUtils.renderArray('#values-container', '#value-template', 'about.values');
+                window.EmpiriciUtils.renderArray('#team-container', '#team-template', 'about.team');
+            }
+        });
+    </script>
+</body>
+</html>
