@@ -1,305 +1,459 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empirici Academy — Contact</title>
-    <meta name="description" content="Get in touch with Empirici Academy. We're here to answer your questions and help you start your learning journey.">
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - Empirici Academy</title>
+  <meta name="description" content="Get in touch with Empirici Academy for course inquiries, collaborations, or general questions.">
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site-content-default.js"></script>
+  
+  <style>
+    /* Form Validation Styles */
+    .form-group input.error,
+    .form-group textarea.error,
+    .form-group select.error {
+      border-color: #e74c3c;
+    }
+    
+    .error-message {
+      color: #e74c3c;
+      font-size: 14px;
+      margin-top: 4px;
+      display: none;
+    }
+    
+    .error-message.show {
+      display: block;
+    }
+    
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: var(--teal-1);
+    }
+    
+    .helper-text {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+  </style>
 </head>
 <body>
-    <header class="header">
-        <a href="#main-content" class="skip-to-content">Skip to main content</a>
-        <nav class="nav container">
-            <div class="nav-brand">
-                <a href="/index.html" class="logo-link">
-                    <img src="/assets/logo.png" alt="Empirici Academy" data-key="site.name" data-alt="site.name" class="logo">
-                </a>
-            </div>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
-            
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="/index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/courses.html" class="nav-link">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/collaboration.html" class="nav-link">Collaboration</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog.html" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact.html" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item nav-item-admin">
-                    <a href="/admin.html" class="nav-link nav-link-admin">Admin</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  
+  <!-- Header -->
+  <header class="header">
+    <nav class="container nav">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="Empirici Academy" class="logo" data-key="site.logo">
+      </a>
+      
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/courses.html" class="nav-link">Courses</a></li>
+        <li class="nav-item"><a href="/collaboration.html" class="nav-link">Collaboration</a></li>
+        <li class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="/contact.html" class="nav-link btn btn-primary">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main id="main-content">
-        <!-- Page Header -->
-        <section class="section-sm" style="background: var(--light-gray);">
-            <div class="container">
-                <h1 data-key="contact.heading">Get in touch</h1>
-                <p class="text-muted" data-key="contact.subheading">Have questions or want to enroll? Send us a message.</p>
-            </div>
-        </section>
+  <!-- Page Header -->
+  <section class="section section-sm" style="background: var(--light-gray);">
+    <div class="container" style="text-align: center;">
+      <h1 data-key="contact.heading">Get in touch</h1>
+      <p data-key="contact.subheading">Have questions or want to enroll? Send us a message.</p>
+    </div>
+  </section>
 
-        <!-- Contact Content -->
-        <section class="section">
-            <div class="container">
-                <div class="grid grid-2">
-                    <!-- Contact Information -->
-                    <div class="contact-info">
-                        <h2>Contact Information</h2>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <h3>Email</h3>
-                                <p data-key="site.email">info@empirici.academy</p>
-                            </div>
-                            <div class="contact-item">
-                                <h3>Phone</h3>
-                                <p data-key="site.phone">+20 100 000 0000</p>
-                            </div>
-                            <div class="contact-item">
-                                <h3>Address</h3>
-                                <p data-key="site.address">Cairo, Egypt (placeholder)</p>
-                            </div>
-                        </div>
-                        
-                        <div class="response-time">
-                            <h3>Response Time</h3>
-                            <p>We typically respond to all inquiries within 24 hours during business days.</p>
-                        </div>
-                    </div>
-
-                    <!-- Contact Form -->
-                    <div class="contact-form-container">
-                        <form id="contact-form" class="contact-form">
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required>
-                                <span class="error-message" id="name-error"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                                <span class="error-message" id="email-error"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" id="phone" name="phone">
-                                <span class="error-message" id="phone-error"></span>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="subject">Subject</label>
-                                <select id="subject" name="subject">
-                                    <option value="">Select a subject</option>
-                                    <option value="course-inquiry">Course Inquiry</option>
-                                    <option value="collaboration">Collaboration</option>
-                                    <option value="general">General Question</option>
-                                    <option value="technical">Technical Support</option>
-                                </select>
-                            </div>
-                            
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="6" required></textarea>
-                                <span class="error-message" id="message-error"></span>
-                            </div>
-                            
-                            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                        </form>
-                        
-                        <div id="form-success" class="form-success" style="display: none;">
-                            <div class="success-icon">✓</div>
-                            <h3>Message Sent Successfully!</h3>
-                            <p>Thanks! Your message has been received — we'll reply at <span data-key="site.email">info@empirici.academy</span>.</p>
-                            <p>Prefer to email directly? <a href="mailto:info@empirici.academy" data-key="site.email">Send us an email</a>.</p>
-                            <button type="button" class="btn btn-outline" onclick="resetForm()">Send Another Message</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Map Placeholder -->
-        <section class="section-sm">
-            <div class="container">
-                <div class="map-placeholder">
-                    <div data-key="contact.mapEmbed">
-                        <!-- Map iframe placeholder -->
-                        <div style="background: var(--light-gray); padding: 60px; text-align: center; border-radius: var(--radius);">
-                            <h3>Location Map</h3>
-                            <p class="text-muted">Map integration placeholder</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content grid grid-3">
-                <div class="footer-section">
-                    <h3 data-key="site.name">Empirici Academy</h3>
-                    <p data-key="site.tagline">Knowledge Gained Through Experience</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
-                        </a>
-                        <a href="#" class="social-link">
-                            <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
-                        </a>
-                        <a href="#" class="social-link">
-                            <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="/courses.html">Courses</a></li>
-                        <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/blog.html">Blog</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <address class="footer-contact">
-                        <p data-key="site.email">info@empirici.academy</p>
-                        <p data-key="site.phone">+20 100 000 0000</p>
-                        <p data-key="site.address">Cairo, Egypt (placeholder)</p>
-                    </address>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
-            </div>
+  <!-- Contact Section -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2" style="gap: 48px;">
+        
+        <!-- Contact Information -->
+        <div class="contact-info">
+          <h2>Contact Information</h2>
+          
+          <div class="contact-item">
+            <h3>Email</h3>
+            <p data-key="site.email">info@empirici.academy</p>
+          </div>
+          
+          <div class="contact-item">
+            <h3>Phone</h3>
+            <p data-key="site.phone">+20 100 000 0000</p>
+          </div>
+          
+          <div class="contact-item">
+            <h3>Address</h3>
+            <p data-key="site.address">Cairo, Egypt</p>
+          </div>
+          
+          <div class="response-time">
+            <h3>Response Time</h3>
+            <p>We typically respond to all inquiries within 24 hours during business days.</p>
+          </div>
         </div>
-    </footer>
+        
+        <!-- Contact Form with Google Sheets Backend -->
+        <div>
+          <form class="contact-form" id="contact-form" novalidate>
+            
+            <!-- Full Name (First and Last) -->
+            <div class="form-group">
+              <label for="name">Full Name *</label>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                placeholder="e.g., Ahmed Hassan" 
+                required
+              >
+              <span class="helper-text">Please enter your first and last name</span>
+              <span class="error-message" id="name-error">Please enter your full name (first and last name)</span>
+            </div>
+            
+            <!-- Email -->
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="e.g., ahmed@example.com" 
+                required
+              >
+              <span class="helper-text">We'll never share your email</span>
+              <span class="error-message" id="email-error">Please enter a valid email address</span>
+            </div>
+            
+            <!-- Phone Number with Country Code -->
+            <div class="form-group">
+              <label for="phone">Phone Number (with country code)</label>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                placeholder="e.g., +20 100 123 4567"
+              >
+              <span class="helper-text">Format: +[country code] [number] (e.g., +20 100 123 4567)</span>
+              <span class="error-message" id="phone-error">Please enter phone with country code (e.g., +20 100 123 4567)</span>
+            </div>
+            
+            <!-- Subject -->
+            <div class="form-group">
+              <label for="subject-field">Subject *</label>
+              <select id="subject-field" name="inquiry_subject" required>
+                <option value="">Select a subject</option>
+                <option value="Course Inquiry">Course Inquiry</option>
+                <option value="Collaboration">Collaboration</option>
+                <option value="General Question">General Question</option>
+                <option value="Technical Support">Technical Support</option>
+                <option value="Partnership Opportunity">Partnership Opportunity</option>
+                <option value="Career Advice">Career Advice</option>
+                <option value="Custom Training Request">Custom Training Request</option>
+                <option value="Feedback & Suggestions">Feedback & Suggestions</option>
+              </select>
+              <span class="error-message" id="subject-error">Please select a subject</span>
+            </div>
+            
+            <!-- Message -->
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="6" 
+                placeholder="Tell us more about your inquiry..."
+                required
+              ></textarea>
+              <span class="helper-text">Minimum 20 characters, maximum 1000 characters</span>
+              <span class="error-message" id="message-error">Please enter a message (minimum 20 characters)</span>
+            </div>
+            
+            <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+              Send Message
+            </button>
+          </form>
+          
+          <!-- Success Message (Hidden by default) -->
+          <div id="success-message" style="display: none;">
+            <div class="form-success">
+              <div class="success-icon">✓</div>
+              <h3>Message Sent Successfully!</h3>
+              <p>Thank you for contacting us. We'll get back to you within 24 hours.</p>
+              <p style="margin-top: 16px; font-size: 14px; color: var(--muted);">
+                Feel free to also reach us directly at 
+                <strong><span data-key="site.email" style="color: var(--teal-1);">info@empirici.academy</span></strong>
+              </p>
+              <a href="/contact.html" class="btn btn-primary" style="margin-top: 24px;">Send Another Message</a>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  </section>
 
-    <script src="/js/site-content-default.js" defer></script>
-    <script src="/js/main.js" defer></script>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-3">
+        <div class="footer-section">
+          <h3 data-key="site.name">Empirici Academy</h3>
+          <p data-key="site.tagline">Knowledge Gained Through Experience</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/courses.html">Courses</a></li>
+            <li><a href="/collaboration.html">Collaboration</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section footer-contact">
+          <h4>Contact</h4>
+          <p data-key="site.email">info@empirici.academy</p>
+          <p data-key="site.phone">+20 100 000 0000</p>
+          <p data-key="site.address">Cairo, Egypt</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
+  
+  <script>
+    // ⭐ PASTE YOUR GOOGLE SCRIPT WEB APP URL HERE
+    const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzdyzzD3ac4SDwucEJ2XUQgt2GkalyfVJPJEiAUXhACPPyfOz9qTiRuQ37HeQxLOVhi/exec';
     
-    <script>
-        // Contact form functionality
-        document.addEventListener('DOMContentLoaded', function() {
-            const contactForm = document.getElementById('contact-form');
-            const formSuccess = document.getElementById('form-success');
-            
-            function validateEmail(email) {
-                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                return re.test(email);
-            }
-            
-            function showError(fieldId, message) {
-                const errorElement = document.getElementById(fieldId + '-error');
-                const field = document.getElementById(fieldId);
-                
-                errorElement.textContent = message;
-                field.style.borderColor = '#e74c3c';
-            }
-            
-            function clearError(fieldId) {
-                const errorElement = document.getElementById(fieldId + '-error');
-                const field = document.getElementById(fieldId);
-                
-                errorElement.textContent = '';
-                field.style.borderColor = '';
-            }
-            
-            function resetForm() {
-                contactForm.reset();
-                contactForm.style.display = 'block';
-                formSuccess.style.display = 'none';
-                
-                // Clear all errors
-                ['name', 'email', 'phone', 'message'].forEach(field => clearError(field));
-            }
-            
-            contactForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                
-                let isValid = true;
-                
-                // Validate name
-                const name = document.getElementById('name').value.trim();
-                if (!name) {
-                    showError('name', 'Name is required');
-                    isValid = false;
-                } else {
-                    clearError('name');
-                }
-                
-                // Validate email
-                const email = document.getElementById('email').value.trim();
-                if (!email) {
-                    showError('email', 'Email is required');
-                    isValid = false;
-                } else if (!validateEmail(email)) {
-                    showError('email', 'Please enter a valid email address');
-                    isValid = false;
-                } else {
-                    clearError('email');
-                }
-                
-                // Validate message
-                const message = document.getElementById('message').value.trim();
-                if (!message) {
-                    showError('message', 'Message is required');
-                    isValid = false;
-                } else {
-                    clearError('message');
-                }
-                
-                if (isValid) {
-                    // Save message to localStorage
-                    const messages = JSON.parse(localStorage.getItem('empirici:messages:v1') || '[]');
-                    const newMessage = {
-                        id: 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9),
-                        name: name,
-                        email: email,
-                        phone: document.getElementById('phone').value.trim(),
-                        subject: document.getElementById('subject').value,
-                        message: message,
-                        page: 'contact',
-                        createdAt: new Date().toISOString()
-                    };
-                    
-                    messages.push(newMessage);
-                    localStorage.setItem('empirici:messages:v1', JSON.stringify(messages));
-                    
-                    // Show success message
-                    contactForm.style.display = 'none';
-                    formSuccess.style.display = 'block';
-                }
-            });
-            
-            // Clear errors on input
-            ['name', 'email', 'phone', 'message'].forEach(fieldId => {
-                document.getElementById(fieldId).addEventListener('input', () => clearError(fieldId));
-            });
+    // Form Validation and Submission
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const successMessage = document.getElementById('success-message');
+    
+    // Real-time validation inputs
+    const nameInput = document.getElementById('name');
+    const emailInput = document.getElementById('email');
+    const phoneInput = document.getElementById('phone');
+    const subjectInput = document.getElementById('subject-field');
+    const messageInput = document.getElementById('message');
+    
+    // Validation functions
+    function validateName() {
+      const value = nameInput.value.trim();
+      const nameError = document.getElementById('name-error');
+      const words = value.split(/\s+/).filter(word => word.length >= 2);
+      
+      if (value === '') {
+        nameInput.classList.add('error');
+        nameError.textContent = 'Name is required';
+        nameError.classList.add('show');
+        return false;
+      } else if (words.length < 2) {
+        nameInput.classList.add('error');
+        nameError.textContent = 'Please enter your full name (first and last name)';
+        nameError.classList.add('show');
+        return false;
+      } else {
+        nameInput.classList.remove('error');
+        nameError.classList.remove('show');
+        return true;
+      }
+    }
+    
+    function validateEmail() {
+      const value = emailInput.value.trim();
+      const emailError = document.getElementById('email-error');
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      
+      if (value === '') {
+        emailInput.classList.add('error');
+        emailError.textContent = 'Email is required';
+        emailError.classList.add('show');
+        return false;
+      } else if (!emailPattern.test(value)) {
+        emailInput.classList.add('error');
+        emailError.textContent = 'Please enter a valid email address';
+        emailError.classList.add('show');
+        return false;
+      } else {
+        emailInput.classList.remove('error');
+        emailError.classList.remove('show');
+        return true;
+      }
+    }
+    
+    function validatePhone() {
+      const value = phoneInput.value.trim();
+      const phoneError = document.getElementById('phone-error');
+      
+      if (value === '') {
+        phoneInput.classList.remove('error');
+        phoneError.classList.remove('show');
+        return true;
+      }
+      
+      const cleanedPhone = value.replace(/[\s\-\(\)]/g, '');
+      const phonePattern = /^\+[1-9]\d{7,14}$/;
+      
+      if (!phonePattern.test(cleanedPhone)) {
+        phoneInput.classList.add('error');
+        phoneError.textContent = 'Please enter phone with country code (e.g., +20 100 123 4567)';
+        phoneError.classList.add('show');
+        return false;
+      } else {
+        phoneInput.classList.remove('error');
+        phoneError.classList.remove('show');
+        return true;
+      }
+    }
+    
+    function validateSubject() {
+      const value = subjectInput.value;
+      const subjectError = document.getElementById('subject-error');
+      
+      if (value === '') {
+        subjectInput.classList.add('error');
+        subjectError.classList.add('show');
+        return false;
+      } else {
+        subjectInput.classList.remove('error');
+        subjectError.classList.remove('show');
+        return true;
+      }
+    }
+    
+    function validateMessage() {
+      const value = messageInput.value.trim();
+      const messageError = document.getElementById('message-error');
+      
+      if (value === '') {
+        messageInput.classList.add('error');
+        messageError.textContent = 'Message is required';
+        messageError.classList.add('show');
+        return false;
+      } else if (value.length < 20) {
+        messageInput.classList.add('error');
+        messageError.textContent = `Please enter at least 20 characters (currently ${value.length})`;
+        messageError.classList.add('show');
+        return false;
+      } else if (value.length > 1000) {
+        messageInput.classList.add('error');
+        messageError.textContent = 'Message is too long (maximum 1000 characters)';
+        messageError.classList.add('show');
+        return false;
+      } else {
+        messageInput.classList.remove('error');
+        messageError.classList.remove('show');
+        return true;
+      }
+    }
+    
+    // Add event listeners
+    nameInput.addEventListener('blur', validateName);
+    emailInput.addEventListener('blur', validateEmail);
+    phoneInput.addEventListener('blur', validatePhone);
+    subjectInput.addEventListener('change', validateSubject);
+    messageInput.addEventListener('blur', validateMessage);
+    
+    nameInput.addEventListener('input', function() {
+      if (this.classList.contains('error')) validateName();
+    });
+    
+    emailInput.addEventListener('input', function() {
+      if (this.classList.contains('error')) validateEmail();
+    });
+    
+    phoneInput.addEventListener('input', function() {
+      if (this.classList.contains('error')) validatePhone();
+    });
+    
+    messageInput.addEventListener('input', function() {
+      if (this.classList.contains('error')) validateMessage();
+    });
+    
+    // Form submission
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      
+      // Validate all fields
+      const isNameValid = validateName();
+      const isEmailValid = validateEmail();
+      const isPhoneValid = validatePhone();
+      const isSubjectValid = validateSubject();
+      const isMessageValid = validateMessage();
+      
+      if (!isNameValid || !isEmailValid || !isPhoneValid || !isSubjectValid || !isMessageValid) {
+        const firstError = document.querySelector('.error');
+        if (firstError) {
+          firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          firstError.focus();
+        }
+        return;
+      }
+      
+      // Show loading state
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '✉️ Sending...';
+      
+      try {
+        const formData = new FormData(form);
+        const response = await fetch(GOOGLE_SCRIPT_URL, {
+          method: 'POST',
+          body: new URLSearchParams(formData)
         });
-    </script>
+        
+        const result = await response.json();
+        
+        if (result.success) {
+          form.style.display = 'none';
+          successMessage.style.display = 'block';
+          
+          if (window.EmpiriciUtils) {
+            window.EmpiriciUtils.renderAll();
+          }
+          
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          throw new Error(result.message || 'Submission failed');
+        }
+      } catch (error) {
+        alert('Error: ' + error.message + '\n\nPlease try again or email us directly.');
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = 'Send Message';
+      }
+    });
+  </script>
 </body>
 </html>
