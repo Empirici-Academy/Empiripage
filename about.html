@@ -1,172 +1,196 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Us - Empirici Academy</title>
-  <meta name="description" content="Learn about Empirici Academy's mission, vision, and the team behind your learning journey.">
-  <link rel="icon" href="/assets/logo.png" type="image/png">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/site-content-default.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Empirici Academy's mission, vision, and the expert team behind your data education journey.">
+    <title>About Us - Empirici Academy</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <!-- Header -->
-  <header class="header">
-    <nav class="container nav">
-      <a href="/index.html">
-        <img src="/assets/logo.png" alt="Empirici Academy" class="logo" data-key="site.logo">
-      </a>
-      
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-      
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/courses.html" class="nav-link">Courses</a></li>
-        <li class="nav-item"><a href="/collaboration.html" class="nav-link">Collaboration</a></li>
-        <li class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/contact.html" class="nav-link btn btn-primary">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Page Header -->
-  <section class="section section-sm" style="background: var(--light-gray);">
-    <div class="container" style="text-align: center;">
-      <h1>About Empirici Academy</h1>
-      <p>Our mission, vision, and the team behind your learning journey</p>
-    </div>
-  </section>
-
-  <!-- Mission & Vision -->
-  <section class="section">
-    <div class="container">
-      <div class="grid grid-2">
-        <div class="card">
-          <h2>Our Mission</h2>
-          <p data-key="about.mission">
-            To empower learners with practical data skills through hands-on experience, mentorship, and real-world projects.
-          </p>
-        </div>
-        
-        <div class="card">
-          <h2>Our Vision</h2>
-          <p data-key="about.vision">
-            To be a trusted local hub for applied data education that prepares learners for modern data roles.
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Our Story -->
-  <section class="section" style="background: var(--light-gray);">
-    <div class="container">
-      <h2>Our Story</h2>
-      <p data-key="about.story" style="font-size: 18px; line-height: 1.8;">
-        Founded with the idea that experience is the best teacher, Empirici Academy grew from small weekend workshops 
-        into a regular program teaching hundreds of students.
-      </p>
-    </div>
-  </section>
-
-  <!-- Our Values -->
-  <section class="section">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 48px;">Our Values</h2>
-      
-      <div class="grid grid-4" id="values-container">
-        <!-- Values will be rendered here -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Template for Values -->
-  <template id="value-template">
-    <div class="value-card-small">
-      <h4 data-key="[i].value">Value</h4>
-    </div>
-  </template>
-
-  <!-- Our Team - HORIZONTAL SCROLL -->
-  <section class="section" style="background: var(--light-gray);">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 48px;">Meet Our Team</h2>
-      
-      <div class="horizontal-scroll-container">
-        <div class="horizontal-scroll" id="team-container">
-          <!-- Team members will be rendered here -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Template for Team Members -->
-  <template id="team-template">
-    <div class="card team-card horizontal-card">
-      <h3 data-key="[i].name">Team Member Name</h3>
-      <p class="team-role" data-key="[i].role">Role</p>
-      <p class="team-bio" data-key="[i].bio">Bio</p>
-    </div>
-  </template>
-
-  <!-- CTA Section -->
-  <section class="section cta-banner" style="background: linear-gradient(135deg, var(--teal-1), var(--teal-2));">
-    <div class="container">
-      <h2>Ready to Join Our Community?</h2>
-      <a href="/contact.html" class="btn btn-secondary">Get In Touch</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="grid grid-3">
-        <div class="footer-section">
-          <h3 data-key="site.name">Empirici Academy</h3>
-          <p data-key="site.tagline">Knowledge Gained Through Experience</p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" id="header">
+        <nav class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Empirici Academy" class="logo-image" width="40" height="40">
+                <span class="logo-text">Empirici Academy</span>
             </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
-            </a>
-            <a href="#" class="social-link" aria-label="Facebook">
-              <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/courses.html">Courses</a></li>
-            <li><a href="/collaboration.html">Collaboration</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section footer-contact">
-          <h4>Contact</h4>
-          <p data-key="site.email">info@empirici.academy</p>
-          <p data-key="site.phone">+20 100 000 0000</p>
-          <p data-key="site.address">Cairo, Egypt</p>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="about.html" class="nav-link active" aria-current="page">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="collaboration.html" class="nav-link">Collaborate</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <script src="/js/main.js"></script>
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content fade-in">
+                    <h1 class="page-hero-title">Our Mission, Vision & <span class="highlight">Team</span></h1>
+                    <p class="page-hero-subtitle">Discover the story behind Empirici Academy and meet the experts dedicated to your learning journey.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <article class="content-block" style="margin-bottom: 4rem;">
+                        <h2 style="color: var(--teal-primary); margin-bottom: 1rem;">Our Mission</h2>
+                        <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--gray-700);">
+                            To empower learners with practical data skills through hands-on experience, expert mentorship, and real-world projects. We believe that the best way to learn data analytics is by doing—working with actual datasets, solving real problems, and building portfolio-ready projects.
+                        </p>
+                    </article>
+
+                    <article class="content-block" style="margin-bottom: 4rem;">
+                        <h2 style="color: var(--teal-primary); margin-bottom: 1rem;">Our Vision</h2>
+                        <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--gray-700);">
+                            To be a trusted hub for applied data education that prepares learners for modern data roles. We envision a future where anyone with the determination to learn can access world-class data education and transform their career, regardless of their background.
+                        </p>
+                    </article>
+
+                    <article class="content-block" style="margin-bottom: 4rem;">
+                        <h2 style="color: var(--teal-primary); margin-bottom: 1rem;">Our Story</h2>
+                        <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--gray-700); margin-bottom: 1.5rem;">
+                            Founded with the idea that experience is the best teacher, Empirici Academy grew from small weekend workshops into a comprehensive program training hundreds of students. Our founders recognized a gap in data education—too many courses focused on theory without giving students the practical skills employers actually need.
+                        </p>
+                        <p style="font-size: var(--text-lg); line-height: 1.8; color: var(--gray-700);">
+                            Today, we've evolved into a full-fledged academy offering courses in data analysis, business intelligence, statistical analysis, and data visualization. But our core philosophy remains the same: learning by doing, with real data, real tools, and real projects.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--gray-50);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Meet Our Team</h2>
+                    <p class="section-subtitle">Expert instructors passionate about your success</p>
+                </div>
+                
+                <div class="scroll-container">
+                    <div id="team-scroll" class="horizontal-scroll">
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                        <div class="skeleton-card"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Our Values</h2>
+                </div>
+                
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <polyline points="22 4 12 14.01 9 11.01"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Quality Education</h3>
+                        <p class="feature-description">We never compromise on educational quality. Every course is carefully designed and continuously updated to reflect industry standards.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Student-Centered</h3>
+                        <p class="feature-description">Your success is our success. We provide personalized support, flexible learning options, and a community that supports your journey.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Practical Learning</h3>
+                        <p class="feature-description">Theory alone isn't enough. All our courses emphasize hands-on projects with real datasets to build job-ready skills.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <polyline points="12 6 12 12 16 14"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Continuous Innovation</h3>
+                        <p class="feature-description">The data field evolves rapidly, and so do we. We constantly update our curriculum with the latest tools and techniques.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/>
+                                <line x1="7" y1="7" x2="7.01" y2="7"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Integrity</h3>
+                        <p class="feature-description">We maintain the highest ethical standards in education, assessment, and certification. Your achievements are earned and recognized.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Accessibility</h3>
+                        <p class="feature-description">Quality education should be accessible to all. We offer flexible payment plans and strive to keep our courses affordable.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2 class="cta-title">Ready to Join Our Learning Community?</h2>
+                    <p class="cta-text">Become part of a growing community of data professionals and enthusiasts.</p>
+                    <div class="cta-buttons">
+                        <a href="courses.html" class="btn btn-primary btn-large">Explore Courses</a>
+                        <a href="contact.html" class="btn btn-outline btn-large">Get in Touch</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo" id="site-footer">
+        <!-- Footer populated dynamically -->
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/site-content-default.js" defer></script>
 </body>
 </html>

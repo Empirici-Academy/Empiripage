@@ -1,129 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Empirici Academy</title>
-  <meta name="description" content="Insights, tips, and news about data analysis, statistics, and data visualization from Empirici Academy.">
-  <link rel="icon" href="/assets/logo.png" type="image/png">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/site-content-default.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read our latest insights, tutorials, and industry news about data analytics, business intelligence, and data science.">
+    <title>Blog - Empirici Academy</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <!-- Header -->
-  <header class="header">
-    <nav class="container nav">
-      <a href="/index.html">
-        <img src="/assets/logo.png" alt="Empirici Academy" class="logo" data-key="site.logo">
-      </a>
-      
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-      
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/courses.html" class="nav-link">Courses</a></li>
-        <li class="nav-item"><a href="/collaboration.html" class="nav-link">Collaboration</a></li>
-        <li class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/contact.html" class="nav-link btn btn-primary">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Page Header -->
-  <section class="section section-sm" style="background: var(--light-gray);">
-    <div class="container" style="text-align: center;">
-      <h1>Blog</h1>
-      <p>Insights, tips, and news about data analysis, statistics, and data visualization</p>
-    </div>
-  </section>
-
-  <!-- Blog Posts Vertical Layout -->
-  <section class="section">
-    <div class="container">
-      <div id="blog-posts-container">
-        <!-- Blog posts will be rendered here vertically like courses -->
-      </div>
-    </div>
-  </section>
-
-  <!-- Template for Blog Posts - Vertical Layout -->
-  <template id="blog-post-template">
-    <div class="card" style="margin-bottom: 48px;">
-      <div class="blog-detail-grid">
-        <div class="blog-detail-image">
-          <img src="/assets/hero.png" alt="Blog Post" data-key="[i].featuredImage">
-        </div>
-        
-        <div>
-          <h2 data-key="[i].title">Blog Post Title</h2>
-          
-          <div class="blog-detail-meta">
-            <span>📅 <span data-key="[i].date">2025-09-01</span></span>
-            <span>✍️ <span data-key="[i].author">Author</span></span>
-          </div>
-          
-          <div class="blog-excerpt" data-key="[i].excerpt">
-            Blog post excerpt...
-          </div>
-          
-          <div class="blog-actions">
-            <a href="/post.html" class="btn btn-primary">Read Full Article</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </template>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="grid grid-3">
-        <div class="footer-section">
-          <h3 data-key="site.name">Empirici Academy</h3>
-          <p data-key="site.tagline">Knowledge Gained Through Experience</p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" id="header">
+        <nav class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Empirici Academy" class="logo-image" width="40" height="40">
+                <span class="logo-text">Empirici Academy</span>
             </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
-            </a>
-            <a href="#" class="social-link" aria-label="Facebook">
-              <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/courses.html">Courses</a></li>
-            <li><a href="/collaboration.html">Collaboration</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section footer-contact">
-          <h4>Contact</h4>
-          <p data-key="site.email">info@empirici.academy</p>
-          <p data-key="site.phone">+20 100 000 0000</p>
-          <p data-key="site.address">Cairo, Egypt</p>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link active" aria-current="page">Blog</a></li>
+                <li><a href="collaboration.html" class="nav-link">Collaborate</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <script src="/js/main.js"></script>
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content fade-in">
+                    <h1 class="page-hero-title">Insights & <span class="highlight">Resources</span></h1>
+                    <p class="page-hero-subtitle">Stay updated with the latest tutorials, tips, and industry trends in data analytics and business intelligence.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div id="blog-container" class="blog-grid">
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                    <div class="skeleton-card"></div>
+                </div>
+                
+                <div id="no-posts" style="display: none; text-align: center; padding: 4rem 2rem;">
+                    <h3 style="color: var(--gray-600); margin-bottom: 1rem;">No blog posts yet</h3>
+                    <p style="color: var(--gray-500);">Check back soon for new content!</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2 class="cta-title">Ready to Start Learning?</h2>
+                    <p class="cta-text">Explore our comprehensive data analytics courses and transform your career.</p>
+                    <div class="cta-buttons">
+                        <a href="courses.html" class="btn btn-primary btn-large">View Courses</a>
+                        <a href="contact.html" class="btn btn-outline btn-large">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo" id="site-footer">
+        <!-- Footer populated dynamically -->
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/site-content-default.js" defer></script>
 </body>
 </html>

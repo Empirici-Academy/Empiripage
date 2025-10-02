@@ -1,735 +1,745 @@
-// admin.js - COMPLETE VERSION with all fixes and features
-console.log('=== ADMIN JS LOADED ===');
+// ================================
+// Empirici Academy - Admin Panel JavaScript
+// Complete CRUD operations with ALL new features
+// Stats, Settings, Social Media, Featured Toggle
+// ================================
 
-const admin = {
-  currentData: null,
-  currentTab: 'dashboard',
-  editingArray: null,
-  editingIndex: null,
+(function() {
+    'use strict';
 
-  init() {
-    console.log('🔄 Admin initializing...');
-    this.loadData();
-    this.setupEventListeners();
-    this.updateDashboard();
-    this.loadMessages();
-    this.showNotification('Admin panel loaded successfully!', 'success');
-  },
-
-  loadData() {
-    console.log('📥 Loading site data...');
-    this.currentData = window.EmpiriciUtils.loadSiteData();
-    this.populateAllFormFields();
-    this.renderAllArrays();
-    this.updateDashboard();
-  },
-
-  setupEventListeners() {
-    console.log('🎯 Setting up event listeners...');
-    
-    // Tab navigation
-    document.querySelectorAll('.admin-nav-link').forEach(link => {
-      link.addEventListener('click', (e) => {
-        e.preventDefault();
-        const tab = link.getAttribute('data-tab');
-        this.switchTab(tab);
-      });
+    // ================================
+    // Tab Navigation
+    // ================================
+    document.querySelectorAll('.admin-tab').forEach(tab => {
+        tab.addEventListener('click', function() {
+            document.querySelectorAll('.admin-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.admin-panel').forEach(p => p.classList.remove('active'));
+            
+            this.classList.add('active');
+            const panelId = this.dataset.tab + '-panel';
+            document.getElementById(panelId)?.classList.add('active');
+        });
     });
 
-    // Auto-save on input
-    let saveTimeout;
-    document.addEventListener('input', (e) => {
-      if (e.target.classList.contains('admin-input') || e.target.classList.contains('admin-textarea')) {
-        clearTimeout(saveTimeout);
-        saveTimeout = setTimeout(() => {
-          this.updateDataFromForm();
-        }, 1000);
-      }
-    });
-  },
-
-  switchTab(tabName) {
-    this.currentTab = tabName;
+    // ================================
+    // COURSES MANAGEMENT with Featured Toggle
+    // ================================
     
-    // Update active tab
-    document.querySelectorAll('.admin-nav-link').forEach(link => {
-      link.classList.remove('active');
-    });
-    document.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
-    
-    // Update active section
-    document.querySelectorAll('.admin-section').forEach(section => {
-      section.classList.remove('active');
-    });
-    const targetSection = document.getElementById(`${tabName}-section`);
-    if (targetSection) {
-      targetSection.classList.add('active');
-    }
-    
-    if (tabName === 'messages') {
-      this.loadMessages();
-    }
-  },
-
-  populateAllFormFields() {
-    console.log('📝 Populating form fields...');
-    
-    // Site Settings
-    this.setInputValue('site-name', 'site.name');
-    this.setInputValue('site-tagline', 'site.tagline');
-    this.setInputValue('site-email', 'site.email');
-    this.setInputValue('site-phone', 'site.phone');
-    this.setTextareaValue('site-address', 'site.address');
-    
-    // Home Page
-    this.setInputValue('home-hero-title', 'home.hero.title');
-    this.setTextareaValue('home-hero-subtitle', 'home.hero.subtitle');
-    this.setInputValue('home-hero-primaryCta', 'home.hero.primaryCta');
-    this.setInputValue('home-hero-secondaryCta', 'home.hero.secondaryCta');
-    this.setInputValue('home-intro-heading', 'home.intro.heading');
-    this.setTextareaValue('home-intro-paragraph', 'home.intro.paragraph');
-    
-    // About Page
-    this.setTextareaValue('about-mission', 'about.mission');
-    this.setTextareaValue('about-vision', 'about.vision');
-    this.setTextareaValue('about-story', 'about.story');
-    
-    // Courses Page
-    this.setInputValue('courses-header', 'coursesPage.header');
-    this.setTextareaValue('courses-description', 'coursesPage.description');
-    
-    // Collaboration Page
-    this.setInputValue('collaboration-headline', 'collaboration.headline');
-    this.setTextareaValue('collaboration-paragraph', 'collaboration.paragraph');
-    this.setInputValue('collaboration-cta-text', 'collaboration.cta.text');
-    
-    // Contact Page
-    this.setInputValue('contact-heading', 'contact.heading');
-    this.setInputValue('contact-subheading', 'contact.subheading');
-    this.setTextareaValue('contact-mapEmbed', 'contact.mapEmbed');
-  },
-
-  setInputValue(elementId, dataPath) {
-    const element = document.getElementById(elementId);
-    if (element) {
-      const value = window.EmpiriciUtils.getValueByPath(this.currentData, dataPath);
-      element.value = value || '';
-    }
-  },
-
-  setTextareaValue(elementId, dataPath) {
-    const element = document.getElementById(elementId);
-    if (element) {
-      const value = window.EmpiriciUtils.getValueByPath(this.currentData, dataPath);
-      element.value = value || '';
-    }
-  },
-
-  updateDataFromForm() {
-    // Site Settings
-    this.updateDataValue('site-name', 'site.name');
-    this.updateDataValue('site-tagline', 'site.tagline');
-    this.updateDataValue('site-email', 'site.email');
-    this.updateDataValue('site-phone', 'site.phone');
-    this.updateDataValue('site-address', 'site.address');
-    
-    // Home Page
-    this.updateDataValue('home-hero-title', 'home.hero.title');
-    this.updateDataValue('home-hero-subtitle', 'home.hero.subtitle');
-    this.updateDataValue('home-hero-primaryCta', 'home.hero.primaryCta');
-    this.updateDataValue('home-hero-secondaryCta', 'home.hero.secondaryCta');
-    this.updateDataValue('home-intro-heading', 'home.intro.heading');
-    this.updateDataValue('home-intro-paragraph', 'home.intro.paragraph');
-    
-    // About Page
-    this.updateDataValue('about-mission', 'about.mission');
-    this.updateDataValue('about-vision', 'about.vision');
-    this.updateDataValue('about-story', 'about.story');
-    
-    // Courses Page
-    this.updateDataValue('courses-header', 'coursesPage.header');
-    this.updateDataValue('courses-description', 'coursesPage.description');
-    
-    // Collaboration Page
-    this.updateDataValue('collaboration-headline', 'collaboration.headline');
-    this.updateDataValue('collaboration-paragraph', 'collaboration.paragraph');
-    this.updateDataValue('collaboration-cta-text', 'collaboration.cta.text');
-    
-    // Contact Page
-    this.updateDataValue('contact-heading', 'contact.heading');
-    this.updateDataValue('contact-subheading', 'contact.subheading');
-    this.updateDataValue('contact-mapEmbed', 'contact.mapEmbed');
-    
-    this.saveChanges();
-  },
-
-  updateDataValue(elementId, dataPath) {
-    const element = document.getElementById(elementId);
-    if (element) {
-      window.EmpiriciUtils.setValueByPath(this.currentData, dataPath, element.value);
-    }
-  },
-
-  renderAllArrays() {
-    console.log('🔄 Rendering arrays...');
-    
-    // Home page arrays
-    this.renderArray('home.stats', 'stats-array', ['number', 'label']);
-    this.renderFeaturedCourses();
-    this.renderFeaturedPosts();
-    this.renderArray('home.testimonials', 'testimonials-array', ['quote', 'author', 'role']);
-    
-    // About page arrays
-    this.renderArray('about.team', 'team-array', ['name', 'role', 'bio']);
-    this.renderArray('about.values', 'values-array', ['value']);
-    
-    // Courses
-    this.renderArray('coursesPage.courses', 'courses-array', [
-      'title', 'duration', 'level', 'format', 'fullDescription', 'image', 'badgerLink', 'featured'
-    ]);
-    
-    // Collaboration
-    this.renderArray('collaboration.servicesOffered', 'services-array', ['service']);
-    
-    // Blog
-    this.renderArray('blog.posts', 'blog-posts-array', [
-      'title', 'slug', 'date', 'author', 'excerpt', 'content', 'featuredImage', 'featured'
-    ]);
-    
-    // Contact
-    this.renderSimpleArray('contact.subjects', 'subjects-array');
-  },
-
-  renderFeaturedCourses() {
-    const container = document.getElementById('featured-courses-array');
-    if (!container) return;
-
-    const allCourses = window.EmpiriciUtils.getValueByPath(this.currentData, 'coursesPage.courses') || [];
-    const featuredCourses = allCourses.filter(course => course.featured === true);
-
-    if (featuredCourses.length === 0) {
-      container.innerHTML = '<p style="color: var(--muted);">No featured courses. Mark courses as featured in the Courses section.</p>';
-      return;
-    }
-
-    container.innerHTML = '';
-    featuredCourses.forEach((course) => {
-      const div = document.createElement('div');
-      div.className = 'array-item';
-      div.innerHTML = `
-        <div class="array-item-header">
-          <strong>${course.title}</strong>
-          <span class="badge featured-badge">Featured</span>
-        </div>
-        <p><strong>Level:</strong> ${course.level || 'N/A'}</p>
-        <p><strong>Duration:</strong> ${course.duration || 'N/A'}</p>
-      `;
-      container.appendChild(div);
-    });
-  },
-
-  renderFeaturedPosts() {
-    const container = document.getElementById('featured-posts-array');
-    if (!container) return;
-
-    const allPosts = window.EmpiriciUtils.getValueByPath(this.currentData, 'blog.posts') || [];
-    const featuredPosts = allPosts.filter(post => post.featured === true);
-
-    if (featuredPosts.length === 0) {
-      container.innerHTML = '<p style="color: var(--muted);">No featured posts. Mark posts as featured in the Blog section.</p>';
-      return;
-    }
-
-    container.innerHTML = '';
-    featuredPosts.forEach((post) => {
-      const div = document.createElement('div');
-      div.className = 'array-item';
-      div.innerHTML = `
-        <div class="array-item-header">
-          <strong>${post.title}</strong>
-          <span class="badge featured-badge">Featured</span>
-        </div>
-        <p><strong>Author:</strong> ${post.author || 'N/A'}</p>
-        <p><strong>Date:</strong> ${post.date || 'N/A'}</p>
-      `;
-      container.appendChild(div);
-    });
-  },
-
-  renderArray(arrayPath, containerId, fields) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    const array = window.EmpiriciUtils.getValueByPath(this.currentData, arrayPath) || [];
-
-    if (array.length === 0) {
-      container.innerHTML = '<p style="color: var(--muted);">No items yet. Add your first item!</p>';
-      return;
-    }
-
-    container.innerHTML = '';
-    array.forEach((item, index) => {
-      const div = document.createElement('div');
-      div.className = 'array-item';
-      
-      let content = `<div class="array-item-header">`;
-      
-      // Show item title/name
-      const titleField = item.title || item.name || item.quote || item.value || item.service || item.number;
-      content += `<strong>${titleField || `Item ${index + 1}`}</strong>`;
-      
-      // Show featured badge if applicable
-      if (item.featured) {
-        content += `<span class="badge featured-badge">Featured</span>`;
-      }
-      
-      content += `<div class="array-item-actions">
-        <button onclick="admin.editArrayItem('${arrayPath}', ${index})" class="btn btn-sm btn-warning">✏️ Edit</button>
-        <button onclick="admin.deleteArrayItem('${arrayPath}', ${index})" class="btn btn-sm btn-danger">🗑️ Delete</button>
-      </div></div>`;
-      
-      // Show preview of fields
-      fields.forEach(field => {
-        if (field === 'featured') return; // Skip featured field in preview
+    function loadCourses() {
+        const courses = JSON.parse(localStorage.getItem('courses') || '[]');
+        const tbody = document.getElementById('courses-tbody');
         
-        const value = item[field];
-        if (value) {
-          let displayValue = String(value);
-          if (displayValue.length > 100) {
-            displayValue = displayValue.substring(0, 100) + '...';
-          }
-          content += `<p><strong>${field}:</strong> ${this.escapeHtml(displayValue)}</p>`;
+        if (courses.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: var(--gray-500);">No courses yet</td></tr>';
+            return;
         }
-      });
-      
-      div.innerHTML = content;
-      container.appendChild(div);
-    });
-  },
-
-  renderSimpleArray(arrayPath, containerId) {
-    const container = document.getElementById(containerId);
-    if (!container) return;
-
-    const array = window.EmpiriciUtils.getValueByPath(this.currentData, arrayPath) || [];
-
-    if (array.length === 0) {
-      container.innerHTML = '<p style="color: var(--muted);">No items yet.</p>';
-      return;
+        
+        tbody.innerHTML = courses.map(course => `
+            <tr>
+                <td>${course.title}</td>
+                <td><span style="text-transform: capitalize;">${course.level}</span></td>
+                <td>${course.duration || 'N/A'}</td>
+                <td>
+                    <label class="featured-toggle">
+                        <input type="checkbox" ${course.featured ? 'checked' : ''} 
+                               onchange="toggleCourseFeatured(${course.id}, this.checked)">
+                        ${course.featured ? '<span class="featured-badge">Featured</span>' : 'No'}
+                    </label>
+                </td>
+                <td class="admin-actions">
+                    <button class="btn btn-sm btn-secondary" onclick="editCourse(${course.id})">Edit</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteCourse(${course.id})">Delete</button>
+                </td>
+            </tr>
+        `).join('');
     }
 
-    container.innerHTML = '';
-    array.forEach((item, index) => {
-      const div = document.createElement('div');
-      div.className = 'array-item';
-      div.innerHTML = `
-        <div class="array-item-header">
-          <strong>${item}</strong>
-          <div class="array-item-actions">
-            <button onclick="admin.editSimpleArrayItem('${arrayPath}', ${index})" class="btn btn-sm btn-warning">✏️ Edit</button>
-            <button onclick="admin.deleteArrayItem('${arrayPath}', ${index})" class="btn btn-sm btn-danger">🗑️ Delete</button>
-          </div>
-        </div>
-      `;
-      container.appendChild(div);
-    });
-  },
-
-  addArrayItem(arrayPath) {
-    const array = window.EmpiriciUtils.getValueByPath(this.currentData, arrayPath) || [];
-    
-    // Templates for different array types
-    const templates = {
-      'home.stats': { number: '100+', label: 'New Stat' },
-      'home.testimonials': { quote: 'Testimonial quote...', author: 'Author Name', role: 'Role' },
-      'about.team': { name: 'Team Member', role: 'Position', bio: 'Biography...' },
-      'about.values': { value: 'New Value' },
-      'coursesPage.courses': {
-        title: 'New Course',
-        duration: '8 weeks',
-        level: 'Beginner',
-        format: 'Live',
-        fullDescription: 'Course description...',
-        image: '/assets/course-1.png',
-        badgerLink: '',
-        featured: false
-      },
-      'collaboration.servicesOffered': { service: 'New Service' },
-      'blog.posts': {
-        title: 'New Blog Post',
-        slug: 'new-blog-post',
-        date: new Date().toISOString().split('T')[0],
-        author: 'Author',
-        excerpt: 'Post excerpt...',
-        content: '<p>Post content...</p>',
-        featuredImage: '/assets/hero.png',
-        featured: false
-      },
-      'contact.subjects': 'New Subject'
-    };
-
-    const newItem = arrayPath === 'contact.subjects' 
-      ? templates[arrayPath]
-      : { id: `item_${Date.now()}`, ...templates[arrayPath] };
-
-    array.push(newItem);
-    window.EmpiriciUtils.setValueByPath(this.currentData, arrayPath, array);
-    
-    this.renderAllArrays();
-    this.saveChanges();
-    this.showNotification('Item added successfully!', 'success');
-  },
-
-  editArrayItem(arrayPath, index) {
-    const array = window.EmpiriciUtils.getValueByPath(this.currentData, arrayPath);
-    const item = array[index];
-    
-    const fieldConfigs = {
-      'home.stats': [
-        { name: 'number', label: 'Number', type: 'text' },
-        { name: 'label', label: 'Label', type: 'text' }
-      ],
-      'home.testimonials': [
-        { name: 'quote', label: 'Quote', type: 'textarea' },
-        { name: 'author', label: 'Author', type: 'text' },
-        { name: 'role', label: 'Role', type: 'text' }
-      ],
-      'about.team': [
-        { name: 'name', label: 'Name', type: 'text' },
-        { name: 'role', label: 'Role', type: 'text' },
-        { name: 'bio', label: 'Bio', type: 'textarea' }
-      ],
-      'about.values': [
-        { name: 'value', label: 'Value', type: 'text' }
-      ],
-      'coursesPage.courses': [
-        { name: 'title', label: 'Title', type: 'text' },
-        { name: 'duration', label: 'Duration', type: 'text' },
-        { name: 'level', label: 'Level', type: 'text' },
-        { name: 'format', label: 'Format', type: 'text' },
-        { name: 'fullDescription', label: 'Description', type: 'textarea' },
-        { name: 'image', label: 'Image URL', type: 'text' },
-        { name: 'badgerLink', label: 'Badger Link', type: 'text' },
-        { name: 'featured', label: 'Featured', type: 'checkbox' }
-      ],
-      'collaboration.servicesOffered': [
-        { name: 'service', label: 'Service', type: 'text' }
-      ],
-      'blog.posts': [
-        { name: 'title', label: 'Title', type: 'text' },
-        { name: 'slug', label: 'Slug', type: 'text' },
-        { name: 'date', label: 'Date (YYYY-MM-DD)', type: 'text' },
-        { name: 'author', label: 'Author', type: 'text' },
-        { name: 'excerpt', label: 'Excerpt', type: 'textarea' },
-        { name: 'content', label: 'Content (HTML)', type: 'textarea' },
-        { name: 'featuredImage', label: 'Featured Image URL', type: 'text' },
-        { name: 'featured', label: 'Featured', type: 'checkbox' }
-      ]
-    };
-
-    const fields = fieldConfigs[arrayPath] || [];
-    
-    let formHtml = `<div class="admin-card"><h3>Edit Item</h3>`;
-    
-    fields.forEach(field => {
-      const value = item[field.name] || '';
-      
-      if (field.type === 'checkbox') {
-        const checked = value ? 'checked' : '';
-        formHtml += `
-          <div class="form-group">
-            <label>
-              <input type="checkbox" id="edit-${field.name}" ${checked}> ${field.label}
-            </label>
-          </div>
-        `;
-      } else if (field.type === 'textarea') {
-        formHtml += `
-          <div class="form-group">
-            <label>${field.label}</label>
-            <textarea id="edit-${field.name}" class="admin-textarea">${this.escapeHtml(value)}</textarea>
-          </div>
-        `;
-      } else {
-        formHtml += `
-          <div class="form-group">
-            <label>${field.label}</label>
-            <input type="text" id="edit-${field.name}" class="admin-input" value="${this.escapeHtml(value)}">
-          </div>
-        `;
-      }
-    });
-    
-    formHtml += `
-      <div class="admin-actions">
-        <button onclick="admin.saveArrayItemEdit('${arrayPath}', ${index})" class="btn btn-primary">💾 Save</button>
-        <button onclick="admin.cancelArrayItemEdit()" class="btn btn-outline">❌ Cancel</button>
-      </div>
-    </div>`;
-    
-    // Create modal/overlay
-    const overlay = document.createElement('div');
-    overlay.id = 'edit-overlay';
-    overlay.style.cssText = `
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(0,0,0,0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 10000;
-    `;
-    
-    const modal = document.createElement('div');
-    modal.style.cssText = `
-      background: white;
-      padding: 32px;
-      border-radius: var(--radius);
-      max-width: 600px;
-      width: 90%;
-      max-height: 80vh;
-      overflow-y: auto;
-    `;
-    modal.innerHTML = formHtml;
-    
-    overlay.appendChild(modal);
-    document.body.appendChild(overlay);
-  },
-
-  saveArrayItemEdit(arrayPath, index) {
-    const array = window.EmpiriciUtils.getValueByPath(this.currentData, arrayPath);
-    const item = array[index];
-    
-    // Update all fields
-    const editElements = document.querySelectorAll('[id^="edit-"]');
-    editElements.forEach(element => {
-      const fieldName = element.id.replace('edit-', '');
-      if (element.type === 'checkbox') {
-        item[fieldName] = element.checked;
-      } else {
-        item[fieldName] = element.value;
-      }
-    });
-    
-    window.EmpiriciUtils.setValueByPath(this.currentData, arrayPath, array);
-    
-    this.cancelArrayItemEdit();
-    this.renderAllArrays();
-    this.saveChanges();
-    this.showNotification('Item updated successfully!', 'success');
-  },
-
-  cancelArrayItemEdit() {
-    const overlay = document.getElementById('edit-overlay');
-    if (overlay) {
-      overlay.remove();
-    }
-  },
-
-  editSimpleArrayItem(arrayPath, index) {
-    const array = window.EmpiriciUtils.getValueByPath(this.currentData, arrayPath);
-    const item = array[index];
-    
-    const newValue = prompt('Edit item:', item);
-    if (newValue !== null && newValue.trim() !== '') {
-      array[index] = newValue.trim();
-      window.EmpiriciUtils.setValueByPath(this.currentData, arrayPath, array);
-      this.renderAllArrays();
-      this.saveChanges();
-      this.showNotification('Item updated!', 'success');
-    }
-  },
-
-  deleteArrayItem(arrayPath, index) {
-    if (confirm('Are you sure you want to delete this item?')) {
-      const array = window.EmpiriciUtils.getValueByPath(this.currentData, arrayPath);
-      array.splice(index, 1);
-      window.EmpiriciUtils.setValueByPath(this.currentData, arrayPath, array);
-      this.renderAllArrays();
-      this.saveChanges();
-      this.showNotification('Item deleted successfully!', 'success');
-    }
-  },
-
-  saveChanges() {
-    window.EmpiriciUtils.saveSiteData(this.currentData);
-    this.showNotification('✅ Changes saved!', 'success');
-  },
-
-  updateDashboard() {
-    const courses = window.EmpiriciUtils.getValueByPath(this.currentData, 'coursesPage.courses') || [];
-    const posts = window.EmpiriciUtils.getValueByPath(this.currentData, 'blog.posts') || [];
-    const messages = JSON.parse(localStorage.getItem('empirici:messages:v1') || '[]');
-    
-    document.getElementById('dashboard-courses-count').textContent = courses.length;
-    document.getElementById('dashboard-posts-count').textContent = posts.length;
-    document.getElementById('dashboard-messages-count').textContent = messages.length;
-    
-    const dataStr = JSON.stringify(this.currentData);
-    const sizeKB = (new Blob([dataStr]).size / 1024).toFixed(2);
-    document.getElementById('dashboard-storage').textContent = `💾 Using ${sizeKB} KB of localStorage`;
-  },
-
-  loadMessages() {
-    const messages = JSON.parse(localStorage.getItem('empirici:messages:v1') || '[]');
-    const messagesList = document.getElementById('messages-list');
-    
-    if (!messagesList) return;
-    
-    if (messages.length === 0) {
-      messagesList.innerHTML = '<p style="color: var(--muted);">No messages yet.</p>';
-      return;
-    }
-    
-    messagesList.innerHTML = '';
-    messages.reverse().forEach(msg => {
-      const div = document.createElement('div');
-      div.className = 'message-item';
-      div.innerHTML = `
-        <strong>${this.escapeHtml(msg.name)}</strong>
-        <p>📧 ${this.escapeHtml(msg.email)}</p>
-        ${msg.phone ? `<p>📱 ${this.escapeHtml(msg.phone)}</p>` : ''}
-        ${msg.subject ? `<p>📋 Subject: ${this.escapeHtml(msg.subject)}</p>` : ''}
-        <p>💬 ${this.escapeHtml(msg.message)}</p>
-        <p style="font-size: 12px;">🕐 ${new Date(msg.createdAt).toLocaleString()}</p>
-      `;
-      messagesList.appendChild(div);
-    });
-  },
-
-  exportJSON() {
-    const dataStr = JSON.stringify(this.currentData, null, 2);
-    const blob = new Blob([dataStr], { type: 'application/json' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `empirici-site-data-${new Date().toISOString().split('T')[0]}.json`;
-    link.click();
-    this.showNotification('JSON exported successfully!', 'success');
-  },
-
-  importJSON() {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.json';
-    input.onchange = (e) => {
-      const file = e.target.files[0];
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        try {
-          const data = JSON.parse(e.target.result);
-          this.currentData = data;
-          this.loadData();
-          this.saveChanges();
-          this.showNotification('JSON imported successfully!', 'success');
-        } catch (error) {
-          this.showNotification('Error: Invalid JSON file', 'error');
+    window.toggleCourseFeatured = function(id, featured) {
+        const courses = JSON.parse(localStorage.getItem('courses') || '[]');
+        const index = courses.findIndex(c => c.id === id);
+        if (index !== -1) {
+            courses[index].featured = featured;
+            localStorage.setItem('courses', JSON.stringify(courses));
+            loadCourses();
+            showSuccessMessage(featured ? 'Course marked as featured!' : 'Course unmarked from featured');
         }
-      };
-      reader.readAsText(file);
     };
-    input.click();
-  },
 
-  resetToDefaults() {
-    if (confirm('⚠️ Reset ALL content to defaults? This cannot be undone!')) {
-      this.currentData = JSON.parse(JSON.stringify(window.DEFAULT_SITE_DATA));
-      this.loadData();
-      this.saveChanges();
-      this.showNotification('Reset to defaults complete!', 'success');
-    }
-  },
+    window.showAddCourseForm = function() {
+        document.getElementById('course-form').style.display = 'block';
+        document.getElementById('course-id').value = '';
+        document.getElementById('course-title').value = '';
+        document.getElementById('course-description').value = '';
+        document.getElementById('course-level').value = 'beginner';
+        document.getElementById('course-duration').value = '';
+        document.getElementById('course-image').value = '';
+        document.getElementById('course-badge').value = '';
+        document.getElementById('course-featured').checked = false;
+        document.getElementById('course-form').scrollIntoView({ behavior: 'smooth' });
+    };
 
-  exportMessagesCSV() {
-    const messages = JSON.parse(localStorage.getItem('empirici:messages:v1') || '[]');
+    window.cancelCourseForm = function() {
+        document.getElementById('course-form').style.display = 'none';
+    };
+
+    window.editCourse = function(id) {
+        const courses = JSON.parse(localStorage.getItem('courses') || '[]');
+        const course = courses.find(c => c.id === id);
+        
+        if (!course) return;
+        
+        document.getElementById('course-form').style.display = 'block';
+        document.getElementById('course-id').value = course.id;
+        document.getElementById('course-title').value = course.title;
+        document.getElementById('course-description').value = course.description;
+        document.getElementById('course-level').value = course.level;
+        document.getElementById('course-duration').value = course.duration || '';
+        document.getElementById('course-image').value = course.image || '';
+        document.getElementById('course-badge').value = course.badge || '';
+        document.getElementById('course-featured').checked = course.featured || false;
+        
+        document.getElementById('course-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.saveCourse = function(event) {
+        event.preventDefault();
+        
+        const courses = JSON.parse(localStorage.getItem('courses') || '[]');
+        const id = document.getElementById('course-id').value;
+        
+        const courseData = {
+            id: id ? parseInt(id) : Date.now(),
+            title: document.getElementById('course-title').value,
+            description: document.getElementById('course-description').value,
+            level: document.getElementById('course-level').value,
+            duration: document.getElementById('course-duration').value,
+            image: document.getElementById('course-image').value,
+            badge: document.getElementById('course-badge').value,
+            featured: document.getElementById('course-featured').checked
+        };
+        
+        if (id) {
+            const index = courses.findIndex(c => c.id === parseInt(id));
+            if (index !== -1) {
+                courses[index] = courseData;
+            }
+        } else {
+            courses.push(courseData);
+        }
+        
+        localStorage.setItem('courses', JSON.stringify(courses));
+        loadCourses();
+        cancelCourseForm();
+        showSuccessMessage('Course saved successfully!');
+    };
+
+    window.deleteCourse = function(id) {
+        if (!confirm('Are you sure you want to delete this course?')) return;
+        
+        let courses = JSON.parse(localStorage.getItem('courses') || '[]');
+        courses = courses.filter(c => c.id !== id);
+        localStorage.setItem('courses', JSON.stringify(courses));
+        loadCourses();
+        showSuccessMessage('Course deleted successfully!');
+    };
+
+    // ================================
+    // BLOG POSTS MANAGEMENT with Featured Toggle
+    // ================================
     
-    if (messages.length === 0) {
-      this.showNotification('No messages to export', 'warning');
-      return;
+    function loadBlogPosts() {
+        const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+        const tbody = document.getElementById('blog-tbody');
+        
+        if (posts.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="5" style="text-align: center; color: var(--gray-500);">No blog posts yet</td></tr>';
+            return;
+        }
+        
+        tbody.innerHTML = posts.map(post => `
+            <tr>
+                <td>${post.title}</td>
+                <td>${post.author || 'N/A'}</td>
+                <td>${post.date}</td>
+                <td>
+                    <label class="featured-toggle">
+                        <input type="checkbox" ${post.featured ? 'checked' : ''} 
+                               onchange="toggleBlogFeatured(${post.id}, this.checked)">
+                        ${post.featured ? '<span class="featured-badge">Featured</span>' : 'No'}
+                    </label>
+                </td>
+                <td class="admin-actions">
+                    <button class="btn btn-sm btn-secondary" onclick="editBlogPost(${post.id})">Edit</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteBlogPost(${post.id})">Delete</button>
+                </td>
+            </tr>
+        `).join('');
     }
-    
-    let csv = 'Date,Name,Email,Phone,Subject,Message\n';
-    messages.forEach(msg => {
-      csv += `"${new Date(msg.createdAt).toLocaleString()}","${this.escapeCsv(msg.name)}","${this.escapeCsv(msg.email)}","${this.escapeCsv(msg.phone || '')}","${this.escapeCsv(msg.subject || '')}","${this.escapeCsv(msg.message)}"\n`;
-    });
-    
-    const blob = new Blob([csv], { type: 'text/csv' });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = `messages-${new Date().toISOString().split('T')[0]}.csv`;
-    link.click();
-    this.showNotification('Messages exported as CSV!', 'success');
-  },
 
-  clearMessages() {
-    if (confirm('⚠️ Delete ALL messages? This cannot be undone!')) {
-      localStorage.setItem('empirici:messages:v1', '[]');
-      this.loadMessages();
-      this.updateDashboard();
-      this.showNotification('All messages cleared', 'success');
+    window.toggleBlogFeatured = function(id, featured) {
+        const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+        const index = posts.findIndex(p => p.id === id);
+        if (index !== -1) {
+            posts[index].featured = featured;
+            localStorage.setItem('blogPosts', JSON.stringify(posts));
+            loadBlogPosts();
+            showSuccessMessage(featured ? 'Post marked as featured!' : 'Post unmarked from featured');
+        }
+    };
+
+    window.showAddBlogForm = function() {
+        document.getElementById('blog-form').style.display = 'block';
+        document.getElementById('blog-id').value = '';
+        document.getElementById('blog-title').value = '';
+        document.getElementById('blog-excerpt').value = '';
+        document.getElementById('blog-content').value = '';
+        document.getElementById('blog-author').value = '';
+        document.getElementById('blog-date').value = '';
+        document.getElementById('blog-image').value = '';
+        document.getElementById('blog-featured').checked = false;
+        document.getElementById('blog-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.cancelBlogForm = function() {
+        document.getElementById('blog-form').style.display = 'none';
+    };
+
+    window.editBlogPost = function(id) {
+        const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+        const post = posts.find(p => p.id === id);
+        
+        if (!post) return;
+        
+        document.getElementById('blog-form').style.display = 'block';
+        document.getElementById('blog-id').value = post.id;
+        document.getElementById('blog-title').value = post.title;
+        document.getElementById('blog-excerpt').value = post.excerpt;
+        document.getElementById('blog-content').value = post.content || post.excerpt;
+        document.getElementById('blog-author').value = post.author || '';
+        document.getElementById('blog-date').value = post.date;
+        document.getElementById('blog-image').value = post.image || '';
+        document.getElementById('blog-featured').checked = post.featured || false;
+        
+        document.getElementById('blog-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.saveBlogPost = function(event) {
+        event.preventDefault();
+        
+        const posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+        const id = document.getElementById('blog-id').value;
+        
+        const postData = {
+            id: id ? parseInt(id) : Date.now(),
+            title: document.getElementById('blog-title').value,
+            excerpt: document.getElementById('blog-excerpt').value,
+            content: document.getElementById('blog-content').value,
+            author: document.getElementById('blog-author').value,
+            date: document.getElementById('blog-date').value || new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' }),
+            image: document.getElementById('blog-image').value,
+            featured: document.getElementById('blog-featured').checked
+        };
+        
+        if (id) {
+            const index = posts.findIndex(p => p.id === parseInt(id));
+            if (index !== -1) {
+                posts[index] = postData;
+            }
+        } else {
+            posts.push(postData);
+        }
+        
+        localStorage.setItem('blogPosts', JSON.stringify(posts));
+        loadBlogPosts();
+        cancelBlogForm();
+        showSuccessMessage('Blog post saved successfully!');
+    };
+
+    window.deleteBlogPost = function(id) {
+        if (!confirm('Are you sure you want to delete this blog post?')) return;
+        
+        let posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+        posts = posts.filter(p => p.id !== id);
+        localStorage.setItem('blogPosts', JSON.stringify(posts));
+        loadBlogPosts();
+        showSuccessMessage('Blog post deleted successfully!');
+    };
+
+    // ================================
+    // TEAM MANAGEMENT
+    // ================================
+    
+    function loadTeam() {
+        const team = JSON.parse(localStorage.getItem('team') || '[]');
+        const tbody = document.getElementById('team-tbody');
+        
+        if (team.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="3" style="text-align: center; color: var(--gray-500);">No team members yet</td></tr>';
+            return;
+        }
+        
+        tbody.innerHTML = team.map(member => `
+            <tr>
+                <td>${member.name}</td>
+                <td>${member.role}</td>
+                <td class="admin-actions">
+                    <button class="btn btn-sm btn-secondary" onclick="editTeamMember(${member.id})">Edit</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteTeamMember(${member.id})">Delete</button>
+                </td>
+            </tr>
+        `).join('');
     }
-  },
 
-  previewSite() {
-    window.open('/index.html', '_blank');
-  },
+    window.showAddTeamForm = function() {
+        document.getElementById('team-form').style.display = 'block';
+        document.getElementById('team-id').value = '';
+        document.getElementById('team-name').value = '';
+        document.getElementById('team-role').value = '';
+        document.getElementById('team-bio').value = '';
+        document.getElementById('team-form').scrollIntoView({ behavior: 'smooth' });
+    };
 
-  logout() {
-    sessionStorage.removeItem('admin-authenticated');
-    window.location.reload();
-  },
+    window.cancelTeamForm = function() {
+        document.getElementById('team-form').style.display = 'none';
+    };
 
-  showNotification(message, type = 'info') {
-    const notification = document.createElement('div');
-    notification.style.cssText = `
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 16px 24px;
-      background: ${type === 'success' ? '#27ae60' : type === 'error' ? '#e74c3c' : type === 'warning' ? '#f39c12' : '#3498db'};
-      color: white;
-      border-radius: var(--radius);
-      z-index: 10000;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-      font-weight: 600;
-      animation: slideIn 0.3s ease;
+    window.editTeamMember = function(id) {
+        const team = JSON.parse(localStorage.getItem('team') || '[]');
+        const member = team.find(m => m.id === id);
+        
+        if (!member) return;
+        
+        document.getElementById('team-form').style.display = 'block';
+        document.getElementById('team-id').value = member.id;
+        document.getElementById('team-name').value = member.name;
+        document.getElementById('team-role').value = member.role;
+        document.getElementById('team-bio').value = member.bio;
+        
+        document.getElementById('team-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.saveTeamMember = function(event) {
+        event.preventDefault();
+        
+        const team = JSON.parse(localStorage.getItem('team') || '[]');
+        const id = document.getElementById('team-id').value;
+        
+        const memberData = {
+            id: id ? parseInt(id) : Date.now(),
+            name: document.getElementById('team-name').value,
+            role: document.getElementById('team-role').value,
+            bio: document.getElementById('team-bio').value
+        };
+        
+        if (id) {
+            const index = team.findIndex(m => m.id === parseInt(id));
+            if (index !== -1) {
+                team[index] = memberData;
+            }
+        } else {
+            team.push(memberData);
+        }
+        
+        localStorage.setItem('team', JSON.stringify(team));
+        loadTeam();
+        cancelTeamForm();
+        showSuccessMessage('Team member saved successfully!');
+    };
+
+    window.deleteTeamMember = function(id) {
+        if (!confirm('Are you sure you want to delete this team member?')) return;
+        
+        let team = JSON.parse(localStorage.getItem('team') || '[]');
+        team = team.filter(m => m.id !== id);
+        localStorage.setItem('team', JSON.stringify(team));
+        loadTeam();
+        showSuccessMessage('Team member deleted successfully!');
+    };
+    // ================================
+    // TESTIMONIALS MANAGEMENT
+    // ================================
+    
+    function loadTestimonials() {
+        const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+        const tbody = document.getElementById('testimonials-tbody');
+        
+        if (testimonials.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="4" style="text-align: center; color: var(--gray-500);">No testimonials yet</td></tr>';
+            return;
+        }
+        
+        tbody.innerHTML = testimonials.map(testimonial => `
+            <tr>
+                <td>${testimonial.author}</td>
+                <td>${testimonial.role}</td>
+                <td style="max-width: 300px;">${testimonial.quote.substring(0, 100)}${testimonial.quote.length > 100 ? '...' : ''}</td>
+                <td class="admin-actions">
+                    <button class="btn btn-sm btn-secondary" onclick="editTestimonial(${testimonial.id})">Edit</button>
+                    <button class="btn btn-sm btn-danger" onclick="deleteTestimonial(${testimonial.id})">Delete</button>
+                </td>
+            </tr>
+        `).join('');
+    }
+
+    window.showAddTestimonialForm = function() {
+        document.getElementById('testimonial-form').style.display = 'block';
+        document.getElementById('testimonial-id').value = '';
+        document.getElementById('testimonial-quote').value = '';
+        document.getElementById('testimonial-author').value = '';
+        document.getElementById('testimonial-role').value = '';
+        document.getElementById('testimonial-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.cancelTestimonialForm = function() {
+        document.getElementById('testimonial-form').style.display = 'none';
+    };
+
+    window.editTestimonial = function(id) {
+        const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+        const testimonial = testimonials.find(t => t.id === id);
+        
+        if (!testimonial) return;
+        
+        document.getElementById('testimonial-form').style.display = 'block';
+        document.getElementById('testimonial-id').value = testimonial.id;
+        document.getElementById('testimonial-quote').value = testimonial.quote;
+        document.getElementById('testimonial-author').value = testimonial.author;
+        document.getElementById('testimonial-role').value = testimonial.role;
+        
+        document.getElementById('testimonial-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.saveTestimonial = function(event) {
+        event.preventDefault();
+        
+        const testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+        const id = document.getElementById('testimonial-id').value;
+        
+        const testimonialData = {
+            id: id ? parseInt(id) : Date.now(),
+            quote: document.getElementById('testimonial-quote').value,
+            author: document.getElementById('testimonial-author').value,
+            role: document.getElementById('testimonial-role').value
+        };
+        
+        if (id) {
+            const index = testimonials.findIndex(t => t.id === parseInt(id));
+            if (index !== -1) {
+                testimonials[index] = testimonialData;
+            }
+        } else {
+            testimonials.push(testimonialData);
+        }
+        
+        localStorage.setItem('testimonials', JSON.stringify(testimonials));
+        loadTestimonials();
+        cancelTestimonialForm();
+        showSuccessMessage('Testimonial saved successfully!');
+    };
+
+    window.deleteTestimonial = function(id) {
+        if (!confirm('Are you sure you want to delete this testimonial?')) return;
+        
+        let testimonials = JSON.parse(localStorage.getItem('testimonials') || '[]');
+        testimonials = testimonials.filter(t => t.id !== id);
+        localStorage.setItem('testimonials', JSON.stringify(testimonials));
+        loadTestimonials();
+        showSuccessMessage('Testimonial deleted successfully!');
+    };
+
+    // ================================
+    // STATS MANAGEMENT (NEW FEATURE)
+    // ================================
+    
+    function loadStats() {
+        const stats = JSON.parse(localStorage.getItem('stats') || '[]');
+        const container = document.getElementById('stats-container');
+        
+        if (!container) return;
+        
+        if (stats.length === 0) {
+            container.innerHTML = '<p style="text-align: center; color: var(--gray-500); grid-column: 1/-1;">No stats yet. Add stats to display on the homepage.</p>';
+            return;
+        }
+        
+        container.innerHTML = stats.map(stat => `
+            <div class="stat-card">
+                <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 1rem;">
+                    <div>
+                        <div style="font-size: var(--text-3xl); font-weight: 700; color: var(--teal-primary);">${stat.number}+</div>
+                        <div style="color: var(--gray-600); margin-top: 0.5rem;">${stat.label}</div>
+                    </div>
+                    <div class="admin-actions" style="flex-direction: column;">
+                        <button class="btn btn-sm btn-secondary" onclick="editStat(${stat.id})">Edit</button>
+                        <button class="btn btn-sm btn-danger" onclick="deleteStat(${stat.id})">Delete</button>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+    }
+
+    window.showAddStatForm = function() {
+        document.getElementById('stat-form').style.display = 'block';
+        document.getElementById('stat-id').value = '';
+        document.getElementById('stat-number').value = '';
+        document.getElementById('stat-label').value = '';
+        document.getElementById('stat-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.cancelStatForm = function() {
+        document.getElementById('stat-form').style.display = 'none';
+    };
+
+    window.editStat = function(id) {
+        const stats = JSON.parse(localStorage.getItem('stats') || '[]');
+        const stat = stats.find(s => s.id === id);
+        
+        if (!stat) return;
+        
+        document.getElementById('stat-form').style.display = 'block';
+        document.getElementById('stat-id').value = stat.id;
+        document.getElementById('stat-number').value = stat.number;
+        document.getElementById('stat-label').value = stat.label;
+        
+        document.getElementById('stat-form').scrollIntoView({ behavior: 'smooth' });
+    };
+
+    window.saveStat = function(event) {
+        event.preventDefault();
+        
+        const stats = JSON.parse(localStorage.getItem('stats') || '[]');
+        const id = document.getElementById('stat-id').value;
+        
+        const statData = {
+            id: id ? parseInt(id) : Date.now(),
+            number: parseInt(document.getElementById('stat-number').value),
+            label: document.getElementById('stat-label').value
+        };
+        
+        if (id) {
+            const index = stats.findIndex(s => s.id === parseInt(id));
+            if (index !== -1) {
+                stats[index] = statData;
+            }
+        } else {
+            stats.push(statData);
+        }
+        
+        localStorage.setItem('stats', JSON.stringify(stats));
+        loadStats();
+        cancelStatForm();
+        showSuccessMessage('Stat saved successfully!');
+    };
+
+    window.deleteStat = function(id) {
+        if (!confirm('Are you sure you want to delete this stat?')) return;
+        
+        let stats = JSON.parse(localStorage.getItem('stats') || '[]');
+        stats = stats.filter(s => s.id !== id);
+        localStorage.setItem('stats', JSON.stringify(stats));
+        loadStats();
+        showSuccessMessage('Stat deleted successfully!');
+    };
+
+    // ================================
+    // SITE SETTINGS - Contact Info & Social Media (NEW FEATURE)
+    // ================================
+    
+    function loadSettings() {
+        const settings = JSON.parse(localStorage.getItem('siteSettings') || '{}');
+        
+        // Load contact info
+        document.getElementById('settings-email').value = settings.email || '';
+        document.getElementById('settings-phone').value = settings.phone || '';
+        document.getElementById('settings-address').value = settings.address || '';
+        
+        // Load social media
+        document.getElementById('settings-facebook').value = settings.facebook || '';
+        document.getElementById('settings-linkedin').value = settings.linkedin || '';
+        document.getElementById('settings-twitter').value = settings.twitter || '';
+    }
+
+    window.saveContactInfo = function(event) {
+        event.preventDefault();
+        
+        const settings = JSON.parse(localStorage.getItem('siteSettings') || '{}');
+        
+        settings.email = document.getElementById('settings-email').value;
+        settings.phone = document.getElementById('settings-phone').value;
+        settings.address = document.getElementById('settings-address').value;
+        
+        localStorage.setItem('siteSettings', JSON.stringify(settings));
+        showSuccessMessage('Contact information saved successfully!');
+    };
+
+    window.saveSocialMedia = function(event) {
+        event.preventDefault();
+        
+        const settings = JSON.parse(localStorage.getItem('siteSettings') || '{}');
+        
+        settings.facebook = document.getElementById('settings-facebook').value;
+        settings.linkedin = document.getElementById('settings-linkedin').value;
+        settings.twitter = document.getElementById('settings-twitter').value;
+        
+        localStorage.setItem('siteSettings', JSON.stringify(settings));
+        showSuccessMessage('Social media links saved successfully!');
+    };
+
+    // ================================
+    // DATA MANAGEMENT
+    // ================================
+    
+    window.exportData = function() {
+        const data = {
+            courses: JSON.parse(localStorage.getItem('courses') || '[]'),
+            blogPosts: JSON.parse(localStorage.getItem('blogPosts') || '[]'),
+            team: JSON.parse(localStorage.getItem('team') || '[]'),
+            testimonials: JSON.parse(localStorage.getItem('testimonials') || '[]'),
+            stats: JSON.parse(localStorage.getItem('stats') || '[]'),
+            siteSettings: JSON.parse(localStorage.getItem('siteSettings') || '{}')
+        };
+        
+        const dataStr = JSON.stringify(data, null, 2);
+        const dataBlob = new Blob([dataStr], { type: 'application/json' });
+        const url = URL.createObjectURL(dataBlob);
+        
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `empirici-academy-backup-${new Date().toISOString().split('T')[0]}.json`;
+        link.click();
+        
+        URL.revokeObjectURL(url);
+        showSuccessMessage('Data exported successfully!');
+    };
+
+    window.importData = function(event) {
+        const file = event.target.files[0];
+        if (!file) return;
+        
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            try {
+                const data = JSON.parse(e.target.result);
+                
+                if (data.courses) localStorage.setItem('courses', JSON.stringify(data.courses));
+                if (data.blogPosts) localStorage.setItem('blogPosts', JSON.stringify(data.blogPosts));
+                if (data.team) localStorage.setItem('team', JSON.stringify(data.team));
+                if (data.testimonials) localStorage.setItem('testimonials', JSON.stringify(data.testimonials));
+                if (data.stats) localStorage.setItem('stats', JSON.stringify(data.stats));
+                if (data.siteSettings) localStorage.setItem('siteSettings', JSON.stringify(data.siteSettings));
+                
+                loadCourses();
+                loadBlogPosts();
+                loadTeam();
+                loadTestimonials();
+                loadStats();
+                loadSettings();
+                
+                showSuccessMessage('Data imported successfully! Page will reload in 2 seconds...');
+                setTimeout(() => window.location.reload(), 2000);
+            } catch (error) {
+                alert('Error importing data. Please check the file format.');
+                console.error(error);
+            }
+        };
+        reader.readAsText(file);
+        
+        // Reset file input
+        event.target.value = '';
+    };
+
+    window.clearAllData = function() {
+        if (!confirm('⚠️ WARNING: This will delete ALL content from the website including courses, blog posts, team, testimonials, stats, and settings. Are you absolutely sure?')) return;
+        if (!confirm('This action cannot be undone. Click OK to proceed with clearing all data.')) return;
+        
+        localStorage.removeItem('courses');
+        localStorage.removeItem('blogPosts');
+        localStorage.removeItem('team');
+        localStorage.removeItem('testimonials');
+        localStorage.removeItem('stats');
+        localStorage.removeItem('siteSettings');
+        
+        loadCourses();
+        loadBlogPosts();
+        loadTeam();
+        loadTestimonials();
+        loadStats();
+        loadSettings();
+        
+        showSuccessMessage('All data cleared! Reloading page...');
+        setTimeout(() => window.location.reload(), 1500);
+    };
+
+    // ================================
+    // SUCCESS MESSAGE
+    // ================================
+    
+    function showSuccessMessage(message) {
+        const existingMessage = document.querySelector('.success-message');
+        if (existingMessage) {
+            existingMessage.remove();
+        }
+        
+        const messageDiv = document.createElement('div');
+        messageDiv.className = 'success-message';
+        messageDiv.textContent = message;
+        messageDiv.style.position = 'fixed';
+        messageDiv.style.top = '2rem';
+        messageDiv.style.right = '2rem';
+        messageDiv.style.zIndex = '9999';
+        messageDiv.style.animation = 'slideInRight 0.3s ease-out';
+        messageDiv.style.padding = '1rem 1.5rem';
+        messageDiv.style.borderRadius = 'var(--radius-lg)';
+        messageDiv.style.boxShadow = 'var(--shadow-xl)';
+        
+        document.body.appendChild(messageDiv);
+        
+        setTimeout(() => {
+            messageDiv.style.animation = 'slideOutRight 0.3s ease-out';
+            setTimeout(() => messageDiv.remove(), 300);
+        }, 3000);
+    }
+
+    // Add animations
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        @keyframes slideOutRight {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
     `;
-    notification.textContent = message;
-    document.body.appendChild(notification);
+    document.head.appendChild(style);
+
+    // ================================
+    // INITIALIZE ON PAGE LOAD
+    // ================================
     
-    setTimeout(() => {
-      notification.style.animation = 'slideOut 0.3s ease';
-      setTimeout(() => notification.remove(), 300);
-    }, 3000);
-  },
+    document.addEventListener('DOMContentLoaded', function() {
+        loadCourses();
+        loadBlogPosts();
+        loadTeam();
+        loadTestimonials();
+        loadStats();
+        loadSettings();
+        
+        console.log('✓ Admin panel loaded successfully with all features');
+        console.log('✓ Features: Courses, Blog, Team, Testimonials, Stats, Settings');
+    });
 
-  escapeHtml(unsafe) {
-    if (!unsafe) return '';
-    return String(unsafe)
-      .replace(/&/g, "&amp;")
-      .replace(/</g, "&lt;")
-      .replace(/>/g, "&gt;")
-      .replace(/"/g, "&quot;")
-      .replace(/'/g, "&#039;");
-  },
-
-  escapeCsv(str) {
-    if (!str) return '';
-    return String(str).replace(/"/g, '""');
-  }
-};
-
-// Initialize when DOM is ready
-document.addEventListener('DOMContentLoaded', function() {
-  if (sessionStorage.getItem('admin-authenticated') === 'true') {
-    if (window.EmpiriciUtils && window.DEFAULT_SITE_DATA) {
-      admin.init();
-    }
-  }
-});
-
-window.admin = admin;
+})();

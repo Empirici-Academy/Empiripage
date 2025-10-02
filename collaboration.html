@@ -1,124 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Collaboration - Empirici Academy</title>
-  <meta name="description" content="Partner with Empirici Academy for corporate training, workshops, and educational partnerships.">
-  <link rel="icon" href="/assets/logo.png" type="image/png">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/site-content-default.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Partner with Empirici Academy for corporate training, educational collaborations, and custom data analytics programs.">
+    <title>Collaboration & Partnerships - Empirici Academy</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <!-- Header -->
-  <header class="header">
-    <nav class="container nav">
-      <a href="/index.html">
-        <img src="/assets/logo.png" alt="Empirici Academy" class="logo" data-key="site.logo">
-      </a>
-      
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-      
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/courses.html" class="nav-link">Courses</a></li>
-        <li class="nav-item"><a href="/collaboration.html" class="nav-link">Collaboration</a></li>
-        <li class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/contact.html" class="nav-link btn btn-primary">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- Page Header -->
-  <section class="section section-sm" style="background: var(--light-gray);">
-    <div class="container" style="text-align: center;">
-      <h1 data-key="collaboration.headline">Partner with Empirici Academy</h1>
-      <p data-key="collaboration.paragraph">
-        We offer tailored corporate training, workshop days, and curriculum partnerships for institutions.
-      </p>
-    </div>
-  </section>
-
-  <!-- Services Section - HORIZONTAL SCROLL -->
-  <section class="section">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 48px;">Our Collaboration Services</h2>
-      
-      <div class="horizontal-scroll-container">
-        <div class="horizontal-scroll" id="services-container">
-          <!-- Services will be rendered here -->
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Template for Services -->
-  <template id="service-template">
-    <div class="card service-card horizontal-card">
-      <h3 data-key="[i].service">Service Name</h3>
-      <p>We provide comprehensive solutions tailored to your organization's needs.</p>
-    </div>
-  </template>
-
-  <!-- CTA Banner -->
-  <section class="section collaboration-cta" style="background: linear-gradient(135deg, var(--teal-1), var(--teal-2));">
-    <div class="container">
-      <h2 data-key="collaboration.cta.text">Contact us for a tailored partnership</h2>
-      <p>Let's discuss how we can work together to meet your training and development goals.</p>
-      <a href="/contact.html" class="btn btn-secondary">Start Conversation</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="grid grid-3">
-        <div class="footer-section">
-          <h3 data-key="site.name">Empirici Academy</h3>
-          <p data-key="site.tagline">Knowledge Gained Through Experience</p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" id="header">
+        <nav class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Empirici Academy" class="logo-image" width="40" height="40">
+                <span class="logo-text">Empirici Academy</span>
             </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
-            </a>
-            <a href="#" class="social-link" aria-label="Facebook">
-              <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/courses.html">Courses</a></li>
-            <li><a href="/collaboration.html">Collaboration</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section footer-contact">
-          <h4>Contact</h4>
-          <p data-key="site.email">info@empirici.academy</p>
-          <p data-key="site.phone">+20 100 000 0000</p>
-          <p data-key="site.address">Cairo, Egypt</p>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="collaboration.html" class="nav-link active" aria-current="page">Collaborate</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <script src="/js/main.js"></script>
+    <main id="main-content">
+        <section class="page-hero">
+            <div class="container">
+                <div class="page-hero-content fade-in">
+                    <h1 class="page-hero-title">Partnership <span class="highlight">Opportunities</span></h1>
+                    <p class="page-hero-subtitle">Collaborate with us to deliver world-class data education to your organization or institution.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center; margin-bottom: 4rem;">
+                    <h2 style="font-size: var(--text-3xl); margin-bottom: 1.5rem;">Why Partner With Us?</h2>
+                    <p style="font-size: var(--text-lg); color: var(--gray-600); line-height: 1.8;">
+                        We offer tailored data analytics training programs for corporations, universities, and educational institutions. Our hands-on approach ensures your team or students gain practical, job-ready skills.
+                    </p>
+                </div>
+
+                <div class="feature-grid">
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Corporate Training</h3>
+                        <p class="feature-description">Upskill your workforce with customized data analytics programs designed for your business needs and industry.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 10v6M2 10l10-5 10 5-10 5z"/>
+                                <path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">University Partnerships</h3>
+                        <p class="feature-description">Enhance your curriculum with practical data courses that bridge the gap between theory and industry practice.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                <circle cx="9" cy="7" r="4"/>
+                                <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Custom Programs</h3>
+                        <p class="feature-description">We develop bespoke training solutions tailored to your specific tools, datasets, and business objectives.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Flexible Delivery</h3>
+                        <p class="feature-description">Choose from on-site training, online programs, or hybrid models that fit your schedule and preferences.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                                <polyline points="14 2 14 8 20 8"/>
+                                <line x1="16" y1="13" x2="8" y2="13"/>
+                                <line x1="16" y1="17" x2="8" y2="17"/>
+                                <polyline points="10 9 9 9 8 9"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Certification</h3>
+                        <p class="feature-description">Participants receive recognized certificates upon completion, validating their new data analytics skills.</p>
+                    </article>
+
+                    <article class="feature-card">
+                        <div class="feature-icon">
+                            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                        </div>
+                        <h3 class="feature-title">Ongoing Support</h3>
+                        <p class="feature-description">Access to instructor support, course materials, and resources even after program completion.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" style="background: var(--gray-50);">
+            <div class="container">
+                <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                    <h2 style="font-size: var(--text-3xl); margin-bottom: 1.5rem;">What We Offer</h2>
+                    <p style="font-size: var(--text-lg); color: var(--gray-600); line-height: 1.8; margin-bottom: 3rem;">
+                        Our partnership programs are designed to deliver maximum value and measurable results.
+                    </p>
+
+                    <div style="text-align: left; display: grid; gap: 2rem;">
+                        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--teal-primary); color: white; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem;">1</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem;">Needs Assessment</h3>
+                                <p style="color: var(--gray-600); margin-bottom: 0;">We analyze your requirements and design a program that aligns with your goals.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--teal-primary); color: white; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem;">2</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem;">Curriculum Development</h3>
+                                <p style="color: var(--gray-600); margin-bottom: 0;">Custom course content tailored to your industry, tools, and skill level requirements.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--teal-primary); color: white; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem;">3</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem;">Expert Instruction</h3>
+                                <p style="color: var(--gray-600); margin-bottom: 0;">Experienced instructors deliver engaging, hands-on training sessions with real-world projects.</p>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; gap: 1.5rem; align-items: flex-start;">
+                            <div style="flex-shrink: 0; width: 48px; height: 48px; background: var(--teal-primary); color: white; border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem;">4</div>
+                            <div>
+                                <h3 style="margin-bottom: 0.5rem;">Assessment & Certification</h3>
+                                <p style="color: var(--gray-600); margin-bottom: 0;">Comprehensive evaluations and official certification for all successful participants.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2 class="cta-title">Ready to Partner With Us?</h2>
+                    <p class="cta-text">Let's discuss how we can help transform your team's data capabilities.</p>
+                    <div class="cta-buttons">
+                        <a href="contact.html" class="btn btn-primary btn-large">Get in Touch</a>
+                        <a href="courses.html" class="btn btn-outline btn-large">View Courses</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer" role="contentinfo" id="site-footer">
+        <!-- Footer populated dynamically -->
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/site-content-default.js" defer></script>
 </body>
 </html>

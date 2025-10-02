@@ -1,142 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog Post - Empirici Academy</title>
-  <meta name="description" content="Read the latest insights and tips from Empirici Academy's blog.">
-  <link rel="icon" href="/assets/logo.png" type="image/png">
-  
-  <link rel="stylesheet" href="/css/style.css">
-  <script src="/js/site-content-default.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Read this blog post from Empirici Academy">
+    <title id="page-title">Blog Post - Empirici Academy</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  
-  <!-- Header -->
-  <header class="header">
-    <nav class="container nav">
-      <a href="/index.html">
-        <img src="/assets/logo.png" alt="Empirici Academy" class="logo" data-key="site.logo">
-      </a>
-      
-      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-        <span class="hamburger"></span>
-      </button>
-      
-      <ul class="nav-menu">
-        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
-        <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="/courses.html" class="nav-link">Courses</a></li>
-        <li class="nav-item"><a href="/collaboration.html" class="nav-link">Collaboration</a></li>
-        <li class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></li>
-        <li class="nav-item"><a href="/contact.html" class="nav-link btn btn-primary">Contact Us</a></li>
-      </ul>
-    </nav>
-  </header>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <header class="header" id="header">
+        <nav class="container nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.svg" alt="Empirici Academy" class="logo-image" width="40" height="40">
+                <span class="logo-text">Empirici Academy</span>
+            </a>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="blog.html" class="nav-link active" aria-current="page">Blog</a></li>
+                <li><a href="collaboration.html" class="nav-link">Collaborate</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- Breadcrumb -->
-  <section class="section section-sm" style="background: var(--light-gray);">
-    <div class="container">
-      <div class="breadcrumb">
-        <a href="/index.html">Home</a> / 
-        <a href="/blog.html">Blog</a> / 
-        <span class="post-title">Post</span>
-      </div>
-    </div>
-  </section>
+    <main id="main-content">
+        <article class="section">
+            <div class="container" style="max-width: 900px;">
+                <div id="post-content">
+                    <div style="text-align: center; padding: 4rem 2rem;">
+                        <div class="skeleton-card" style="max-width: 100%; height: 600px; margin: 0 auto;"></div>
+                    </div>
+                </div>
+                
+                <div id="post-not-found" style="display: none; text-align: center; padding: 4rem 2rem;">
+                    <h2 style="color: var(--gray-600); margin-bottom: 1rem;">Post Not Found</h2>
+                    <p style="color: var(--gray-500); margin-bottom: 2rem;">The blog post you're looking for doesn't exist.</p>
+                    <a href="blog.html" class="btn btn-primary">Back to Blog</a>
+                </div>
+            </div>
+        </article>
 
-  <!-- Blog Post Content -->
-  <article class="section">
-    <div class="container">
-      <div class="blog-post-header">
-        <h1>Loading Post...</h1>
-        <p class="blog-post-meta">
-          <span>Date</span> • <span>Author</span>
-        </p>
-      </div>
-      
-      <img src="/assets/hero.png" alt="Featured Image" class="blog-post-featured-image-fixed">
-      
-      <div class="blog-post-content">
-        <p>Loading post content...</p>
-      </div>
-      
-      <div class="blog-post-actions">
-        <a href="/blog.html" class="btn btn-outline">← Back to Blog</a>
-        
-        <div class="social-share">
-          <span>Share:</span>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="Share on LinkedIn">
-              <img src="/assets/linkedin.svg" alt="LinkedIn" style="width: 20px; height: 20px;">
-            </a>
-            <a href="#" class="social-link" aria-label="Share on Twitter">
-              <img src="/assets/twitter.svg" alt="Twitter" style="width: 20px; height: 20px;">
-            </a>
-            <a href="#" class="social-link" aria-label="Share on Facebook">
-              <img src="/assets/facebook.svg" alt="Facebook" style="width: 20px; height: 20px;">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </article>
+        <section class="section" style="background: var(--gray-50);">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Related Posts</h2>
+                </div>
+                
+                <div id="related-posts" class="blog-grid">
+                    <!-- Related posts loaded dynamically -->
+                </div>
+            </div>
+        </section>
 
-  <!-- More Posts Section -->
-  <section class="section" style="background: var(--light-gray);">
-    <div class="container">
-      <h2 style="text-align: center; margin-bottom: 48px;">More from our Blog</h2>
-      <div style="text-align: center;">
-        <a href="/blog.html" class="btn btn-primary">View All Posts</a>
-      </div>
-    </div>
-  </section>
+        <section class="section cta-section">
+            <div class="container">
+                <div class="cta-card">
+                    <h2 class="cta-title">Interested in Learning More?</h2>
+                    <p class="cta-text">Check out our comprehensive courses on data analytics and business intelligence.</p>
+                    <div class="cta-buttons">
+                        <a href="courses.html" class="btn btn-primary btn-large">View Courses</a>
+                        <a href="contact.html" class="btn btn-outline btn-large">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="grid grid-3">
-        <div class="footer-section">
-          <h3 data-key="site.name">Empirici Academy</h3>
-          <p data-key="site.tagline">Knowledge Gained Through Experience</p>
-          <div class="social-links">
-            <a href="#" class="social-link" aria-label="LinkedIn">
-              <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
-            </a>
-            <a href="#" class="social-link" aria-label="Twitter">
-              <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
-            </a>
-            <a href="#" class="social-link" aria-label="Facebook">
-              <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
-            </a>
-          </div>
-        </div>
-        
-        <div class="footer-section">
-          <h4>Quick Links</h4>
-          <ul class="footer-links">
-            <li><a href="/about.html">About</a></li>
-            <li><a href="/courses.html">Courses</a></li>
-            <li><a href="/collaboration.html">Collaboration</a></li>
-            <li><a href="/blog.html">Blog</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
-        
-        <div class="footer-section footer-contact">
-          <h4>Contact</h4>
-          <p data-key="site.email">info@empirici.academy</p>
-          <p data-key="site.phone">+20 100 000 0000</p>
-          <p data-key="site.address">Cairo, Egypt</p>
-        </div>
-      </div>
-      
-      <div class="footer-bottom">
-        <p>&copy; 2025 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
+    <footer class="footer" role="contentinfo" id="site-footer">
+        <!-- Footer populated dynamically -->
+    </footer>
 
-  <script src="/js/main.js"></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/site-content-default.js" defer></script>
+    <script>
+        // Load individual blog post
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const postId = urlParams.get('id');
+            
+            if (!postId) {
+                document.getElementById('post-content').style.display = 'none';
+                document.getElementById('post-not-found').style.display = 'block';
+                return;
+            }
+            
+            const blogPosts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
+            const post = blogPosts.find(p => p.id == postId);
+            
+            if (!post) {
+                document.getElementById('post-content').style.display = 'none';
+                document.getElementById('post-not-found').style.display = 'block';
+                return;
+            }
+            
+            document.getElementById('page-title').textContent = post.title + ' - Empirici Academy';
+            
+            const postContent = document.getElementById('post-content');
+            postContent.innerHTML = `
+                <header style="margin-bottom: 3rem;">
+                    <a href="blog.html" style="color: var(--teal-primary); font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; margin-bottom: 2rem;">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="15 18 9 12 15 6"/>
+                        </svg>
+                        Back to Blog
+                    </a>
+                    
+                    <h1 style="font-size: var(--text-4xl); margin-bottom: 1.5rem; color: var(--navy-dark);">${post.title}</h1>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; color: var(--gray-500); font-size: var(--text-sm); margin-bottom: 2rem;">
+                        ${post.author ? `<div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            By ${post.author}
+                        </div>` : ''}
+                        <div style="display: flex; align-items: center; gap: 0.5rem;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                                <line x1="16" y1="2" x2="16" y2="6"/>
+                                <line x1="8" y1="2" x2="8" y2="6"/>
+                                <line x1="3" y1="10" x2="21" y2="10"/>
+                            </svg>
+                            ${post.date}
+                        </div>
+                    </div>
+                    
+                    ${post.image ? `<img src="${post.image}" alt="${post.title}" style="width: 100%; height: 400px; object-fit: cover; border-radius: var(--radius-xl); margin-bottom: 2rem;">` : ''}
+                </header>
+                
+                <div style="font-size: var(--text-lg); line-height: 1.8; color: var(--gray-700);">
+                    ${post.content || post.excerpt || ''}
+                </div>
+            `;
+            
+            const relatedPosts = blogPosts.filter(p => p.id != postId).slice(0, 3);
+            const relatedContainer = document.getElementById('related-posts');
+            
+            if (relatedPosts.length > 0) {
+                relatedContainer.innerHTML = relatedPosts.map(p => `
+                    <article class="blog-card">
+                        ${p.image ? `<img src="${p.image}" alt="${p.title}" class="blog-image">` : ''}
+                        <div class="blog-content">
+                            <div class="blog-meta-stacked">
+                                ${p.author ? `<div class="blog-author">${p.author}</div>` : ''}
+                                <div class="blog-date">${p.date}</div>
+                            </div>
+                            <h3 class="blog-title">${p.title}</h3>
+                            <p class="blog-excerpt">${p.excerpt}</p>
+                            <a href="post.html?id=${p.id}" class="blog-link">
+                                Read More
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="9 18 15 12 9 6"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </article>
+                `).join('');
+            } else {
+                relatedContainer.parentElement.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

@@ -1,0 +1,166 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Data Analysis Fundamentals",
+      "description": "Master the basics of data analysis including data cleaning, exploration, and visualization. Perfect for beginners.",
+      "level": "beginner",
+      "duration": "8 weeks",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Power BI Mastery",
+      "description": "Learn to create interactive dashboards and reports with Microsoft Power BI. From basics to advanced DAX.",
+      "level": "intermediate",
+      "duration": "6 weeks",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Advanced Tableau",
+      "description": "Create stunning data visualizations and interactive dashboards with Tableau. Real-world projects included.",
+      "level": "intermediate",
+      "duration": "7 weeks",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Python for Data Science",
+      "description": "Learn Python programming essentials for data analysis with Pandas, NumPy, and Matplotlib.",
+      "level": "beginner",
+      "duration": "10 weeks",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "SQL for Analytics",
+      "description": "Master SQL queries, joins, and database design for effective data analysis and reporting.",
+      "level": "beginner",
+      "duration": "5 weeks",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Statistical Analysis",
+      "description": "Understand statistical methods, hypothesis testing, and predictive modeling for data-driven decisions.",
+      "level": "advanced",
+      "duration": "9 weeks",
+      "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": false
+    }
+  ],
+  "blogPosts": [
+    {
+      "id": 1,
+      "title": "10 Essential Data Analysis Skills Every Analyst Needs",
+      "excerpt": "Discover the core competencies that will make you stand out in the competitive field of data analytics.",
+      "content": "<p>Data analysis has become one of the most sought-after skills in today's job market. Whether you're just starting or looking to advance your career, mastering these essential skills will set you apart.</p><h2>1. Statistical Knowledge</h2><p>Understanding statistics is fundamental to data analysis. You need to know distributions, correlations, hypothesis testing, and regression analysis.</p><h2>2. Programming Skills</h2><p>Python and R are the most popular languages for data analysis. Learn libraries like Pandas, NumPy, and Matplotlib.</p><h2>3. Data Visualization</h2><p>Being able to communicate insights visually is crucial. Master tools like Tableau, Power BI, or Python visualization libraries.</p>",
+      "date": "October 1, 2025",
+      "author": "Dr. Ahmed Hassan",
+      "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Power BI vs Tableau: Which Tool Should You Learn?",
+      "excerpt": "A comprehensive comparison of the two leading business intelligence platforms to help you choose the right one.",
+      "content": "<p>Choosing between Power BI and Tableau is one of the most common dilemmas for aspiring data analysts. Both tools are industry leaders, but they have different strengths and use cases.</p><h2>Power BI Advantages</h2><p>Microsoft Power BI integrates seamlessly with other Microsoft products, has a lower cost, and is easier for beginners. It's particularly strong in the enterprise space.</p><h2>Tableau Advantages</h2><p>Tableau offers more advanced visualization capabilities, better performance with large datasets, and a more intuitive drag-and-drop interface.</p>",
+      "date": "September 28, 2025",
+      "author": "Sarah Ahmed",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Getting Started with Python for Data Analysis",
+      "excerpt": "Your complete beginner's guide to using Python libraries like Pandas and NumPy for data manipulation.",
+      "content": "<p>Python has become the go-to language for data analysis. This guide will help you get started with the essential libraries and concepts.</p><h2>Why Python?</h2><p>Python is versatile, has a gentle learning curve, and has an extensive ecosystem of data science libraries.</p><h2>Essential Libraries</h2><p>Start with Pandas for data manipulation, NumPy for numerical computing, and Matplotlib for visualization.</p>",
+      "date": "September 25, 2025",
+      "author": "Mohamed Ibrahim",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
+      "featured": true
+    }
+  ],
+  "team": [
+    {
+      "id": 1,
+      "name": "Dr. Ahmed Hassan",
+      "role": "Lead Instructor - Data Science",
+      "bio": "15+ years of experience in data science and analytics. Former data scientist at Fortune 500 companies."
+    },
+    {
+      "id": 2,
+      "name": "Sarah Ahmed",
+      "role": "Senior Instructor - Business Intelligence",
+      "bio": "Power BI and Tableau expert with 10 years of experience in corporate training and consulting."
+    },
+    {
+      "id": 3,
+      "name": "Mohamed Ibrahim",
+      "role": "Instructor - Python & Statistics",
+      "bio": "Data analyst turned educator. Passionate about making complex statistical concepts accessible."
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "quote": "Empirici Academy transformed my career. The hands-on approach and real-world projects gave me the confidence to land my dream job as a data analyst.",
+      "author": "Fatma Khalil",
+      "role": "Data Analyst at Tech Corp"
+    },
+    {
+      "id": 2,
+      "quote": "The instructors are incredibly knowledgeable and supportive. I went from zero coding experience to building complex dashboards in just a few months.",
+      "author": "Omar Mansour",
+      "role": "Business Intelligence Developer"
+    },
+    {
+      "id": 3,
+      "quote": "Best investment in my professional development. The curriculum is practical, up-to-date, and directly applicable to my work.",
+      "author": "Layla Hassan",
+      "role": "Data Scientist"
+    }
+  ],
+  "stats": [
+    {
+      "id": 1,
+      "number": 500,
+      "label": "Students Trained"
+    },
+    {
+      "id": 2,
+      "number": 15,
+      "label": "Expert Instructors"
+    },
+    {
+      "id": 3,
+      "number": 20,
+      "label": "Courses Offered"
+    },
+    {
+      "id": 4,
+      "number": 95,
+      "label": "Success Rate %"
+    }
+  ],
+  "siteSettings": {
+    "email": "info@empirici.academy",
+    "phone": "+20 100 000 0000",
+    "address": "Cairo, Egypt",
+    "facebook": "https://facebook.com/empirici",
+    "linkedin": "https://linkedin.com/company/empirici",
+    "twitter": "https://twitter.com/empirici"
+  }
+}
