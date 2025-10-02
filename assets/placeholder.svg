@@ -1,6 +1,0 @@
-<svg width="400" height="300" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="400" height="300" fill="#F7F9FB"/>
-  <rect x="100" y="100" width="200" height="100" fill="#1B9AAA" opacity="0.2"/>
-  <path d="M150 150 L200 120 L250 150 L200 180 Z" fill="#107D8B" opacity="0.4"/>
-  <text x="200" y="240" text-anchor="middle" fill="#0A1C28" font-family="Arial" font-size="16">Empirici Academy</text>
-</svg>
