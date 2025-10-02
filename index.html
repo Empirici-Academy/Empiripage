@@ -1,211 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empirici Academy — Home</title>
-    <meta name="description" content="Practical, hands-on data courses: Data Analysis, Statistics, Power BI, Tableau — designed for learners of all levels.">
-    
-    <!-- OpenGraph Tags -->
-    <meta property="og:title" content="Empirici Academy — Home">
-    <meta property="og:description" content="Knowledge Gained Through Experience">
-    <meta property="og:image" content="/assets/logo.png">
-    <meta property="og:type" content="website">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- CSS -->
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-key="site.name">Empirici Academy</title>
+  <meta name="description" content="Practical, hands-on data courses: Data Analysis, Statistics, Power BI, Tableau — designed for learners of all levels.">
+  <meta name="keywords" content="data analysis, statistics, Power BI, Tableau, data courses, Egypt">
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- IMPORTANT: Load defaults BEFORE main.js -->
+  <script src="/js/site-content-default.js"></script>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <a href="#main-content" class="skip-to-content">Skip to main content</a>
-        <nav class="nav container">
-            <div class="nav-brand">
-                <a href="/index.html" class="logo-link">
-                    <img src="/assets/logo.png" alt="Empirici Academy" data-key="site.name" data-alt="site.name" class="logo">
-                </a>
-            </div>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
-            
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="/index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/courses.html" class="nav-link">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/collaboration.html" class="nav-link">Collaboration</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog.html" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact.html" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item nav-item-admin">
-                    <a href="/admin.html" class="nav-link nav-link-admin">Admin</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  
+  <!-- Header -->
+  <header class="header">
+    <nav class="container nav">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="Empirici Academy" class="logo" data-key="site.logo">
+      </a>
+      
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/courses.html" class="nav-link">Courses</a></li>
+        <li class="nav-item"><a href="/collaboration.html" class="nav-link">Collaboration</a></li>
+        <li class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="/contact.html" class="nav-link btn btn-primary">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main id="main-content">
-        <!-- Hero Section -->
-        <section class="hero" style="background: linear-gradient(135deg, var(--teal-1), var(--teal-2));">
-            <div class="container">
-                <div class="hero-content">
-                    <div class="hero-text">
-                        <h1 data-key="home.hero.title">Knowledge Gained Through Experience</h1>
-                        <p class="hero-subtitle" data-key="home.hero.subtitle">Practical, hands-on data courses: Data Analysis, Statistics, Power BI, Tableau — designed for learners of all levels.</p>
-                        <div class="hero-actions">
-                            <a href="/courses.html" class="btn btn-primary" data-key="home.hero.primaryCta" data-ignore-href="true">Explore Courses</a>
-                            <a href="/contact.html" class="btn btn-outline" data-key="home.hero.secondaryCta" data-ignore-href="true">Contact Us</a>
-                        </div>
-                    </div>
-                    <div class="hero-image">
-                        <img src="/assets/hero.png" alt="Empirici Academy students learning" data-key="home.hero.heroImage">
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Intro Section -->
-        <section class="section">
-            <div class="container">
-                <div class="intro-content">
-                    <h2 data-key="home.intro.heading">Who We Are</h2>
-                    <p data-key="home.intro.paragraph">Empirici Academy is a small, student-centered educational institution specializing in practical data and analytics training. We emphasize hands-on projects and real-world experience to build skills you can apply immediately.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Featured Courses Section -->
-        <section class="section" style="background: var(--light-gray);">
-            <div class="container">
-                <h2 style="text-align: center; margin-bottom: 48px;">Featured Courses</h2>
-                
-                <div class="grid grid-3" id="featured-courses-container">
-                    <!-- Courses will be dynamically rendered here -->
-                </div>
-                
-                <!-- Course Template (hidden) -->
-                <template id="course-template">
-                    <div class="card course-card">
-                        <img src="/assets/course-1.png" alt="Course image" data-key="home.featuredCourses[i].image" class="course-image">
-                        <div class="course-content">
-                            <h3 data-key="home.featuredCourses[i].title">Course Title</h3>
-                            <div class="course-meta">
-                                <span class="course-level" data-key="home.featuredCourses[i].level">Level</span>
-                                <span class="course-duration" data-key="home.featuredCourses[i].duration">Duration</span>
-                            </div>
-                            <p class="course-desc" data-key="home.featuredCourses[i].shortDesc">Course description</p>
-                            <div class="course-format" data-key="home.featuredCourses[i].format">Format</div>
-                            <a href="/courses.html" class="btn btn-primary" data-key="home.featuredCourses[i].link" data-ignore-href="true">Learn More</a>
-                        </div>
-                    </div>
-                </template>
-            </div>
-        </section>
-
-        <!-- Testimonial Section -->
-        <section class="section">
-            <div class="container">
-                <div class="testimonial-card card">
-                    <div class="testimonial-badge" data-key="home.testimonial.badge">500+ students trained</div>
-                    <blockquote class="testimonial-quote">
-                        <p data-key="home.testimonial.quote">Empirici Academy gave me the confidence to switch careers into data analysis. The projects were practical and relevant.</p>
-                    </blockquote>
-                    <div class="testimonial-author">
-                        <img src="/assets/team-1.png" alt="Student photo" data-key="home.testimonial.avatar" class="testimonial-avatar">
-                        <div class="testimonial-info">
-                            <strong data-key="home.testimonial.author">Sara H.</strong>
-                            <span data-key="home.testimonial.role">Former Student</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- CTA Banner -->
-        <section class="section" style="background: var(--navy); color: white;">
-            <div class="container">
-                <div class="cta-banner">
-                    <h2 data-key="home.ctaBanner.text">Ready to start your learning journey?</h2>
-                    <a href="/contact.html" class="btn btn-primary" data-key="home.ctaBanner.buttonText" data-ignore-href="true">Contact Us</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content grid grid-3">
-                <div class="footer-section">
-                    <h3 data-key="site.name">Empirici Academy</h3>
-                    <p data-key="site.tagline">Knowledge Gained Through Experience</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
-                        </a>
-                        <a href="#" class="social-link">
-                            <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
-                        </a>
-                        <a href="#" class="social-link">
-                            <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="/courses.html">Courses</a></li>
-                        <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/blog.html">Blog</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <address class="footer-contact">
-                        <p data-key="site.email">info@empirici.academy</p>
-                        <p data-key="site.phone">+20 100 000 0000</p>
-                        <p data-key="site.address">Cairo, Egypt (placeholder)</p>
-                    </address>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
-            </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1 data-key="home.hero.title">Knowledge Gained Through Experience</h1>
+        <p class="hero-subtitle" data-key="home.hero.subtitle">
+          Practical, hands-on data courses: Data Analysis, Statistics, Power BI, Tableau — designed for learners of all levels.
+        </p>
+        <div class="hero-actions">
+          <a href="/courses.html" class="btn btn-primary" data-key="home.hero.primaryCta">Explore Courses</a>
+          <a href="/contact.html" class="btn btn-secondary" data-key="home.hero.secondaryCta">Contact Us</a>
         </div>
-    </footer>
+      </div>
+      <div class="hero-image">
+        <img src="/assets/hero.png" alt="Data Analysis Learning" data-key="home.hero.heroImage">
+      </div>
+    </div>
+  </section>
 
-    <!-- JavaScript -->
-    <script src="/js/site-content-default.js" defer></script>
-    <script src="/js/main.js" defer></script>
-    
-    <!-- Home page specific script -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Render featured courses
-            if (window.EmpiriciUtils) {
-                window.EmpiriciUtils.renderArray('#featured-courses-container', '#course-template', 'home.featuredCourses');
-            }
-        });
-    </script>
+  <!-- Intro Section -->
+  <section class="section">
+    <div class="container">
+      <h2 data-key="home.intro.heading">Who We Are</h2>
+      <p data-key="home.intro.paragraph">
+        Empirici Academy is a student-centered educational institution specializing in practical data and analytics training. 
+        We emphasize hands-on projects and real-world experience to build skills you can apply immediately.
+      </p>
+    </div>
+  </section>
+
+  <!-- Statistics Section -->
+  <section class="section section-sm" style="background: var(--light-gray);">
+    <div class="container">
+      <div class="grid grid-3" id="stats-container">
+        <!-- Stats will be rendered here by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Template for Statistics -->
+  <template id="stat-template">
+    <div class="card stat-card">
+      <h3 data-key="[i].number">500+</h3>
+      <p data-key="[i].label">Students Trained</p>
+    </div>
+  </template>
+
+  <!-- Featured Courses Section - HORIZONTAL SCROLL -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+        <div>
+          <h2>Featured Courses</h2>
+          <p style="margin-bottom: 0;">Start your data journey with our most popular courses</p>
+        </div>
+        <a href="/courses.html" class="btn btn-outline">View All →</a>
+      </div>
+      
+      <div class="horizontal-scroll-container">
+        <div class="horizontal-scroll" id="featured-courses-container">
+          <!-- Featured courses will be rendered here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Template for Featured Courses -->
+  <template id="course-template">
+    <div class="card course-card horizontal-card">
+      <img src="/assets/course-1.png" alt="Course" class="course-image" data-key="[i].image">
+      <div class="course-content">
+        <h3 data-key="[i].title">Course Title</h3>
+        <div class="course-meta">
+          <span data-key="[i].duration">12 weeks</span>
+          <span>•</span>
+          <span data-key="[i].level">Beginner</span>
+        </div>
+        <p data-key="[i].fullDescription" class="course-desc">Course description</p>
+        <div class="course-actions">
+          <a href="/courses.html" class="btn btn-primary">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- Featured Blog Posts Section - HORIZONTAL SCROLL -->
+  <section class="section" style="background: var(--light-gray);">
+    <div class="container">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px;">
+        <div>
+          <h2>Latest from Our Blog</h2>
+          <p style="margin-bottom: 0;">Insights, tips, and news about data analysis</p>
+        </div>
+        <a href="/blog.html" class="btn btn-outline">View All →</a>
+      </div>
+      
+      <div class="horizontal-scroll-container">
+        <div class="horizontal-scroll" id="featured-posts-container">
+          <!-- Featured posts will be rendered here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Template for Featured Posts -->
+  <template id="featured-post-template">
+    <div class="card blog-post-card horizontal-card">
+      <img src="/assets/hero.png" alt="Blog Post" class="blog-post-image" data-key="[i].featuredImage">
+      <div class="blog-post-content">
+        <h3 data-key="[i].title">Blog Post Title</h3>
+        <p class="blog-post-meta">
+          <span data-key="[i].date">2025-09-01</span> • 
+          <span data-key="[i].author">Author</span>
+        </p>
+        <p data-key="[i].excerpt" class="blog-post-excerpt">Blog post excerpt...</p>
+        <a href="/post.html" class="btn btn-outline">Read More</a>
+      </div>
+    </div>
+  </template>
+
+  <!-- Testimonials Section - HORIZONTAL SCROLL - MOVED TO END -->
+  <section class="section">
+    <div class="container">
+      <h2 style="text-align: center; margin-bottom: 48px;">What Our Students Say</h2>
+      
+      <div class="horizontal-scroll-container">
+        <div class="horizontal-scroll" id="testimonials-container">
+          <!-- Testimonials will be rendered here -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Template for Testimonials -->
+  <template id="testimonial-template">
+    <div class="card testimonial-card horizontal-card">
+      <p class="testimonial-quote" data-key="[i].quote">Testimonial quote...</p>
+      <div class="testimonial-author">
+        <div class="testimonial-info">
+          <strong data-key="[i].author">Student Name</strong>
+          <span data-key="[i].role">Role</span>
+        </div>
+      </div>
+    </div>
+  </template>
+
+  <!-- CTA Banner -->
+  <section class="section cta-banner" style="background: linear-gradient(135deg, var(--teal-1), var(--teal-2));">
+    <div class="container">
+      <h2 data-key="home.ctaBanner.text">Ready to start your learning journey?</h2>
+      <a href="/contact.html" class="btn btn-secondary" data-key="home.ctaBanner.buttonText">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-3">
+        <div class="footer-section">
+          <h3 data-key="site.name">Empirici Academy</h3>
+          <p data-key="site.tagline">Knowledge Gained Through Experience</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/courses.html">Courses</a></li>
+            <li><a href="/collaboration.html">Collaboration</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section footer-contact">
+          <h4>Contact</h4>
+          <p data-key="site.email">info@empirici.academy</p>
+          <p data-key="site.phone">+20 100 000 0000</p>
+          <p data-key="site.address">Cairo, Egypt</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script src="/js/main.js"></script>
 </body>
 </html>
