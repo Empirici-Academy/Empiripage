@@ -1,168 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Empirici Academy — Courses</title>
-    <meta name="description" content="Practical data courses: Data Analysis, Statistics, Power BI, Tableau — designed for learners of all levels.">
-    <link rel="stylesheet" href="/css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses - Empirici Academy</title>
+  <meta name="description" content="Explore our practical data courses: Data Analysis, Statistics, Power BI, and Tableau training programs.">
+  <link rel="icon" href="/assets/logo.png" type="image/png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <script src="/js/site-content-default.js"></script>
 </head>
 <body>
-    <header class="header">
-        <a href="#main-content" class="skip-to-content">Skip to main content</a>
-        <nav class="nav container">
-            <div class="nav-brand">
-                <a href="/index.html" class="logo-link">
-                    <img src="/assets/logo.png" alt="Empirici Academy" data-key="site.name" data-alt="site.name" class="logo">
-                </a>
-            </div>
-            
-            <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span class="hamburger"></span>
-            </button>
-            
-            <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="/index.html" class="nav-link">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/about.html" class="nav-link">About</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/courses.html" class="nav-link">Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/collaboration.html" class="nav-link">Collaboration</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/blog.html" class="nav-link">Blog</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/contact.html" class="nav-link">Contact</a>
-                </li>
-                <li class="nav-item nav-item-admin">
-                    <a href="/admin.html" class="nav-link nav-link-admin">Admin</a>
-                </li>
-            </ul>
-        </nav>
-    </header>
+  
+  <!-- Header -->
+  <header class="header">
+    <nav class="container nav">
+      <a href="/index.html">
+        <img src="/assets/logo.png" alt="Empirici Academy" class="logo" data-key="site.logo">
+      </a>
+      
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      
+      <ul class="nav-menu">
+        <li class="nav-item"><a href="/index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="/about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="/courses.html" class="nav-link">Courses</a></li>
+        <li class="nav-item"><a href="/collaboration.html" class="nav-link">Collaboration</a></li>
+        <li class="nav-item"><a href="/blog.html" class="nav-link">Blog</a></li>
+        <li class="nav-item"><a href="/contact.html" class="nav-link btn btn-primary">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main id="main-content">
-        <!-- Page Header -->
-        <section class="section-sm" style="background: var(--light-gray);">
-            <div class="container">
-                <h1 data-key="coursesPage.header">Courses — Practical data training</h1>
-                <p class="text-muted" data-key="coursesPage.description">Choose from short workshops to comprehensive programs covering data analysis, visualization, and statistics.</p>
-            </div>
-        </section>
+  <!-- Page Header -->
+  <section class="section section-sm" style="background: var(--light-gray);">
+    <div class="container" style="text-align: center;">
+      <h1 data-key="coursesPage.header">Courses — Practical data training</h1>
+      <p data-key="coursesPage.description">
+        Choose from short workshops to comprehensive programs covering data analysis, visualization, and statistics.
+      </p>
+    </div>
+  </section>
 
-        <!-- Courses List -->
-        <section class="section">
-            <div class="container">
-                <div class="courses-list" id="courses-container">
-                    <!-- Courses will be dynamically rendered here -->
-                </div>
-                
-                <template id="course-detail-template">
-                    <article class="course-detail card" id="course-template-anchor">
-                        <div class="course-detail-grid">
-                            <div class="course-detail-image">
-                                <img src="/assets/course-1.png" alt="Course image" data-key="coursesPage.courses[i].image">
-                            </div>
-                            <div class="course-detail-content">
-                                <h2 data-key="coursesPage.courses[i].title">Course Title</h2>
-                                <div class="course-detail-meta">
-                                    <span class="course-duration" data-key="coursesPage.courses[i].duration">Duration</span>
-                                    <span class="course-level" data-key="coursesPage.courses[i].level">Level</span>
-                                    <span class="course-format" data-key="coursesPage.courses[i].format">Format</span>
-                                </div>
-                                <div class="course-full-desc" data-key="coursesPage.courses[i].fullDescription" data-html="true">
-                                    <p>Course full description</p>
-                                </div>
-                                <a href="/contact.html" class="btn btn-primary">Enroll Now</a>
-                            </div>
-                        </div>
-                    </article>
-                </template>
-            </div>
-        </section>
+  <!-- Courses Grid -->
+  <section class="section">
+    <div class="container">
+      <div id="courses-container">
+        <!-- Courses will be rendered here -->
+      </div>
+    </div>
+  </section>
 
-        <!-- CTA Section -->
-        <section class="section" style="background: var(--navy); color: white;">
-            <div class="container">
-                <div class="cta-banner">
-                    <h2>Ready to start your data journey?</h2>
-                    <p>Contact us to learn more about course schedules, pricing, and enrollment.</p>
-                    <a href="/contact.html" class="btn btn-primary">Get Started</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content grid grid-3">
-                <div class="footer-section">
-                    <h3 data-key="site.name">Empirici Academy</h3>
-                    <p data-key="site.tagline">Knowledge Gained Through Experience</p>
-                    <div class="social-links">
-                        <a href="#" class="social-link">
-                            <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
-                        </a>
-                        <a href="#" class="social-link">
-                            <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
-                        </a>
-                        <a href="#" class="social-link">
-                            <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="/courses.html">Courses</a></li>
-                        <li><a href="/about.html">About Us</a></li>
-                        <li><a href="/blog.html">Blog</a></li>
-                        <li><a href="/contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Contact Info</h4>
-                    <address class="footer-contact">
-                        <p data-key="site.email">info@empirici.academy</p>
-                        <p data-key="site.phone">+20 100 000 0000</p>
-                        <p data-key="site.address">Cairo, Egypt (placeholder)</p>
-                    </address>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2024 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
-            </div>
+  <!-- Template for Course Details -->
+  <template id="course-detail-template">
+    <div class="card" style="margin-bottom: 48px;">
+      <div class="course-detail-grid">
+        <div class="course-detail-image">
+          <img src="/assets/course-1.png" alt="Course" data-key="[i].image">
         </div>
-    </footer>
+        
+        <div>
+          <h2 data-key="[i].title">Course Title</h2>
+          
+          <div class="course-detail-meta">
+            <span>📅 <span data-key="[i].duration">Duration</span></span>
+            <span>📊 <span data-key="[i].level">Level</span></span>
+            <span>🎓 <span data-key="[i].format">Format</span></span>
+          </div>
+          
+          <div class="course-full-desc" data-key="[i].fullDescription" data-html>
+            Course full description
+          </div>
+          
+          <div class="course-actions">
+            <a href="/contact.html" class="btn btn-primary">Enroll Now</a>
+            <a href="#" class="btn btn-outline" data-key="[i].badgerLink">More Info</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </template>
 
-    <script src="/js/site-content-default.js" defer></script>
-    <script src="/js/main.js" defer></script>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            if (window.EmpiriciUtils) {
-                window.EmpiriciUtils.renderArray('#courses-container', '#course-detail-template', 'coursesPage.courses');
-                
-                // Handle hash navigation to specific courses
-                if (window.location.hash) {
-                    const targetElement = document.querySelector(window.location.hash);
-                    if (targetElement) {
-                        setTimeout(() => {
-                            targetElement.scrollIntoView({ behavior: 'smooth' });
-                        }, 500);
-                    }
-                }
-            }
-        });
-    </script>
+  <!-- CTA Section -->
+  <section class="section" style="background: var(--light-gray); text-align: center;">
+    <div class="container">
+      <h2>Need More Information?</h2>
+      <p style="margin-bottom: 24px;">Contact us to learn more about course schedules, pricing, and enrollment.</p>
+      <a href="/contact.html" class="btn btn-primary">Contact Us</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="grid grid-3">
+        <div class="footer-section">
+          <h3 data-key="site.name">Empirici Academy</h3>
+          <p data-key="site.tagline">Knowledge Gained Through Experience</p>
+          <div class="social-links">
+            <a href="#" class="social-link" aria-label="LinkedIn">
+              <img src="/assets/linkedin.svg" alt="LinkedIn" data-key="site.social.linkedin">
+            </a>
+            <a href="#" class="social-link" aria-label="Twitter">
+              <img src="/assets/twitter.svg" alt="Twitter" data-key="site.social.twitter">
+            </a>
+            <a href="#" class="social-link" aria-label="Facebook">
+              <img src="/assets/facebook.svg" alt="Facebook" data-key="site.social.facebook">
+            </a>
+          </div>
+        </div>
+        
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="/about.html">About</a></li>
+            <li><a href="/courses.html">Courses</a></li>
+            <li><a href="/collaboration.html">Collaboration</a></li>
+            <li><a href="/blog.html">Blog</a></li>
+            <li><a href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-section footer-contact">
+          <h4>Contact</h4>
+          <p data-key="site.email">info@empirici.academy</p>
+          <p data-key="site.phone">+20 100 000 0000</p>
+          <p data-key="site.address">Cairo, Egypt</p>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>&copy; 2025 <span data-key="site.name">Empirici Academy</span>. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/main.js"></script>
 </body>
 </html>
