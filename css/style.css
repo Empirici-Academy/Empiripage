@@ -1186,11 +1186,12 @@ img {
 .footer-link {
     color: rgba(255, 255, 255, 0.7);
     transition: all var(--transition-fast);
+    display: inline-block;
 }
 
 .footer-link:hover {
     color: var(--white);
-    padding-left: 0.5rem;
+    transform: translateX(0.5rem);
 }
 
 .footer-contact {
