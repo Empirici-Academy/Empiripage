@@ -3,4 +3,4 @@ Disallow: /admin.html
 Disallow: /js/admin.js
 Disallow: /data/site-data.json
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Sitemap: https://empirici.dpdns.org/sitemap.xml
