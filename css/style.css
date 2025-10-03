@@ -728,11 +728,19 @@ img {
 
 .course-image {
     width: 100%;
+    height: 250px;
+    object-fit: contain;  /* forces image to stretch/shrink */
+    background: var(--gray-100);
+}
+
+/* old version
+.course-image {
+    width: 100%;
     height: 200px;
     object-fit: cover;
     background: var(--gray-100);
 }
-
+*/
 .course-content {
     padding: var(--space-4);
     flex: 1;

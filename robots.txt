@@ -1,6 +1,12 @@
 User-agent: *
 Disallow: /admin.html
+Disallow: /post-builder.html
 Disallow: /js/admin.js
 Disallow: /data/site-data.json
 
-Sitemap: https://yourdomain.com/sitemap.xml
+Disallow: /admin
+Disallow: /post-builder
+Disallow: /js/admin
+Disallow: /data/site-data
+
+Sitemap: https://empirici.dpdns.org/sitemap.xml

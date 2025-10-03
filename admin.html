@@ -85,7 +85,10 @@
             <div class="admin-section">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
                     <h2>Manage Blog Posts</h2>
-                    <button class="admin-btn admin-btn-primary" onclick="openBlogModal()">Add New Post</button>
+                    <div style="display: flex; gap: 0.5rem;">
+                        <button class="admin-btn admin-btn-secondary" onclick="window.open('post-builder.html', '_blank')">📝 Open Post Builder</button>
+                        <button class="admin-btn admin-btn-primary" onclick="openBlogModal()">Add New Post</button>
+                    </div>
                 </div>
                 <table class="admin-table">
                     <thead>

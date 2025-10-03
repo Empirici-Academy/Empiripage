@@ -29,6 +29,36 @@
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
       "badge": "",
       "featured": true
+    },
+    {
+      "id": 4,
+      "title": "Python for Data Science",
+      "description": "Learn Python programming essentials for data analysis with Pandas, NumPy, and Matplotlib.",
+      "level": "beginner",
+      "duration": "10 weeks",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "SQL for Analytics",
+      "description": "Master SQL queries, joins, and database design for effective data analysis and reporting.",
+      "level": "beginner",
+      "duration": "5 weeks",
+      "image": "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Statistical Analysis",
+      "description": "Understand statistical methods, hypothesis testing, and predictive modeling for data-driven decisions.",
+      "level": "advanced",
+      "duration": "9 weeks",
+      "image": "https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=600&fit=crop",
+      "badge": "",
+      "featured": false
     }
   ],
   "blogPosts": [
@@ -36,27 +66,71 @@
       "id": 1,
       "title": "10 Essential Data Analysis Skills Every Analyst Needs",
       "excerpt": "Discover the core competencies that will make you stand out in the competitive field of data analytics.",
-      "content": "<p>Data analysis has become one of the most sought-after skills in today's job market.</p>",
+      "content": "<p>Data analysis has become one of the most sought-after skills in today's job market. Whether you're just starting or looking to advance your career, mastering these essential skills will set you apart.</p><h2>1. Statistical Knowledge</h2><p>Understanding statistics is fundamental to data analysis. You need to know distributions, correlations, hypothesis testing, and regression analysis.</p><h2>2. Programming Skills</h2><p>Python and R are the most popular languages for data analysis. Learn libraries like Pandas, NumPy, and Matplotlib.</p><h2>3. Data Visualization</h2><p>Being able to communicate insights visually is crucial. Master tools like Tableau, Power BI, or Python visualization libraries.</p>",
       "date": "October 1, 2025",
-      "author": "Dr. Ahmed Hassan",
+      "author": "Amr Ayyad",
       "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Power BI vs Tableau: Which Tool Should You Learn?",
+      "excerpt": "A comprehensive comparison of the two leading business intelligence platforms to help you choose the right one.",
+      "content": "<p>Choosing between Power BI and Tableau is one of the most common dilemmas for aspiring data analysts. Both tools are industry leaders, but they have different strengths and use cases.</p><h2>Power BI Advantages</h2><p>Microsoft Power BI integrates seamlessly with other Microsoft products, has a lower cost, and is easier for beginners. It's particularly strong in the enterprise space.</p><h2>Tableau Advantages</h2><p>Tableau offers more advanced visualization capabilities, better performance with large datasets, and a more intuitive drag-and-drop interface.</p>",
+      "date": "September 28, 2025",
+      "author": "Abdelrahmen Elashry",
+      "image": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "Getting Started with Python for Data Analysis",
+      "excerpt": "Your complete beginner's guide to using Python libraries like Pandas and NumPy for data manipulation.",
+      "content": "<p>Python has become the go-to language for data analysis. This guide will help you get started with the essential libraries and concepts.</p><h2>Why Python?</h2><p>Python is versatile, has a gentle learning curve, and has an extensive ecosystem of data science libraries.</p><h2>Essential Libraries</h2><p>Start with Pandas for data manipulation, NumPy for numerical computing, and Matplotlib for visualization.</p>",
+      "date": "September 25, 2025",
+      "author": "Ahmed Sami",
+      "image": "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=600&fit=crop",
       "featured": true
     }
   ],
   "team": [
     {
       "id": 1,
-      "name": "Dr. Ahmed Hassan",
-      "role": "Lead Instructor - Data Science",
-      "bio": "15+ years of experience in data science and analytics."
+      "name": "Amr Ayyad",
+      "role": "Lead Instructor - Founder",
+      "bio": "7+ years of experience as a data consultant."
+    },
+    {
+      "id": 3,
+      "name": "Abdelrahmen Elashry",
+      "role": "BI Developer",
+      "bio": "Power BI and Tableau expert turned instructor"
+    },
+    {
+      "id": 2,
+      "name": "Ahmed Sami",
+      "role": "Senior Instructor - Python Developer",
+      "bio": "Passionate about making complex programming concepts accessible."
     }
   ],
   "testimonials": [
     {
       "id": 1,
-      "quote": "Empirici Academy transformed my career. The hands-on approach gave me confidence.",
+      "quote": "Empirici Academy transformed my career. The hands-on approach and real-world projects gave me the confidence to land my dream job as a data analyst.",
       "author": "Fatma Khalil",
-      "role": "Data Analyst at Tech Corp"
+      "role": "Data Analyst"
+    },
+    {
+      "id": 2,
+      "quote": "The instructors are incredibly knowledgeable and supportive. I went from zero coding experience to building complex dashboards in just a few months.",
+      "author": "Omar Mansour",
+      "role": "Business Intelligence Developer"
+    },
+    {
+      "id": 3,
+      "quote": "Best investment in my professional development. The curriculum is practical, up-to-date, and directly applicable to my work.",
+      "author": "Layla Hassan",
+      "role": "Data Scientist"
     }
   ],
   "stats": [
@@ -67,8 +141,8 @@
     },
     {
       "id": 2,
-      "number": 15,
-      "label": "Expert Instructors"
+      "number": 100,
+      "label": "Sessions Taught"
     },
     {
       "id": 3,
@@ -91,14 +165,14 @@
   ],
   "socialMedia": [
     {
-      "id": 1,
+      "id": 2,
       "name": "Facebook",
-      "url": "https://facebook.com/empirici",
+      "url": "https://www.facebook.com/EmpiriciAcademy/",
       "icon": "assets/icons/facebook.svg",
       "visible": true
     },
     {
-      "id": 2,
+      "id": 1,
       "name": "LinkedIn",
       "url": "https://linkedin.com/company/empirici",
       "icon": "assets/icons/linkedin.svg",
@@ -107,16 +181,16 @@
     {
       "id": 3,
       "name": "Twitter",
-      "url": "https://twitter.com/empirici",
+      "url": "https://x.com/empiriciacademy",
       "icon": "assets/icons/twitter.svg",
       "visible": true
     },
     {
       "id": 4,
       "name": "Instagram",
-      "url": "https://instagram.com/empirici",
+      "url": "https://www.instagram.com/empiriciacademy/",
       "icon": "assets/icons/instagram.svg",
-      "visible": false
+      "visible": true
     },
     {
       "id": 5,
@@ -127,8 +201,10 @@
     }
   ],
   "siteSettings": {
-    "email": "info@empirici.academy",
-    "phone": "+20 100 000 0000",
-    "address": "Cairo, Egypt"
+    "email": "info@empirici.dpdns.org",
+    "address": "Cairo, Egypt",
+    "_phone": "add the [phone] number in here and remove the '_' " 
+
   }
 }
+
