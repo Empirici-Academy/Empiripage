@@ -27,16 +27,16 @@
     // Initialize localStorage with JSON data
     // ================================
     async function initializeData() {
-        // Check if data already exists
         const hasData = localStorage.getItem('courses') && 
                        localStorage.getItem('blogPosts') && 
                        localStorage.getItem('team') && 
                        localStorage.getItem('testimonials') &&
                        localStorage.getItem('stats') &&
-                       localStorage.getItem('siteSettings');
+                       localStorage.getItem('siteSettings') &&
+                       localStorage.getItem('contactSubjects') &&
+                       localStorage.getItem('socialMedia');
         
         if (!hasData) {
-            // Load from JSON file
             const data = await loadDataFromJSON();
             if (data) {
                 Object.keys(data).forEach(key => {
@@ -70,7 +70,7 @@
     }
 
     // ================================
-    // Render Courses with Badge Link
+    // Render Courses
     // ================================
     function renderCourses(containerId = 'courses-grid', limit = null, featured = false, showBadge = true) {
         const container = document.getElementById(containerId);
@@ -146,12 +146,10 @@
 
         let posts = JSON.parse(localStorage.getItem('blogPosts') || '[]');
         
-        // ONLY filter featured if explicitly requested
         if (featured === true) {
             posts = posts.filter(p => p.featured === true);
         }
         
-        // Sort by date (newest first)
         posts.sort((a, b) => {
             const dateA = new Date(a.date);
             const dateB = new Date(b.date);
@@ -237,19 +235,28 @@
     }
 
     // ================================
-    // Render Footer with Dynamic Settings
+    // Render Footer with Dynamic Social Media
     // ================================
     function renderFooter() {
         const footer = document.getElementById('site-footer');
         if (!footer) return;
         
         const settings = JSON.parse(localStorage.getItem('siteSettings') || '{}');
+        const socialMedia = JSON.parse(localStorage.getItem('socialMedia') || '[]');
+        
         const email = settings.email || 'info@empirici.academy';
         const phone = settings.phone || '+20 100 000 0000';
         const address = settings.address || 'Cairo, Egypt';
-        const facebook = settings.facebook || '#';
-        const linkedin = settings.linkedin || '#';
-        const twitter = settings.twitter || '#';
+        
+        // Filter visible social media
+        const visibleSocials = socialMedia.filter(s => s.visible);
+        
+        // Generate social links HTML
+        const socialLinksHTML = visibleSocials.map(social => `
+            <a href="${social.url}" class="social-link" aria-label="${social.name}" target="_blank" rel="noopener">
+                <img src="${social.icon}" alt="${social.name}" width="24" height="24" style="display: block;" />
+            </a>
+        `).join('');
         
         footer.innerHTML = `
             <div class="container">
@@ -257,17 +264,7 @@
                     <div class="footer-column">
                         <h3 class="footer-title">Empirici Academy</h3>
                         <p class="footer-description">Empowering learners with practical data skills through hands-on experience and real-world projects.</p>
-                        <div class="footer-social">
-                            <a href="${facebook}" class="social-link" aria-label="Facebook" target="_blank" rel="noopener">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                            </a>
-                            <a href="${linkedin}" class="social-link" aria-label="LinkedIn" target="_blank" rel="noopener">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                            </a>
-                            <a href="${twitter}" class="social-link" aria-label="Twitter" target="_blank" rel="noopener">
-                                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/></svg>
-                            </a>
-                        </div>
+                        ${visibleSocials.length > 0 ? `<div class="footer-social">${socialLinksHTML}</div>` : ''}
                     </div>
                     <div class="footer-column">
                         <h4 class="footer-heading">Quick Links</h4>
@@ -383,54 +380,68 @@
     }
 
     // ================================
+    // Render Contact Form Subjects
+    // ================================
+    function renderContactSubjects() {
+        const subjectSelect = document.getElementById('subject');
+        if (!subjectSelect) return;
+        
+        const subjects = JSON.parse(localStorage.getItem('contactSubjects') || '[]');
+        
+        if (subjects.length === 0) {
+            subjectSelect.innerHTML = '<option value="">Select a subject</option>';
+            return;
+        }
+        
+        subjectSelect.innerHTML = '<option value="">Select a subject</option>' + 
+            subjects.map(subject => `<option value="${subject}">${subject}</option>`).join('');
+    }
+
+    // ================================
     // Initialize on page load
     // ================================
     document.addEventListener('DOMContentLoaded', async () => {
         await initializeData();
         
-        // Render stats
         renderStats();
         
-        // Homepage - Featured only
         if (document.getElementById('courses-scroll')) {
-            renderCourses('courses-scroll', null, true, false); // Featured, no badge
+            renderCourses('courses-scroll', null, true, false);
         }
         
         if (document.getElementById('blog-scroll')) {
-            renderBlogPosts('blog-scroll', 3, true); // Featured blog only
+            renderBlogPosts('blog-scroll', 3, true);
         }
         
         if (document.getElementById('testimonials-scroll')) {
             renderTestimonials('testimonials-scroll');
         }
 
-        // Courses page - All courses with badge
         if (document.getElementById('courses-container')) {
-            renderCourses('courses-container', null, false, true); // All courses, show badge
+            renderCourses('courses-container', null, false, true);
         }
 
-        // Blog page - All posts
         if (document.getElementById('blog-container')) {
-            renderBlogPosts('blog-container', null, false); // All posts
+            renderBlogPosts('blog-container', null, false);
         }
 
-        // About page
         if (document.getElementById('team-scroll')) {
             renderTeam('team-scroll');
         }
         
-        // Contact page
         if (document.getElementById('contact-info-container')) {
             renderContactInfo();
         }
         
-        // Render footer on all pages
+        if (document.getElementById('subject')) {
+            renderContactSubjects();
+        }
+        
         renderFooter();
 
         console.log('✓ Content loaded successfully from JSON');
     });
 
-    // Export functions
     window.EmpiriciContent = {
         renderCourses,
         renderBlogPosts,
@@ -439,6 +450,7 @@
         renderStats,
         renderFooter,
         renderContactInfo,
+        renderContactSubjects,
         initializeData
     };
 })();
