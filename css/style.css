@@ -1331,3 +1331,18 @@ img {
     margin-bottom: 0;
     color: var(--gray-600);
 }
+
+/* ================================
+   Posts's dark code block
+   ================================ */
+}
+pre {
+  background-color: #1e1e1e; /* dark gray */
+  color: #f8f8f2;           /* light text */
+  padding: 12px;
+  border-radius: 6px;
+  overflow-x: auto;
+}
+code {
+  font-family: Consolas, Monaco, 'Courier New', monospace;
+}
