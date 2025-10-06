@@ -92,6 +92,8 @@ empirici-academy/
 ├── css/
 │   └── style.css             # Main styles and variables
 │
+├── faculty/                  # Faculty members pages
+│                   
 ├── js/
 │   ├── cache-buster.js       # Cache versioning helper
 │   ├── main.js               # UI interactions and routing
@@ -99,6 +101,7 @@ empirici-academy/
 │   └── admin.js              # Admin panel logic (CRUD, localStorage)
 │
 ├── data/
+│   ├── team.json             # Team
 │   ├── site-data.json        # Site settings, team, testimonials
 │   ├── courses.json          # Course catalog
 │   └── blog-posts.json       # Blog content
@@ -356,5 +359,6 @@ Empirici Academy Team
 ## Support
 
 For support, bug reports, or feature requests, open an issue in the repository or contact `info@empirici.academy`.
+
 
 
