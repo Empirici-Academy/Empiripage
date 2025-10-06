@@ -11,29 +11,32 @@
     async function loadDataFromJSON() {
         try {
             // Load all three JSON files in parallel
-            const [siteDataResponse, coursesResponse, blogPostsResponse] = await Promise.all([
+            const [siteDataResponse, coursesResponse, blogPostsResponse, teamResponse] = await Promise.all([
                 fetch('data/site-data.json'),
                 fetch('data/courses.json'),
-                fetch('data/blog-posts.json')
+                fetch('data/blog-posts.json'),
+                fetch('data/team.json')                
             ]);
             
             // Check if all responses are OK
-            if (!siteDataResponse.ok || !coursesResponse.ok || !blogPostsResponse.ok) {
+            if (!siteDataResponse.ok || !coursesResponse.ok || !blogPostsResponse.ok || !teamResponse.ok) {
                 throw new Error('Failed to load data');
             }
             
             // Parse all JSON
-            const [siteData, coursesData, blogPostsData] = await Promise.all([
+            const [siteData, coursesData, blogPostsData, teamdata] = await Promise.all([
                 siteDataResponse.json(),
                 coursesResponse.json(),
-                blogPostsResponse.json()
+                blogPostsResponse.json(),
+                teamResponse.json()
             ]);
             
             // Merge all data into one object
             return {
                 ...siteData,
                 courses: coursesData.courses,
-                blogPosts: blogPostsData.blogPosts
+                blogPosts: blogPostsData.blogPosts,
+                team: teamdata.team
             };
         } catch (error) {
             console.error('Error loading data:', error);
@@ -297,7 +300,7 @@
                         <h4 class="footer-heading">Resources</h4>
                         <ul class="footer-links">
                             <li><a href="#" class="footer-link">Student Portal</a></li>
-                            <li><a href="#" class="footer-link">Course Materials</a></li>
+                            <li><a href="faculty/amr-ayyad.html" class="footer-link">Meet Our Team</a></li>
                             <li><a href="#" class="footer-link">FAQs</a></li>
                             <li><a href="contact.html" class="footer-link">Support</a></li>
                         </ul>

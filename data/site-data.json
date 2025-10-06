@@ -1,24 +1,4 @@
 {
-  "team": [
-    {
-      "id": 1,
-      "name": "Amr Ayyad",
-      "role": "Lead Instructor - Founder",
-      "bio": "7+ years of experience as a data consultant."
-    },
-    {
-      "id": 3,
-      "name": "Abdelrahmen Elashry",
-      "role": "BI Developer",
-      "bio": "Power BI and Tableau expert turned instructor"
-    },
-    {
-      "id": 2,
-      "name": "Ahmed Sami",
-      "role": "Senior Instructor - Python Developer",
-      "bio": "Passionate about making complex programming concepts accessible."
-    }
-  ],
   "testimonials": [
     {
       "id": 1,

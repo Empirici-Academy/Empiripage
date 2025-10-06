@@ -719,29 +719,34 @@
             localStorage.clear();
             
             // Load data from all three JSON files in parallel
-            const [siteDataResponse, coursesResponse, blogPostsResponse] = await Promise.all([
+            const [siteDataResponse, coursesResponse, blogPostsResponse, teamResponse] = await Promise.all([
                 fetch('data/site-data.json'),
                 fetch('data/courses.json'),
-                fetch('data/blog-posts.json')
+                fetch('data/blog-posts.json'),
+                fetch('data/team.json')               
+
             ]);
             
             // Check if all responses are OK
-            if (!siteDataResponse.ok || !coursesResponse.ok || !blogPostsResponse.ok) {
+            if (!siteDataResponse.ok || !coursesResponse.ok || !blogPostsResponse.ok || !teamResponse.ok) {
                 throw new Error('Failed to load default data');
             }
             
             // Parse all JSON
-            const [siteData, coursesData, blogPostsData] = await Promise.all([
+            const [siteData, coursesData, blogPostsData, teamdata] = await Promise.all([
                 siteDataResponse.json(),
                 coursesResponse.json(),
-                blogPostsResponse.json()
+                blogPostsResponse.json(),
+                teamResponse.json()
             ]);
             
             // Merge all data
             const data = {
                 ...siteData,
                 courses: coursesData.courses,
-                blogPosts: blogPostsData.blogPosts
+                blogPosts: blogPostsData.blogPosts,
+                team: teamdata.team
+
             };
             
             // Restore defaults to localStorage

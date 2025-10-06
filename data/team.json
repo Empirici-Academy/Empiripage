@@ -1,0 +1,25 @@
+{
+  "team": [
+    {
+      "id": 1,
+      "name": "Amr Ayyad",
+      "role": "Lead Instructor - Founder",
+      "bio": "7+ years of experience as a data consultant.",
+      "linkedin": "https://www.linkedin.com/in/amr-m-ayyad/",
+      "image": "https://media.licdn.com/dms/image/v2/D4D03AQFKr7kh2UVqdQ/profile-displayphoto-scale_400_400/B4DZgfBBU1GgAk-/0/1752867022591?e=1762387200&v=beta&t=OobR3zrtp9VE9WTLCjVaGFQWAEKI_tb96psDB-n90vM",
+      "credentials": ["Microsoft Certified", "Tableau Master"]
+    },
+    {
+      "id": 3,
+      "name": "Abdelrahmen Elashry",
+      "role": "BI Developer",
+      "bio": "Power BI and Tableau expert turned instructor"
+    },
+    {
+      "id": 2,
+      "name": "Ahmed Sami",
+      "role": "Senior Instructor - Python Developer",
+      "bio": "Passionate about making complex programming concepts accessible."
+    }
+  ]
+}

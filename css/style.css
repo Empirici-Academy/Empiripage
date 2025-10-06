@@ -1344,3 +1344,95 @@ pre {
 code {
   font-family: Consolas, Monaco, 'Courier New', monospace;
 }
+/* ================================
+   INSTRUCTOR PAGE STYLES
+   ================================ */
+
+/* Instructor spotlight grid */
+.instructor-spotlight-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.instructor-image-wrapper {
+    position: relative;
+}
+
+.instructor-image-wrapper img {
+    width: 70%;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+}
+
+.verification-badge {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: var(--teal-primary);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.instructor-title {
+    font-size: 2.5rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.instructor-subtitle {
+    font-size: 1.2rem;
+    color: var(--gray-600);
+    margin-bottom: 2rem;
+}
+
+/* Credentials grid */
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.credential-badge {
+    background: var(--gray-50);
+    padding: 1rem;
+    border-radius: 8px;
+    border-left: 4px solid var(--teal-primary);
+}
+
+.credential-badge strong {
+    display: block;
+    color: var(--teal-primary);
+    margin-bottom: 0.25rem;
+}
+
+.credential-badge span {
+    font-size: 0.9rem;
+    color: var(--gray-600);
+}
+
+.instructor-bio {
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--gray-700);
+    margin: 2rem 0;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .instructor-spotlight-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .credentials-grid {
+        grid-template-columns: 1fr;
+    }
+}
