@@ -1330,11 +1330,9 @@ img {
 .contact-info-content p {
     margin-bottom: 0;
     color: var(--gray-600);
-}
-
 /* ================================
    Posts's dark code block
-   ================================ */
+   ================================ */    
 }
 pre {
   background-color: #1e1e1e; /* dark gray */

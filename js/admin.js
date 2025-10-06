@@ -718,12 +718,31 @@
             // Clear all localStorage
             localStorage.clear();
             
-            // Reload data from JSON file
-            const response = await fetch('data/site-data.json');
-            if (!response.ok) {
+            // Load data from all three JSON files in parallel
+            const [siteDataResponse, coursesResponse, blogPostsResponse] = await Promise.all([
+                fetch('data/site-data.json'),
+                fetch('data/courses.json'),
+                fetch('data/blog-posts.json')
+            ]);
+            
+            // Check if all responses are OK
+            if (!siteDataResponse.ok || !coursesResponse.ok || !blogPostsResponse.ok) {
                 throw new Error('Failed to load default data');
             }
-            const data = await response.json();
+            
+            // Parse all JSON
+            const [siteData, coursesData, blogPostsData] = await Promise.all([
+                siteDataResponse.json(),
+                coursesResponse.json(),
+                blogPostsResponse.json()
+            ]);
+            
+            // Merge all data
+            const data = {
+                ...siteData,
+                courses: coursesData.courses,
+                blogPosts: blogPostsData.blogPosts
+            };
             
             // Restore defaults to localStorage
             Object.keys(data).forEach(key => {
@@ -733,11 +752,10 @@
             alert('✓ All data has been reset to defaults successfully! Reloading page...');
             location.reload();
         } catch (error) {
-            alert('Error resetting to defaults. Please check your site-data.json file.');
+            alert('Error resetting to defaults. Please check your JSON files.');
             console.error(error);
         }
     };
-
     // ================================
     // DATA IMPORT/EXPORT
     // ================================

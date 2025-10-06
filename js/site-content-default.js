@@ -5,18 +5,36 @@
 
 (function() {
     'use strict';
-
     // ================================
-    // Load Data from JSON File
+    // Load Data from JSON Files
     // ================================
     async function loadDataFromJSON() {
         try {
-            const response = await fetch('data/site-data.json');
-            if (!response.ok) {
+            // Load all three JSON files in parallel
+            const [siteDataResponse, coursesResponse, blogPostsResponse] = await Promise.all([
+                fetch('data/site-data.json'),
+                fetch('data/courses.json'),
+                fetch('data/blog-posts.json')
+            ]);
+            
+            // Check if all responses are OK
+            if (!siteDataResponse.ok || !coursesResponse.ok || !blogPostsResponse.ok) {
                 throw new Error('Failed to load data');
             }
-            const data = await response.json();
-            return data;
+            
+            // Parse all JSON
+            const [siteData, coursesData, blogPostsData] = await Promise.all([
+                siteDataResponse.json(),
+                coursesResponse.json(),
+                blogPostsResponse.json()
+            ]);
+            
+            // Merge all data into one object
+            return {
+                ...siteData,
+                courses: coursesData.courses,
+                blogPosts: blogPostsData.blogPosts
+            };
         } catch (error) {
             console.error('Error loading data:', error);
             return null;

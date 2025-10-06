@@ -1,0 +1,104 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Power BI Analytics",
+      "description": "After completing this course, you’ll be able to import and transform data, and create powerful interactive dashboards in Power BI to streamline your analysis.",
+      "level": "intermediate",
+      "duration": "8 weeks",
+      "image": "assets/images/courses/05.png",
+      "badge": "https://badgr.com/public/badges/wghYfq2tSsST5V5TgWSZ_g",
+      "featured": true
+    },
+    {
+      "id": 2,
+      "title": "Statistics Essentials",
+      "description": "By the end of this course, you’ll understand the core concepts of statistics, spot misleading data, and use visualizations and tests to communicate insights confidently.",
+      "level": "beginner",
+      "duration": "6 weeks",
+      "image": "assets/images/courses/09.png",
+      "badge": "https://badgr.com/public/badges/uM5XGkvMR5G6uC6K93ggkQ",
+      "featured": false
+    },
+    {
+      "id": 3,
+      "title": "Data Analysis with Python",
+      "description": "After this course, you’ll be comfortable using Python and Pandas in Jupyter Lab to clean, analyze, and visualize datasets for meaningful insights.",
+      "level": "intermediate",
+      "duration": "7 weeks",
+      "image": "assets/images/courses/01.png",
+      "badge": "https://badgr.com/public/badges/YeMKVLRIRji73815AA9IzQ",
+      "featured": false
+    },
+    {
+      "id": 4,
+      "title": "SQL Fundamentals",
+      "description": "Once you finish this course, you’ll be able to write SQL queries to retrieve, filter, and join data, giving you strong skills for managing and analyzing databases.",
+      "level": "beginner",
+      "duration": "10 weeks",
+      "image": "assets/images/courses/03.png",
+      "badge": "https://badgr.com/public/badges/L1sViEMLRom0OMO5rdullg",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "Spreadsheets Insights Proficiency",
+      "description": "Through this course, you’ll learn how to use Excel to organize, analyze, and interpret data—building on your stats knowledge to uncover insights.",
+      "level": "beginner",
+      "duration": "5 weeks",
+      "image": "assets/images/courses/07.png",
+      "badge": "https://badgr.com/public/badges/Hpt2Dfl2TeSGhECn_vmHpg",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "Introduction to Python",
+      "description": "After taking this course, you’ll understand the basics of Python coding—variables, loops, functions—and practice them through hands-on projects.",
+      "level": "beginner",
+      "duration": "9 weeks",
+      "image": "assets/images/courses/01.png",
+      "badge": "https://badgr.com/public/badges/rYpsBhRKQiKHfaed7QMlbw",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "Tableau for Analytics and Visualization",
+      "description": "By the end of this course, you’ll be skilled at importing data, shaping it with Tableau Prep, and creating interactive dashboards to communicate insights clearly.",
+      "level": "intermediate",
+      "duration": "6 weeks",
+      "image": "assets/images/courses/04.png",
+      "badge": "https://badgr.com/public/badges/Dp7Mu4-WTIuL9021dHZgmQ",
+      "featured": true
+    },
+    {
+      "id": 8,
+      "title": "Introduction to Machine Learning",
+      "description": "This course will teach you how to apply key machine learning algorithms with Python, preparing and modeling data to solve real-world problems.",
+      "level": "intermediate",
+      "duration": "7 weeks",
+      "image": "assets/images/courses/02.png",
+      "badge": "https://badgr.com/public/badges/Tstb5fjoTcq6D_vOmbJq7A",
+      "featured": true
+    },
+    {
+      "id": 9,
+      "title": "JMP for Statistical Modeling and Visualization",
+      "description": "After this course, you’ll know how to use JMP to run advanced statistical analyses, create clear visualizations, and interpret complex data effectively.",
+      "level": "advanced",
+      "duration": "10 weeks",
+      "image": "assets/images/courses/08.png",
+      "badge": "https://badgr.com/public/badges/9fVFXneLRB2sr2sUw79Xdw",
+      "featured": true
+    },
+    {
+      "id": 10,
+      "title": "Advanced Statistical Analysis",
+      "description": "By completing this course, you’ll gain expertise in advanced tests like ANOVA, regression, and experimental design, equipping you for in-depth data analysis.",
+      "level": "advanced",
+      "duration": "5 weeks",
+      "image": "assets/images/courses/09.png",
+      "badge": "https://badgr.com/public/badges/AyI9fcAkTCWWGm9JaDu0VQ",
+      "featured": true
+    }
+  ]
+}
