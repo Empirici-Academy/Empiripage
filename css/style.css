@@ -1361,10 +1361,18 @@ code {
 }
 
 .instructor-image-wrapper img {
-    width: 70%;
-    border-radius: 16px;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+    max-width: 100%;
+    max-height: 300px;
+    object-fit: contain;  /* forces image to stretch/shrink */
+    border-radius: 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    transition: all var(--transition-base);
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+
 }
+
 
 .verification-badge {
     position: absolute;
