@@ -340,8 +340,8 @@ This project is released under the MIT License. See the `LICENSE` file for full 
 ## Authors
 
 Empirici Academy Team
-Website: [https://empirici.academy](https://empirici.academy)
-Contact: [info@empirici.academy](mailto:info@empirici.academy)
+* Website: [https://empirici.dpdns.org/](https://empirici.dpdns.org/)
+* Contact: [info@empirici.dpdns.org/](mailto:info@empirici.dpdns.org/)
 
 ---
 
@@ -356,3 +356,4 @@ Contact: [info@empirici.academy](mailto:info@empirici.academy)
 ## Support
 
 For support, bug reports, or feature requests, open an issue in the repository or contact `info@empirici.academy`.
+
