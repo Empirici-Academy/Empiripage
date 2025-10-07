@@ -358,7 +358,7 @@ Empirici Academy Team
 
 ## Support
 
-For support, bug reports, or feature requests, open an issue in the repository or contact `info@empirici.academy`.
+For support, bug reports, or feature requests, open an issue in the repository or contact `info@empirici.dpdns.org`.
 
 
 
