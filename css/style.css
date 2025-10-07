@@ -207,7 +207,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--space-3) var(--space-4);
+    padding: var(--space-3) var(--space-3);
     gap: var(--space-4);
 }
 
@@ -221,6 +221,7 @@ img {
     color: var(--navy-dark);
     text-decoration: none;
     transition: transform var(--transition-fast);
+    padding: var(--space-) var(--space-3);
 }
 
 .logo:hover {
@@ -228,8 +229,8 @@ img {
 }
 
 .logo-image {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     object-fit: contain;
 }
 
@@ -272,17 +273,21 @@ img {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: var(--space-4);
+    gap: var(--space-2);
     align-items: center;
 }
 
 .nav-link {
+    display: block; 
     font-weight: 500;
     color: var(--gray-700);
     padding: var(--space-2) var(--space-3);
     border-radius: var(--radius-md);
     transition: all var(--transition-fast);
     position: relative;
+    line-height: 1.5; 
+    text-align: center; 
+
 }
 
 .nav-link::after {
@@ -317,7 +322,7 @@ img {
     transform: translateX(-50%) scaleX(1);
 }
 
-@media (max-width: 968px) {
+@media (max-width: 1000px) {
     .hamburger {
         display: flex;
     }
@@ -381,6 +386,7 @@ img {
 
 .btn-primary:hover {
     background: var(--teal-dark);
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -393,6 +399,7 @@ img {
 
 .btn-secondary:hover {
     background: var(--navy-medium);
+    color: var(--white);
     transform: translateY(-2px);
     box-shadow: var(--shadow-lg);
 }
@@ -669,6 +676,7 @@ img {
     position: relative;
     margin: 0 calc(-1 * var(--space-4));
     padding: 0 var(--space-4);
+
 }
 
 .horizontal-scroll {
@@ -677,7 +685,9 @@ img {
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
-    padding-bottom: var(--space-4);
+    padding-bottom: var(--space-3);
+    padding-top: var(--space-3);
+        padding-left: var(--space-3);
     -webkit-overflow-scrolling: touch;
 }
 
@@ -801,6 +811,7 @@ img {
 
 .course-link:hover {
     background: var(--teal-dark);
+    color: var(--white);
     transform: translateY(-2px);
 }
 
@@ -819,6 +830,7 @@ img {
     background: var(--teal-primary);
     border-color: var(--teal-primary);
     transform: translateY(-2px);
+    color: var(--white);
 }
 
 .course-badge-link svg {
@@ -929,6 +941,7 @@ img {
     transition: all var(--transition-base);
     scroll-snap-align: start;
     min-width: 280px;
+    max-width: 350px;
 }
 
 .team-card:hover {
@@ -939,18 +952,21 @@ img {
 
 .team-name {
     font-size: var(--text-xl);
+    text-align: center;
     margin-bottom: var(--space-2);
     color: var(--navy-dark);
 }
 
 .team-role {
     color: var(--teal-primary);
+    text-align: center;
     font-weight: 600;
     margin-bottom: var(--space-3);
 }
 
 .team-bio {
     color: var(--gray-600);
+    text-align: center;
     line-height: 1.8;
     margin-bottom: 0;
 }
@@ -977,6 +993,7 @@ img {
 }
 
 .testimonial-quote {
+    padding: var(--space-2);
     font-size: var(--text-lg);
     line-height: 1.8;
     color: var(--gray-700);
@@ -1351,8 +1368,8 @@ code {
 /* Instructor spotlight grid */
 .instructor-spotlight-grid {
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 3fr;
+    gap: 1rem;
     align-items: start;
 }
 
@@ -1434,7 +1451,7 @@ code {
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+@media (max-width: 1000px) {
     .instructor-spotlight-grid {
         grid-template-columns: 1fr;
         gap: 2rem;
