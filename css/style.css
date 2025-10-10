@@ -1474,7 +1474,7 @@ code {
   padding: 16px;
   margin: 20px;
   width: 95%;
-  max-width: 1000px;
+  max-width: 100%;
 }
 .responsive-iframe {
   position: relative;
@@ -1492,4 +1492,5 @@ code {
   height: 100%;
   border: none;
   border-radius: 10px;
+
 }
