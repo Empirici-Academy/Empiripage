@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="../">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Empirici Academy - Practical, hands-on data courses: Data Analysis, Statistics, Power BI, Tableau. Transform your career with real-world skills.">
+    <meta name="theme-color" content="#1B9AAA">
+    <title>Empirici Academy - Data Analysis & Analytics Training</title>
+    
+    <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" as="style">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+    
+    <header class="header" id="header" role="banner">
+        <nav class="container nav-container" role="navigation" aria-label="Main navigation">
+            <a href="index.html" class="logo" aria-label="Empirici Academy Home">
+                <img src="assets/logo.svg" alt="Empirici Academy" class="logo-image" width="40" height="40">
+                <span class="logo-text">Empirici Academy</span>
+            </a>
+            
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="nav-menu">
+                <span class="hamburger-line" aria-hidden="true"></span>
+                <span class="hamburger-line" aria-hidden="true"></span>
+                <span class="hamburger-line" aria-hidden="true"></span>
+            </button>
+            
+            <ul class="nav-menu" id="nav-menu" role="list">
+                <li><a href="index.html" class="nav-link active" aria-current="page">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="courses.html" class="nav-link">Courses</a></li>
+                <li><a href="blog.html" class="nav-link">Blog</a></li>
+                <li><a href="collaboration.html" class="nav-link">Collaborate</a></li>
+                <li><a href="contact.html" class="nav-link">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main-content">
+        <div>
+            <h3 style="text-align: center; color: var(--teal-primary); margin-bottom: 1rem;">Regional Sales Dashboard</h3>
+        </div>
+        <div class="dashboard-container">
+            <div class="responsive-iframe">
+            <iframe 
+                title="Regional Sales Sample"
+                src="https://app.powerbi.com/view?r=eyJrIjoiOTc2Y2JkOTUtNmEyNS00MmQ4LWIwMWEtOTExY2QyNTAwYWViIiwidCI6ImViMWIyMTllLWI2MDktNGRmYi1iZmU0LWMzMDY2MDc1MjJmZiJ9"
+                allowFullScreen="true">
+            </iframe>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer" role="contentinfo" id="site-footer">
+        <!-- Footer populated dynamically from site settings -->
+    </footer>
+
+    <script src="js/main.js" defer></script>
+    <script src="js/site-content-default.js" defer></script>
+</body>
+</html>
