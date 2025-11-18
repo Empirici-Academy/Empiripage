@@ -300,7 +300,7 @@
                         <h4 class="footer-heading">Resources</h4>
                         <ul class="footer-links">
                             <li><a href="#" class="footer-link">Student Portal</a></li>
-                            <li><a href="faculty/amr-ayyad.html" class="footer-link">Meet Our Team</a></li>
+                            <li><a href="about.html#meet-our-team" class="footer-link">Meet Our Team</a></li>
                             <li><a href="#" class="footer-link">FAQs</a></li>
                             <li><a href="contact.html" class="footer-link">Support</a></li>
                         </ul>
