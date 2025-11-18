@@ -20,6 +20,12 @@
       "name": "Ahmed Sami",
       "role": "Senior Instructor - Python Developer",
       "bio": "Passionate about making programming concepts accessible."
+    },
+    {
+      "id": 4,
+      "name": "Nadine Elkamery",
+      "role": "Data Analyst - Community Moderator",
+      "bio": "Dedicated to fostering an inclusive, supportive, and engaging environment for all members."
     }
   ]
 }
