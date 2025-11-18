@@ -10,9 +10,9 @@
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="css/style.css?v=1.1.1" as="style">
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" as="style">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1.1.1">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -369,8 +369,8 @@
         <!-- Footer populated dynamically -->
     </footer>
 
-    <script src="js/main.js?v=1.0.1" defer></script>
-    <script src="js/site-content-default.js?v=1.0.1" defer></script>
+    <script src="js/main.js?v=1.1.1" defer></script>
+    <script src="js/site-content-default.js?v=1.1.1" defer></script>
 
 
     <style>
@@ -413,6 +413,90 @@
             transform: translateY(-2px);
             box-shadow: var(--shadow-md);
         }
+
+        /* MOBILE RESPONSIVE FIXES */
+        @media (max-width: 768px) {
+            /* Make banner image shorter on mobile */
+            .section img[alt="DataCamp Scholarship Program"] {
+                height: 200px !important;
+            }
+
+            /* Stack CTA buttons vertically */
+            .section > div > div > div[style*="display: flex"] {
+                flex-direction: column !important;
+            }
+
+            .section > div > div > div[style*="display: flex"] a {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Make Learn More links full width on mobile */
+            section a[href^="https://"],
+            section a[href^="/"] {
+                width: 100%;
+                text-align: center;
+            }
+
+            /* Adjust padding on feature cards */
+            .feature-card {
+                padding: var(--space-4) !important;
+            }
+
+            /* Reduce padding on colored sections */
+            section[style*="background: var(--gray-50)"] {
+                padding: var(--space-6) 0 !important;
+            }
+
+            /* Fix list items on mobile */
+            ul[style*="list-style: none"] li {
+                padding: var(--space-2) !important;
+                font-size: var(--text-sm);
+            }
+
+            /* Make details/FAQ text smaller */
+            details {
+                padding: var(--space-3) !important;
+            }
+
+            details summary {
+                font-size: var(--text-base) !important;
+            }
+
+            /* Reduce hero padding on mobile */
+            .page-hero {
+                padding: var(--space-6) 0 var(--space-4) !important;
+            }
+
+            .page-hero-title {
+                font-size: var(--text-3xl) !important;
+            }
+
+            .page-hero-subtitle {
+                font-size: var(--text-base) !important;
+            }
+        }
+
+        /* Extra small screens */
+        @media (max-width: 480px) {
+            /* Even shorter banner on small phones */
+            .section img[alt="DataCamp Scholarship Program"] {
+                height: 150px !important;
+            }
+
+            /* Reduce spacing */
+            .container {
+                padding: 0 var(--space-2) !important;
+            }
+
+            /* Smaller buttons on tiny screens */
+            .btn-large {
+                padding: var(--space-3) var(--space-4) !important;
+                font-size: var(--text-base) !important;
+            }
+        }
     </style>
+
+
 </body>
 </html>

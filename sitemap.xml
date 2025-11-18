@@ -7,4 +7,5 @@
    <url><loc>https://empirici.dpdns.org/collaboration.html</loc><priority>0.6</priority></url>
    <url><loc>https://empirici.dpdns.org/contact.html</loc><priority>0.6</priority></url>
    <url><loc>https://empirici.dpdns.org/thank-you.html</loc><priority>0.3</priority></url>
+   <url><loc>https://empirici.dpdns.org/datacamp/index.html</loc><priority>0.3</priority></url>
 </urlset>
