@@ -8,4 +8,28 @@
    <url><loc>https://empirici.dpdns.org/contact.html</loc><priority>0.6</priority></url>
    <url><loc>https://empirici.dpdns.org/thank-you.html</loc><priority>0.3</priority></url>
    <url><loc>https://empirici.dpdns.org/datacamp/index.html</loc><priority>0.3</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/</loc><priority>1.0</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/courses.html</loc><priority>0.8</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/about.html</loc><priority>0.7</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/blog.html</loc><priority>0.7</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/collaboration.html</loc><priority>0.6</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/contact.html</loc><priority>0.6</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/thank-you.html</loc><priority>0.3</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/datacamp/index.html</loc><priority>0.3</priority></url>
+   <url><loc>https://empirici.dpdns.org/</loc><priority>1.0</priority></url>
+   <url><loc>https://empirici.dpdns.org/courses/</loc><priority>0.8</priority></url>
+   <url><loc>https://empirici.dpdns.org/about/</loc><priority>0.7</priority></url>
+   <url><loc>https://empirici.dpdns.org/blog/</loc><priority>0.7</priority></url>
+   <url><loc>https://empirici.dpdns.org/collaboration/</loc><priority>0.6</priority></url>
+   <url><loc>https://empirici.dpdns.org/contact/</loc><priority>0.6</priority></url>
+   <url><loc>https://empirici.dpdns.org/thank-you/</loc><priority>0.3</priority></url>
+   <url><loc>https://empirici.dpdns.org/datacamp/</loc><priority>0.3</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/</loc><priority>1.0</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/courses/</loc><priority>0.8</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/about/</loc><priority>0.7</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/blog/</loc><priority>0.7</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/collaboration/</loc><priority>0.6</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/contact/</loc><priority>0.6</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/thank-you/</loc><priority>0.3</priority></url>
+   <url><loc>https://www.empirici.dpdns.org/datacamp/</loc><priority>0.3</priority></url>
 </urlset>
