@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="2.1.1" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url><loc>https://empirici.org/</loc><priority>1.0</priority></url>
    <url><loc>https://empirici.org/courses.html</loc><priority>0.8</priority></url>
@@ -32,4 +32,20 @@
    <url><loc>https://www.empirici.org/contact/</loc><priority>0.6</priority></url>
    <url><loc>https://www.empirici.org/thank-you/</loc><priority>0.3</priority></url>
    <url><loc>https://www.empirici.org/datacamp/</loc><priority>0.3</priority></url>
+   <url><loc>http://empirici.org/</loc><priority>1.0</priority></url>
+   <url><loc>http://empirici.org/courses.html</loc><priority>0.8</priority></url>
+   <url><loc>http://empirici.org/about.html</loc><priority>0.7</priority></url>
+   <url><loc>http://empirici.org/blog.html</loc><priority>0.7</priority></url>
+   <url><loc>http://empirici.org/collaboration.html</loc><priority>0.6</priority></url>
+   <url><loc>http://empirici.org/contact.html</loc><priority>0.6</priority></url>
+   <url><loc>http://empirici.org/thank-you.html</loc><priority>0.3</priority></url>
+   <url><loc>http://empirici.org/datacamp/index.html</loc><priority>0.3</priority></url>
+   <url><loc>http://www.empirici.org/</loc><priority>1.0</priority></url>
+   <url><loc>http://www.empirici.org/courses.html</loc><priority>0.8</priority></url>
+   <url><loc>http://www.empirici.org/about.html</loc><priority>0.7</priority></url>
+   <url><loc>http://www.empirici.org/blog.html</loc><priority>0.7</priority></url>
+   <url><loc>http://www.empirici.org/collaboration.html</loc><priority>0.6</priority></url>
+   <url><loc>http://www.empirici.org/contact.html</loc><priority>0.6</priority></url>
+   <url><loc>http://www.empirici.org/thank-you.html</loc><priority>0.3</priority></url>
+   <url><loc>http://www.empirici.org/datacamp/index.html</loc><priority>0.3</priority></url>
 </urlset>
