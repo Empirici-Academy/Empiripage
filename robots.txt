@@ -9,4 +9,4 @@ Disallow: /post-builder
 Disallow: /js/admin
 Disallow: /data/site-data
 
-Sitemap: https://empirici.dpdns.org/sitemap.xml
+Sitemap: https://empirici.org/sitemap.xml
