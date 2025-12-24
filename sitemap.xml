@@ -1,4 +1,4 @@
-<?xml version="2.1.1" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
    <url><loc>https://empirici.org/</loc><priority>1.0</priority></url>
    <url><loc>https://empirici.org/courses.html</loc><priority>0.8</priority></url>
@@ -49,3 +49,4 @@
    <url><loc>http://www.empirici.org/thank-you.html</loc><priority>0.3</priority></url>
    <url><loc>http://www.empirici.org/datacamp/index.html</loc><priority>0.3</priority></url>
 </urlset>
+
