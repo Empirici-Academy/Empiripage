@@ -1,0 +1,47 @@
+<svg width="600" height="900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Top Section -->
+  <circle cx="60" cy="40" r="4" fill="#32938c" opacity="0.5"/>
+  <circle cx="140" cy="60" r="3.5" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="220" cy="30" r="4" fill="#10b981" opacity="0.5"/>
+  <circle cx="300" cy="70" r="3" fill="#32938c" opacity="0.5"/>
+  <circle cx="380" cy="45" r="3.5" fill="#f59e0b" opacity="0.5"/>
+  <circle cx="460" cy="55" r="4" fill="#10b981" opacity="0.5"/>
+  <circle cx="520" cy="35" r="3" fill="#32938c" opacity="0.5"/>
+  <rect x="90" y="50" width="5" height="5" fill="#32938c" transform="rotate(45 92.5 52.5)" opacity="0.5"/>
+  <rect x="250" y="55" width="5" height="5" fill="#f59e0b" transform="rotate(30 252.5 57.5)" opacity="0.5"/>
+  <rect x="410" y="65" width="5" height="5" fill="#10b981" transform="rotate(60 412.5 67.5)" opacity="0.5"/>
+  <polygon points="170,50 174,58 166,58" fill="#32938c" opacity="0.5"/>
+  <polygon points="330,40 334,48 326,48" fill="#f59e0b" opacity="0.5"/>
+  <polygon points="490,60 494,68 486,68" fill="#10b981" opacity="0.5"/>
+
+  <!-- Middle Section (lighter) -->
+  <circle cx="80" cy="180" r="3.5" fill="#32938c" opacity="0.4"/>
+  <circle cx="180" cy="200" r="3" fill="#f59e0b" opacity="0.4"/>
+  <circle cx="280" cy="170" r="3.5" fill="#10b981" opacity="0.4"/>
+  <circle cx="380" cy="190" r="3" fill="#32938c" opacity="0.4"/>
+  <circle cx="480" cy="175" r="3.5" fill="#f59e0b" opacity="0.4"/>
+  <rect x="120" y="185" width="4" height="4" fill="#32938c" transform="rotate(45 122 187)" opacity="0.4"/>
+  <rect x="320" y="180" width="4" height="4" fill="#f59e0b" transform="rotate(30 322 182)" opacity="0.4"/>
+  <polygon points="220,185 224,192 216,192" fill="#10b981" opacity="0.4"/>
+
+  <!-- Lower Section (even lighter) -->
+  <circle cx="100" cy="320" r="3" fill="#32938c" opacity="0.3"/>
+  <circle cx="220" cy="340" r="2.5" fill="#f59e0b" opacity="0.3"/>
+  <circle cx="340" cy="310" r="3" fill="#10b981" opacity="0.3"/>
+  <circle cx="460" cy="330" r="2.5" fill="#32938c" opacity="0.3"/>
+  <rect x="160" y="325" width="3.5" height="3.5" fill="#f59e0b" transform="rotate(45 161.75 326.75)" opacity="0.3"/>
+  <rect x="400" y="315" width="3.5" height="3.5" fill="#10b981" transform="rotate(60 401.75 316.75)" opacity="0.3"/>
+
+  <!-- Bottom Section (lightest) -->
+  <circle cx="130" cy="460" r="2.5" fill="#32938c" opacity="0.2"/>
+  <circle cx="260" cy="480" r="2" fill="#f59e0b" opacity="0.2"/>
+  <circle cx="390" cy="450" r="2.5" fill="#10b981" opacity="0.2"/>
+  <circle cx="500" cy="470" r="2" fill="#32938c" opacity="0.2"/>
+  <rect x="200" y="465" width="3" height="3" fill="#f59e0b" transform="rotate(30 201.5 466.5)" opacity="0.2"/>
+  <rect x="330" y="475" width="3" height="3" fill="#10b981" transform="rotate(60 331.5 476.5)" opacity="0.2"/>
+
+  <!-- Fading End -->
+  <circle cx="170" cy="600" r="2" fill="#32938c" opacity="0.15"/>
+  <circle cx="300" cy="620" r="1.5" fill="#f59e0b" opacity="0.15"/>
+  <circle cx="430" cy="590" r="2" fill="#10b981" opacity="0.15"/>
+</svg>
