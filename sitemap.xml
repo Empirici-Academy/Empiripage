@@ -7,7 +7,7 @@
    <url><loc>https://empirici.org/collaboration.html</loc><priority>0.6</priority></url>
    <url><loc>https://empirici.org/contact.html</loc><priority>0.6</priority></url>
    <url><loc>https://empirici.org/thank-you.html</loc><priority>0.3</priority></url>
-   <url><loc>https://empirici.org/datacamp/index.html</loc><priority>0.3</priority></url>
+   <url><loc>https://empirici.org/blog/datacamp.html</loc><priority>0.3</priority></url>
    <url><loc>https://www.empirici.org/</loc><priority>1.0</priority></url>
    <url><loc>https://www.empirici.org/courses.html</loc><priority>0.8</priority></url>
    <url><loc>https://www.empirici.org/about.html</loc><priority>0.7</priority></url>
@@ -15,7 +15,7 @@
    <url><loc>https://www.empirici.org/collaboration.html</loc><priority>0.6</priority></url>
    <url><loc>https://www.empirici.org/contact.html</loc><priority>0.6</priority></url>
    <url><loc>https://www.empirici.org/thank-you.html</loc><priority>0.3</priority></url>
-   <url><loc>https://www.empirici.org/datacamp/index.html</loc><priority>0.3</priority></url>
+   <url><loc>https://www.empirici.org/blog/datacamp.html</loc><priority>0.3</priority></url>
    <url><loc>https://empirici.org/</loc><priority>1.0</priority></url>
    <url><loc>https://empirici.org/courses/</loc><priority>0.8</priority></url>
    <url><loc>https://empirici.org/about/</loc><priority>0.7</priority></url>
@@ -31,7 +31,7 @@
    <url><loc>https://www.empirici.org/collaboration/</loc><priority>0.6</priority></url>
    <url><loc>https://www.empirici.org/contact/</loc><priority>0.6</priority></url>
    <url><loc>https://www.empirici.org/thank-you/</loc><priority>0.3</priority></url>
-   <url><loc>https://www.empirici.org/datacamp/</loc><priority>0.3</priority></url>
+   <url><loc>https://www.empirici.org/blog/datacamp/</loc><priority>0.3</priority></url>
    <url><loc>http://empirici.org/</loc><priority>1.0</priority></url>
    <url><loc>http://empirici.org/courses.html</loc><priority>0.8</priority></url>
    <url><loc>http://empirici.org/about.html</loc><priority>0.7</priority></url>
@@ -47,6 +47,6 @@
    <url><loc>http://www.empirici.org/collaboration.html</loc><priority>0.6</priority></url>
    <url><loc>http://www.empirici.org/contact.html</loc><priority>0.6</priority></url>
    <url><loc>http://www.empirici.org/thank-you.html</loc><priority>0.3</priority></url>
-   <url><loc>http://www.empirici.org/datacamp/index.html</loc><priority>0.3</priority></url>
+   <url><loc>http://www.empirici.org/blog/datacamp.html</loc><priority>0.3</priority></url>
 </urlset>
 
